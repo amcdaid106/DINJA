@@ -2,43 +2,77 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
 .order-item {
-  display: flex;
-  justify-content: space-between;
+  margin: 6px;
+  padding: 6px;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: $gray-background;
+    background-color: $gray-lighter;
+  }
+
+  h3 {
+    margin: 0;
   }
 }
+
+.order-item-col-centered {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// .order-item-col {
+//   display: inline-block;
+//   vertical-align: middle;
+//   float: none;
+// }
 .test_picture {
   height: 100px;
   border-radius: 5px;
+  width: 100%;
   // box-shadow:
 }
 
-.edit-quantity {
-  display: inline;
+.orders-edit-quantity {
+  display: flex;
+  justify-content: space-around;
   i {
     font-size: larger;
     padding-left: 10px;
   }
 }
-.picture {
-  width: 300px;
-  padding: 20px 20px 20px 0;
-
-}
-.price-quantity {
-  padding: 20px;
+.orders-total-trash {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  i {
+    font-size: larger;
+    padding-left: 10px;
+  }
+}
+.order-picture {
+  margin: 0 20px;
+}
+.orders-controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   font-size: larger;
 }
-.checkout {
+.orders-controls-quantity {
+  display: flex;
+  justify-content: space-around;
+}
+.orders-controls-arrows {
+  display: flex;
+  justify-content: space-around;
+}
+// .orders-price-quantity {
+//   padding: 20px;
+//   display: flex;
+//   justify-content: space-between;
+//   font-size: larger;
+// }
+.orders-checkout-button {
   width: 100%;
-  margin: 20px;
+  margin: 20px 0;
 }
 
