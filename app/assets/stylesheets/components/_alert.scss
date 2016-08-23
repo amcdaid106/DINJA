@@ -5,10 +5,10 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  color: $white;
 }
 .alert-info {
-  background: $green;
+  background: $green-light;
 }
 .alert-warning {
   background: $red;

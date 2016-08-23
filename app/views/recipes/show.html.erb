@@ -1,0 +1,51 @@
+
+<div class= "info-show-1">
+
+  <div class="recipe-name">
+    <h2> <%= @recipe.name.upcase %> </h2>
+  </div>
+
+  <div class="recipe-price">
+   <p> <%= @recipe.price %>€ </p>
+  </div>
+
+  <div class="prep-time">
+    <p> <%= @recipe.prep_time %>min</p>
+  </div>
+
+  <div class="cooking-time">
+    <p> <%= @recipe.cooking_time %>min</p>
+  </div>
+
+   <div class="add">
+    <%= link_to "Add to cart", root_path, method: 'post', class: "btn btn-primary btn-lg"%>
+  </div>
+
+</div>
+
+<div class="info-show-2">
+
+  <div style="background-image: url('<%= asset_path @recipe.photo %>');" class="recipe-image">
+  </div>
+
+  <div class="tabs">
+    <div class="tab-list">
+      <div class= "tabs prep active" data-target= "prep">Prep</div>
+      <div class= "tabs ingredients" data-target= "ingredients">Ingredients</div>
+    </div>
+  </div>
+
+    <div class = "tab-content" id="prep" >
+      <p>Prep: qfdshtfdjyyherqretjsydj,hgfswgdxhfgb</p>
+    </div>
+
+    <div class = "tab-content hidden" id= "ingredients">
+      <p>Ingredient: qfdshtfdjyyherqretjsydj,hgfswgdxhfgb</p>
+    </div>
+    </div>
+
+</div>
+
+
+
+
