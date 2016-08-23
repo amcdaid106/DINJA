@@ -5,5 +5,8 @@ class RecipesController < ApplicationController
     @user = current_user
   end
 
+  def weekly
+    @recipes = Restaurant.
+  end
 
 end
