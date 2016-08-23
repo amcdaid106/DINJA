@@ -1,0 +1,85 @@
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+        <%= simple_form_for(@user, url: edit_user_path, method: :post) do |f| %>
+
+        <ul class="nav nav-pills">
+          <li role="presentation" class="edit-user-tabs active">
+            <a href="#">
+              <span class="round-tabs account">
+                <i class="fa fa-key"></i>
+              </span>
+            </a>
+          </li>
+          <li role="presentation" class="edit-user-tabs">
+            <a href="#">
+              <span class="round-tabs personal">
+                <i class="glyphicon glyphicon-user"></i>
+              </span>
+            </a>
+          </li>
+          <li role="presentation" class="edit-user-tabs"><a href="#">
+            <span class="round-tabs food">
+              🍴
+            </span>
+          </a>
+          </li>
+            <div class="card-white">
+              <br>
+              <div class="personal-details">
+                <h3>Edit your personal details</h3>
+                  <%= f.input :first_name, placeholder: 'First name' %>
+                  <%= f.input :last_name, placeholder: 'Last name' %>
+                  <%= f.input :address, placeholder: 'Address' %>
+              </div>
+              <div class= "food-preferences">
+                <h3>Edit your food preferences</h3>
+                <div class="food-checks">
+                  <%= f.input :no_gluten, as: :boolean %>
+                  <%= f.input :no_eggs, as: :boolean %>
+                  <%= f.input :no_dairy, as: :boolean %>
+                  <%= f.input :vegetarian, as: :boolean %>
+                  <%= f.input :vegan, as: :boolean %>
+                </div>
+                <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'Enter maximum calories' %>
+                <%= f.input :max_prep_time, label: "Max prep time per dish", placeholder: 'Enter maximum prep time' %>
+
+
+              </div>
+
+
+
+
+
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+
+    <ul class="nav nav-tabs" id="myTab">
+      <div class="liner"></div>
+      <li class="active">
+       <a href="#home" data-toggle="tab" title="" data-original-title="welcome">
+        <span class="round-tabs one">
+          <i class="glyphicon glyphicon-home"></i>
+        </span>
+      </a></li>
+
+      <li><a href="#profile" data-toggle="tab" title="" data-original-title="profile">
+       <span class="round-tabs two">
+         <i class="glyphicon glyphicon-user"></i>
+       </span>
+     </a>
+      </li>
+    </ul>
+
+
+ -->
