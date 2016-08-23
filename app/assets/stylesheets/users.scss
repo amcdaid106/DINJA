@@ -1,7 +1,9 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.wrapper {
+  background-image: url('../images/food_prefs_background.jpg');
+}
 
 .navbar {
   display: flex;
@@ -81,6 +83,7 @@
 .card {
   background-color: $gray-background;
   padding: 50px;
+  border-radius: 3px;
 }
 .food-checks {
   display: flex;
