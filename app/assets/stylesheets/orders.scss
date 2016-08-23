@@ -3,20 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.cart-wrapper {
-  background-color: $green-light;
-  height: fill;
-  width: fill;
-}
-.cart-wrapper > .container {
-  background-color: $white;
-  // margin-top: 40px; want there to be green on top, but this puts white...
-  padding-top: 50px;
-  height: 100vh;
-h1 {
-  margin-bottom: 30px;
-}
-}
+
+
 .order-item {
   display: flex;
   justify-content: space-between;

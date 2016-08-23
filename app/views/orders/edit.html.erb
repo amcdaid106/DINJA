@@ -1,59 +1,37 @@
-<div class="cart-wrapper">
-  <div class="container">
-    <h1>Your Shopping Cart</h1>
+<div class="container">
+  <h1>Your Shopping Cart</h1>
 
-    <div class="order-items">
-      <% @order.order_items.each do |order_item| %>
+  <% @order.order_items.each do |order_item| %>
+    <div class="row order-item">
 
-        <div class="order-item">
-
-          <div class="container">
-            <div class="row">
-
-              <div class="col-xs-6 col-md-3">
-                <div class="picture">
-                  <%= image_tag order_item.recipe.photo, class: "test_picture" %>
-                </div>
-              </div>
-
-              <div class="col-xs-6 col-md-3">
-                <h3><%= order_item.recipe.name %></h3>
-              </div>
-              <!-- want to add this to class below but it messes up large view?? col-xs-6 col-xs-offset-6  -->
-              <div class="col-md-6">
-                <div class="price-quantity">
-                  <p>Price: €<%= order_item.recipe.price %>.00 </p>
-                  <!-- <div class="edit-quantity"> -->
-                  <p>Quantity: <%= order_item.quantity %></p>
-                  <i class="fa fa-caret-up" aria-hidden="true"></i>
-                  <i class="fa fa-caret-down" aria-hidden="true"></i>
-                  <!-- </div> -->
-                  <p>Total: €<%= order_item.recipe.price * order_item.quantity %>.00</p>
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-md-4 col-md-offset-4">
-            <button class="btn btn-success checkout">Pay and Checkout</button>
-
-          </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="picture">
+          <%= image_tag order_item.recipe.photo, class: "test_picture" %>
         </div>
       </div>
 
+      <div class="col-xs-6 col-md-3">
+        <h3><%= order_item.recipe.name %></h3>
+      </div>
+      <!-- want to add this to class below but it messes up large view?? col-xs-6 col-xs-offset-6  -->
+      <div class="col-md-6">
+        <div class="price-quantity">
+          <p>Price: €<%= order_item.recipe.price %>.00 </p>
+          <!-- <div class="edit-quantity"> -->
+          <p>Quantity: <%= order_item.quantity %></p>
+          <i class="fa fa-caret-up" aria-hidden="true"></i>
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          <!-- </div> -->
+          <p>Total: €<%= order_item.recipe.price * order_item.quantity %>.00</p>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </div>
+      </div>
     </div>
+  <% end %>
 
-
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <button class="btn btn-success checkout">Pay and Checkout</button>
+    </div>
   </div>
-
-
-
-
-
-
 </div>
