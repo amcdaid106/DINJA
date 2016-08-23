@@ -1,0 +1,94 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  background-image: url('../images/food_prefs_background.jpg');
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-list {
+  background-color: $gray-background;
+  padding: 30px;
+}
+.liner {
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  width: 60%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+}
+.tab-list > div a:after {
+  content: " ";
+  position: absolute;
+  // left: 48.5%;
+  margin: 0 auto 0 auto;
+  bottom: -1px;
+  border: 10px solid transparent;
+  border-bottom-color: $white;
+  opacity: 0;
+}
+
+.tab-list > div.active a:after {
+    content: " ";
+    position: absolute;
+    // left: 48.5%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: -1px;
+    border: 10px solid transparent;
+    border-bottom-color: $white;
+}
+
+.edit-user-tabs {
+  height: 70px;
+  width: 70px;
+  background-color: $white;
+  border-radius: 50%;
+  font-size: larger;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+  a {
+    text-decoration: none;
+    padding: 20px;
+  }
+  &.food {
+    border: 2px solid $green-dark;
+    i {
+    color: $green-dark;
+    }
+  }
+  &.personal {
+    border: 2px solid $orange;
+    i {
+      color: $orange;
+    }
+  }
+  &.account {
+    border: 2px solid $blue-dark;
+    i {
+      color: $blue-dark;
+    }
+  }
+}
+
+.card {
+  background-color: $gray-background;
+  padding: 50px;
+  border-radius: 3px;
+}
+.food-checks {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  border-radius: 5px;
+}
