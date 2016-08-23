@@ -1,4 +1,6 @@
 
+<div class="container">
+
 <div class= "info-show-1">
 
   <div class="recipe-name">
@@ -6,15 +8,15 @@
   </div>
 
   <div class="recipe-price">
-   <p> <%= @recipe.price %>€ </p>
+   <h5> <%= @recipe.price %>€ </h5>
   </div>
 
   <div class="prep-time">
-    <p> <%= @recipe.prep_time %>min</p>
+    <h5> <%= @recipe.calories%> calories</h5>
   </div>
 
   <div class="cooking-time">
-    <p> <%= @recipe.cooking_time %>min</p>
+    <h5> <%= @recipe.cooking_time %>min</h5>
   </div>
 
    <div class="add">
@@ -28,21 +30,29 @@
   <div style="background-image: url('<%= asset_path @recipe.photo %>');" class="recipe-image">
   </div>
 
-  <div class="tabs">
+  <div class="tabulation">
     <div class="tab-list">
-      <div class= "tabs prep active" data-target= "prep">Prep</div>
-      <div class= "tabs ingredients" data-target= "ingredients">Ingredients</div>
+      <div class= "tabs prep active" data-target= "prep"> PREP
+      </div>
+
+      <div class= "tabs ingredients" data-target= "ingredients">INGREDIENTS</div>
     </div>
+
+ <div class = "tab-content setting" id="prep" >
+          <%= @recipe.prep_time %> minutes
+          <br>
+          <br>
+          <%= @recipe.instructions %>
+    </div>
+
+    <div class = "tab-content hidden setting" id= "ingredients">
+      <% @recipe.doses.each do |dose| %>
+      <ul> <%= dose.measure %> <%= dose.ingredient.name %> </ul>
+      <% end %>
+      </div>
+
   </div>
-
-    <div class = "tab-content" id="prep" >
-      <p>Prep: qfdshtfdjyyherqretjsydj,hgfswgdxhfgb</p>
-    </div>
-
-    <div class = "tab-content hidden" id= "ingredients">
-      <p>Ingredient: qfdshtfdjyyherqretjsydj,hgfswgdxhfgb</p>
-    </div>
-    </div>
+</div>
 
 </div>
 
