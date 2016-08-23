@@ -1,3 +1,16 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.wrapper {
+  background-color: $green-light;
+  height: 100vh;
+  width: 100wh;
+}
+.order-items {
+  display: flex;
+}
+.test_pictures {
+  height: 100px;
+}
