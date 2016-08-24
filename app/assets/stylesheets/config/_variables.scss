@@ -3,8 +3,12 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700|Source+Sans+Pro:300,400,400i,600,700");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 $base-font: "Source Sans Pro", "sans-serif";
 $header-font: "Raleway", "sans-serif";
+$font: "Libre Baskerville", "serif";
+$font2 : 'Montserrat', sans-serif;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -43,3 +47,5 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
+
+

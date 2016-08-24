@@ -1,0 +1,112 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.info-show-1 {
+  // width : 1200px;
+  height: 100px;
+  background-color: $white;
+  margin: 10px auto 0px auto;
+  display:flex;
+  border: 1px solid #E7E7E7;
+  align-items: center;
+}
+
+.recipe-name {
+flex: 1 0 auto;
+//padding: 16px;
+}
+
+.recipe-name h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.recipe-price {
+  flex: 0 0 20%;
+  // padding: 10px;
+}
+
+.prep-time {
+  flex: 0 0 20%;
+  // padding: 10px;
+}
+
+.cooking-time {
+  flex: 0 0 20%;
+  // padding: 10px;
+}
+
+.add {
+  flex: 0 0 15%;
+  // padding-top : 10px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #B6CE67;
+}
+
+.info-show-2 {
+  // width : 1200px;
+  height: 400px;
+  background-color: #E7E7E7;
+ border-right: 1px solid #E7E7E7;
+ border-bottom: 1px solid #E7E7E7;
+  margin: 0px auto;
+  display: flex;
+  .recipe-image {
+    width: 50%;
+    background-size: cover;
+  }
+  .tabulation {
+  width: 50% !important;
+  flex: 0 0 auto;
+}
+
+}
+
+.tab-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.prep {
+ flex: 0 0 50%;
+ display: flex;
+ justify-content: center;
+ border-right: 1px solid gray;
+ font-size: 18px;
+ padding-top: 11px;
+ padding-bottom: 11px;
+ letter-spacing: 0.8px;
+ background-color: #F4F7F8;
+}
+
+.ingredients {
+ flex: 0 0 50%;
+  display: flex;
+ justify-content: center;
+border-right: 1px solid gray;
+ font-size: 18px;
+ padding-top: 11px;
+ padding-bottom: 11px;
+ letter-spacing: 0.8px;
+ background-color: #F4F7F8;
+}
+
+.ingredients:hover {
+ border-bottom: 5px solid $red;
+}
+
+.prep:hover {
+ border-bottom: 5px solid $red;
+}
+
+.setting {
+  text-align: left;
+  padding: 30px;
+  font-size: 18px;
+}
+
+
