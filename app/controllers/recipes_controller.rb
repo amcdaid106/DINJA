@@ -32,8 +32,9 @@ class RecipesController < ApplicationController
     end
   end
 
-
 end
 
-
+# Ajouter une semaine aux meals (ex: 1, 2, 3, 4...)
+# Ajouter : toujours les mêmes meals doivent apparaître pendant 1 semaine
+# fixer le sample dans la durée
 
