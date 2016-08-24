@@ -6,7 +6,22 @@
     <a class="btn btn-primary btn-lg">Discover this week meals</a>
 </div>
 <div>
-  <% @recipes.each do |recipe| %>
-    <%= recipe.name %>
-  <% end %>
+
+  <h2>Starter</h2>
+    <% @starters.each do |starter| %>
+      <%= starter.name %>
+    <% end %>
+
+  <h3>Main course</h3>
+    <% @mains.each do |main| %>
+      <%= main.name %>
+    <% end %>
+
+
+  <h3>Dessert</h3>
+    <% @desserts.each do |dessert| %>
+      <%= dessert.name %>
+    <% end %>
+
+
 </div>
