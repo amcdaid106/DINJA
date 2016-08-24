@@ -1,26 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# haricot =  Ingredient.create(name: "haricots verts")
-# persil =  Ingredient.create(name: "persil")
-# huile_olive =  Ingredient.create(name: "Huile d'Olive")
 
-# salade = Recipe.new(name: "Salade d'haricots", photo_file_name: "logo.png" )
-
-# Dose.create(measure: "500g", ingredient: haricot, recipe: salade)
-# Dose.create(measure: "un bouquet", ingredient: persil, recipe: salade)
-
-# # photo : soit c'est des assets, soit on la stocke sous forme d'URL - cloudinary payant ?
-#
 dummy_instructions = "Set the oven to 400°F. Rinse and dry the parsley and lettuce. Cut the top leaves away from the stems of the parsley and add to the work bowl of a food processor. Measure out 2 teaspoons of the cornstarch and add it to the work bowl, reserving the rest for the onion rings. Peel and slice ⅔ of the onion into thin rounds, then roughly chop the rest. Add the chopped onion to the work bowl.
 
 Drain and rinse the beans. Add the beans, walnuts, oats, garlic powder, cumin, and 1/2 teaspoon of salt and a pinch of pepper to the food processor. Pulse until everything is incorporated but there are still visible pieces of the ingredients. Divide the mixture into 2 patties and put in the refrigerator to chill until you are ready to cook them.
 
 Keeping the corn in the husk, place the ears on the middle rack for 15 to 20 minutes or until the husk is golden brown.Keeping the corn in the husk, place the ears on the middle rack for 15 to 20 minutes or until the husk is golden brown."
+
+
+chickpea =  Ingredient.create(name: "chickpea")
+peanut =  Ingredient.create(name: "peanut")
+sesame_oil =  Ingredient.create(name: "sesame oil")
+sesame_pastry =  Ingredient.create(name: "sesame pastry")
+garlic =  Ingredient.create(name: "garlic")
+lemon =  Ingredient.create(name: "lemons")
+
+Houmous  = Recipe.create(name: "Houmous with peanuts", category: "starter", photo: "houmous.png", description: "Hummus is this delicious mashed chickpeas, blended with tahini, the sesame paste. Hummus is native to the Middle East countries. It is eaten raw, with raw vegetables, or with pita bread!", price:3, prep_time:6 , cooking_time:0, calories:150,
+vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+chick = Dose.create(measure: "400g of", ingredient:chickpea, recipe: Houmous)
+peanut = Dose.create(measure: "100g of", ingredient:peanut, recipe: Houmous)
+sesame = Dose.create(measure: "dessert spoon of", ingredient: sesame_oil, recipe: Houmous)
+pastry = Dose.create(measure: "10g of", ingredient: sesame_pastry, recipe: Houmous)
+garlic = Dose.create(measure: "some", ingredient: garlic, recipe: Houmous)
+lemon = Dose.create(measure: "2" , ingredient: lemon, recipe: Houmous)
 
 
 bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 9, photo: "bean_burger.png", instructions: dummy_instructions, prep_time: 15, cooking_time: 20, category: "Main course", calories: 907, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
@@ -186,7 +187,4 @@ egg = Ingredient.create(name: "Egg")
 Dose.create(measure: "2 large", recipe_id: courgette_brownies, ingredient_id: egg)
 # courgette
 Dose.create(measure: "1.5 cups", recipe_id: courgette_brownies, ingredient_id: courgette)
-
-
-
 
