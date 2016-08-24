@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Please confirm your order details</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 confirm-address">
+      <div>
+        <h3>Address for delivery</h3>
+        <p>45 Hemenway Street</p>
+        <p>Boston, Massachusetts 02115</p>
+        <p>USA</p>
+        <hr>
+        <button class="btn btn-warning confirm-order-button">Edit</button>
+
+      </div>
+
+    </div>
+      <div class="col-xs-12 col-sm-6 confirm-order" >
+        <h3>Your order</h3>
+        <% @order.order_items.each do |item| %>
+          <h4><%= item.recipe.name %></h4>
+          <div class=confirm-order-numbers>
+            <p>Quantity: <%= item.quantity %></p>
+            <p>Total price: €<%= item.recipe.price*item.quantity %>.00 </p>
+          </div>
+        <% end %>
+        <div class="line-button">
+          <hr>
+          <button class="btn btn-warning pull-right confirm-order-button">Edit</button>
+
+        </div>
+        <h3>Grand total: €<%= @order.price %>.00</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <button class="btn btn-danger orders-checkout-button">Looks good!</button>
+      </div>
+    </div>
+
+
+
+</div>
