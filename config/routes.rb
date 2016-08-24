@@ -10,10 +10,8 @@ Rails.application.routes.draw do
   # resources :orders, only: [:edit], as: 'cart'
 
 
-  get '/cart/:id', to: 'orders#edit'
-  resources :orders, only: [ :update ]
-  get '/order_confirmation/:id', to: 'orders#show'
-
-
-
+  get '/cart/:id', to: 'orders#edit', as: :edit_order
+  resources :orders, only: [ :update, :show ]
+  # get '/order_confirmation/:id', to: 'orders#show', as: :order
+  resources :order_items, only: [ :destroy ]
 end

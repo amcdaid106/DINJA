@@ -1,0 +1,3 @@
+$('#grand_total').text(<%= @grand_total %>);
+var id = <%= @order_item.id %>
+$('#order_item_row_' + id).remove();
