@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def weekly
-    @recipes = Restaurant.
+    @recipes = Recipes.all
   end
 
 end
