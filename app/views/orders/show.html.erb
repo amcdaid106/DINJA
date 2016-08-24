@@ -1,14 +1,12 @@
 <div class="container">
   <h1>Order complete!</h1>
 
-  <h3>Keep an eye out for your Dinja box.</h3>
-  <h4>Expected delivery: <%= @order.delivery_date.strftime("%b %d, %Y") %></h4>
+  <h3>Keep an eye out for your Dinja box. <strong>Expected delivery: <%= @order.delivery_date.strftime("%b %d, %Y") %></strong></h3>
+
 
   <h3>Order details</h3>
-  <% @order.order_items.each_with_index do |order_item, index| %>
-    <% order_item_id = index + 1 %>
+  <% @order.order_items.each do |order_item| %>
     <div class="row order-item">
-
       <div class="col-xs-12 col-sm-3">
         <div class="order-picture">
           <%= image_tag order_item.recipe.photo, class: "test_picture" %>
@@ -26,4 +24,9 @@
       </div>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class=>Order total: €<%= @grand_total %>.00</h4>
+    </div>
+  </div>
 </div>
