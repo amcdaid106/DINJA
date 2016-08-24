@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
 
   get '/cart/:id', to: 'orders#edit'
+  resources :orders, only: [ :update ]
+  get '/order_confirmation/:id', to: 'orders#show'
+
+
 end
