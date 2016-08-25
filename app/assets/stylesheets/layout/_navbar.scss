@@ -19,11 +19,19 @@
 .how-it-works {
   font-size: 20px;
   font-family: $header-font;
-  p {
-    border-bottom: 3px solid $red;
-    padding-bottom: 10px;
-    margin: 0px;
+  hr {
+  color: $red;
+  background-color: $red;
+  border: 1px solid;
+  width: 55%;
+  margin-top: 0px;
+  margin-bottom: 0px;
   }
+  // p {
+  //   border-bottom: 3px solid $red;
+  //   padding-bottom: 10px;
+  //   margin: 0px;
+  // }
 }
 
 

@@ -2,10 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.order-process-container {
+  margin: 80px 250px;
+
+}
 
 // Style for orders#edit
-.order-item {
-  margin: 6px;
+.cart-heading hr {
+  color: $green-light;
+  background-color: $green-dark;
+  border: 1px solid;
+  width: 20%;
+
+}
+.order-item-cart {
+  margin: 10px 6px;
   padding: 6px;
   transition: background-color 0.3s ease;
   &:hover {
@@ -56,23 +67,29 @@
   display: flex;
   justify-content: space-around;
 }
-.orders-controls-arrows {
+.orders-controls-plus-minus {
   display: flex;
   justify-content: space-around;
   i {
+    padding-top: 5px;
     padding-left: 20px;
-    font-size: larger;
   }
-  .fa-caret-down {
+  .fa-minus {
     padding-right: 20px;
   }
-  .fa-caret-up:hover {
-    font-size: 25px;
-    color: $green-light;
+  .fa-plus:hover {
+    // font-size: 25px;
+    color: $green-dark;
   }
-  .fa-caret-down:hover {
-    font-size: 25px;
-    color: $green-light;
+  .fa-minus:hover {
+    // font-size: 25px;
+    color: $green-dark;
+  }
+}
+.fa-trash {
+  color: black;
+  &:hover{
+    color: $red-dark;
   }
 }
 .orders-checkout-button {
@@ -81,15 +98,67 @@
 }
 
 // Style for orders#update
+.order-confirm-heading hr {
+  color: $green-light;
+  background-color: $green-dark;
+  border: 1px solid;
+  width: 40%;
+}
 .confirm-order-head-button {
   display: flex;
   justify-content: space-around;
 }
-.confirm-order-numbers {
-  display: flex;
-  justify-content: space-around;
+.orders-confirmation-button {
+  width: 100%;
+  margin: 20px 0;
 }
-// .confirm-order-button {
-//   display: block;
-// }
+
+
+// Style for orders#show
+.order-confirmation-heading hr {
+  color: $green-light;
+  background-color: $green-dark;
+  border: 1px solid;
+  width: 20%;
+}
+.order-final-price {
+  padding-right:55px;
+  text-align: right;
+  p {
+    font-size: 20px;
+  }
+}
+
+.order-item-checkout {
+  background-color: $gray-background;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
+.order-item-conf {
+    margin: 6px;
+    padding: 6px;
+    transition: background-color 0.3s ease;
+    h3 {
+      margin: 0;
+    }
+  .order-item-col-centered {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .test_picture {
+    height: 100px;
+    border-radius: 5px;
+    width: 100%;
+    // box-shadow:
+  }
+}
+
+
+
+
+
+
+
 

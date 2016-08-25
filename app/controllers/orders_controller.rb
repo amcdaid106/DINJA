@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
   end
 
   def update
+    @user = current_user
     @order.order_items.each do |order_item|
       order_item.quantity = params["quantity_order_item_#{order_item.id}"]
       order_item.save
