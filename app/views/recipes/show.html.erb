@@ -35,7 +35,6 @@
               <p><i class="fa fa-balance-scale" aria-hidden="true"></i> : <%= @recipe.calories %> Kcal</p>
             </div>
             <div class="col-xs-6 tab-content-details restrictions">
-              <h4><strong>Nutrition Specs</strong></h4>
               <% if @recipe.vegetarian == true %>
                 <p>Vegetarian <i class="fa fa-check" aria-hidden="true"></i></p>
               <% end %>
@@ -54,7 +53,7 @@
             </div>
           </div>
           <div class = "tab-content hidden setting" id= "ingredients">
-            <h4><strong>In Your Dinja Box</strong></h4>
+            <h4><i class="fa fa-envira" aria-hidden="true"></i><strong>In Your Dinja Box</strong></h4>
             <% @recipe.doses.each do |dose| %>
             <p><%= dose.measure %> <%= dose.ingredient.name %></p>
             <% end %>
