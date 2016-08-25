@@ -1,0 +1,66 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.recipe {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  font-family: "Raleway";
+}
+
+.recipe-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.recipe-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.recipe-description h2 {
+  font-size: 24px;
+}
+.recipe-description p {
+  font-size: 13px;
+  }
+.recipe-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: $gray-background;
+  opacity: 0;
+}
+.recipe-link:hover{
+  opacity: 0.1;
+}
+
+h1 span {
+  background: #fff;
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+h1 span:before {
+  background: #ddd; // add a grey background?
+  // content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+    top: 50%;
+  width: 100%;
+}
+
+h1 span:before {
+  left: 0;
+}
