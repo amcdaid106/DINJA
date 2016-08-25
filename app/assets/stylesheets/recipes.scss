@@ -5,17 +5,19 @@
 
 .title-start {
 text-align:center;
-color:blue;
+color:inherit;
+font-family: "amatic";
 }
 .wrapper-grey {
   background-color: $gray-background;
 }
 
-// .container {
-//   background-color: $gray-background;
-// }
+.container{
+  background-color:$gray-background;
+}
+
 .card-price {
-  width: 30px;
+  width: 50px;
   border-radius: 50%;
 }
 .card-price {
@@ -31,7 +33,8 @@ color:blue;
   background-size: cover !important;
   color: white;
   position: relative;
-  font-family: "Raleway";
+  font-family: "amatic";
+  margin-bottom: 25px;
 }
 .recipe-category {
   position: absolute;
@@ -183,4 +186,22 @@ color:blue;
   text-align: left;
   padding: 30px;
   font-size: 18px;
+}
+
+
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
 }
