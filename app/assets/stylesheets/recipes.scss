@@ -3,11 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.title-start {
-text-align:center;
-color:inherit;
-font-family: "amatic";
+h4 {
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+    text-align: center;
+    font-family: $amatic;
+    font-size: 48px;
 }
+h4:before, h4:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: $blue-darker;
+}
+h4:before {
+    margin-left: -50%;
+    text-align: right;
+}
+
+.padded {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
 .wrapper-grey {
   background-color: $gray-background;
 }
@@ -24,39 +47,8 @@ font-family: "amatic";
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
-.card-price {
-  width: 50px;
-}
-.recipe {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  color: white;
-  position: relative;
-  font-family: "amatic";
-  margin-bottom: 25px;
-}
-.recipe-category {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
-.recipe-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
 
-.recipe-description h2 {
-  font-size: 24px;
-  text-align: center;
-}
-.recipe-description p {
-  font-size: 13px;
-  text-align: center;
-}
+
 .recipe-link {
   position: absolute;
   top: 0;
@@ -71,7 +63,7 @@ font-family: "amatic";
 }
 
 
-// Style for recipes#show
+// Style for recipes#: show
 .recipe-info-show-1 {
   height: 100px;
   background-color: $white;
@@ -90,10 +82,7 @@ font-family: "amatic";
   display: flex;
   justify-content: flex-end;
 }
-.recipe-price {
-  flex: 0 0 20%;
-  // padding: 10px;
-}
+
 .prep-time {
   flex: 0 0 20%;
   // padding: 10px;
@@ -107,23 +96,6 @@ font-family: "amatic";
   text-align: right;
 }
 
-
-.btn {
-  background-color: $red;
-  opacity: 0.9;
-  color: $white;
-  padding: 15px 20px;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-  border: none;
-  font-family: $base-font;
-}
-.btn:hover {
-  background: $red;
-  opacity: 0.5;
-  text-decoration: none;
-  color: $white;
-}
 
 .recipe-info-show-2 {
   // width : 1200px;
@@ -205,3 +177,57 @@ font-family: "amatic";
   text-decoration: none;
   color: white;
 }
+
+
+.recipe-container {
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 6px;
+  padding-top: 40px;
+}
+
+.recipe-picture {
+  height: 220px;
+  width: 100%;
+  background-size: cover !important;
+}
+
+.recipe-footer {
+  background-color: $white;
+  padding: 15px;
+}
+
+.recipe-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.recipe-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-price {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.recipe-select {
+  background-color: $red;
+  opacity: 0.9px;
+  color: $white;
+  border-radius: 4px;
+  font-family: $base-font;
+  padding: 8px 12px;
+  font-weight: 300px;
+  font-size: 20px;
+  &:hover {
+  opacity: 0.2px;
+  text-decoration: none;
+  color: $white;
+  }
+}
+
+
