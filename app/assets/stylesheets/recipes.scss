@@ -2,17 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .title-start {
 text-align:center;
 color:inherit;
 font-family: "amatic";
 }
 .wrapper-grey {
-  background-color: #F0F0F0;
+  background-color: $gray-background;
 }
 
-.container {
-  background-color:#F0F0F0;
+.container{
+  background-color:$gray-background;
 }
 
 .card-price {
@@ -35,7 +36,6 @@ font-family: "amatic";
   font-family: "amatic";
   margin-bottom: 25px;
 }
-
 .recipe-category {
   position: absolute;
   top: 10px;
@@ -43,7 +43,6 @@ font-family: "amatic";
   font-size: 10px;
   text-transform: uppercase;
 }
-
 .recipe-description {
   position: absolute;
   bottom: 10px;
@@ -57,7 +56,7 @@ font-family: "amatic";
 .recipe-description p {
   font-size: 13px;
   text-align: center;
-  }
+}
 .recipe-link {
   position: absolute;
   top: 0;
@@ -71,126 +70,103 @@ font-family: "amatic";
   opacity: 0.1;
 }
 
-//  span {
-//   background-color: #fff;
-//   padding: 0 15px;
-//   position: relative;
-//   text-align: center;
-//   z-index: 1;
-// }
 
- // span:before {
- //  background: #ddd; // add a grey background?
- //  // content: "";
- //  display: block;
- //  height: 1px;
- //  position: absolute;
- //    top: 50%;
- //  width: 100%;
-// }
-//  span:before {
-//   left: 0;
-// }
-.info-show-1 {
-  // width : 1200px;
+// Style for recipes#show
+.recipe-info-show-1 {
   height: 100px;
   background-color: $white;
-  margin: 10px auto 0px auto;
-  display:flex;
+  margin: 0px auto 0px auto;
+  display: flex;
   border: 1px solid #E7E7E7;
   align-items: center;
 }
-
 .recipe-name {
-flex: 1 0 auto;
-//padding: 16px;
+  flex: 1 0 auto;
 }
-
-.recipe-name h2 {
-  font-size: 16px;
-  font-weight: bold;
+.recipe-name h3 {
+  margin-top: 11px;
 }
-
+.recipe-info-details {
+  display: flex;
+  justify-content: flex-end;
+}
 .recipe-price {
   flex: 0 0 20%;
   // padding: 10px;
 }
-
 .prep-time {
   flex: 0 0 20%;
   // padding: 10px;
 }
-
 .cooking-time {
   flex: 0 0 20%;
   // padding: 10px;
 }
-
-.add {
-  flex: 0 0 15%;
-  // padding-top : 10px;
-  text-align: center;
+.recipe-add {
+  padding-right: 20px;
+  text-align: right;
 }
 
-.btn {
+.recipe-add-button {
   background-color: #B6CE67;
 }
-
-.info-show-2 {
+.recipe-info-show-2 {
   // width : 1200px;
   height: 400px;
   background-color: #E7E7E7;
- border-right: 1px solid #E7E7E7;
- border-bottom: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
   margin: 0px auto;
   display: flex;
-}
   .recipe-image {
-    width: 50%;
-    background-size: cover;
-  }
+      padding: 30px;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
   .tabulation {
-  width: 50% !important;
-  flex: 0 0 auto;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: $white;
+    overflow: auto;
+  }
+  .tab-list {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+     // background-color: $red;
+  }
 }
-
-.tab-list {
-  display: flex;
-  justify-content: space-around;
+.tab-content {
+  border-left: 0.2px solid $gray-lighter;
+  border-right: 0.2px solid $gray-lighter;
+  border-bottom: 0.2px solid $gray-lighter;
+  height: calc(400px - 54px);
+  overflow: scroll;
 }
-
-.prep {
- flex: 0 0 50%;
- display: flex;
- justify-content: center;
- border-right: 1px solid gray;
+.tabs {
+ flex: 0 0 33%;
  font-size: 18px;
  padding-top: 11px;
  padding-bottom: 11px;
  letter-spacing: 0.8px;
- background-color: #F4F7F8;
+ background-color: $red;
+ opacity: 0.8;
+ text-align: center;
+ .details {
+   border-right: 1px solid gray;
+ }
+ .ingredients {
+   border-right: 1px solid gray;
+ }
+  &:hover {
+    opacity: 1;
+  }
 }
-
-.ingredients {
- flex: 0 0 50%;
-  display: flex;
- justify-content: center;
-border-right: 1px solid gray;
- font-size: 18px;
- padding-top: 11px;
- padding-bottom: 11px;
- letter-spacing: 0.8px;
- background-color: #F4F7F8;
+.tabs.active {
+  border-bottom: 5px solid $green-dark;
+  opacity: 1;
 }
-
-.ingredients:hover {
- border-bottom: 5px solid $red;
-}
-
-.prep:hover {
- border-bottom: 5px solid $red;
-}
-
 .setting {
   text-align: left;
   padding: 30px;

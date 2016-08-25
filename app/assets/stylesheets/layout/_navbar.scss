@@ -1,27 +1,57 @@
 .navbar {
-  background: white;
+  color-background: #FOFOFO;
   transition: all 0.3s ease;
   display: flex;
-  height: 90px;
-  padding: 0px 30px;
+  justify-content: space-between;
   align-items: center;
+  height: 94px;
+  padding: 0px 55px;
   margin: 0px;
+  .how-it-works,
+  .horizontal-space,
+  .navbar-item,
+  .cart-link {
+    width: 170px;
+  }
 }
 
 
 .how-it-works {
-  font-family : $font2;
-  flex: 0 0 10%;
+  font-size: 20px;
+  font-family: $header-font;
+  p {
+    border-bottom: 3px solid $red;
+    padding-bottom: 10px;
+    margin: 0px;
+  }
 }
 
+
 .logo {
-width : 90px;
-height: 70px;
+  width : 155px;
+}
+
+
+.cart {
+  color: $red;
+  font-size: 40px;
+}
+
+
+.fa-caret-down {
+  size: 12px;
 }
 
 .navbar-item {
   cursor: pointer;
   padding: 0 20px;
+  flex: 0 0 20;
+  font-family: $header-font;
+  font-size: 20px;
+  margin: 0px;
+  p {
+    margin: 0px;
+  }
 }
 
 .navbar-dropdown-menu {
@@ -53,6 +83,11 @@ height: 70px;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar:before,
+.navbar:after {
+  content: initial;
 }
 
 .navbar-link {

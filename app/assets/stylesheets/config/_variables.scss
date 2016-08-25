@@ -3,12 +3,10 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700|Source+Sans+Pro:300,400,400i,600,700");
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
 $base-font: "Source Sans Pro", "sans-serif";
 $header-font: "Raleway", "sans-serif";
-$font: "Libre Baskerville", "serif";
-$font2 : 'Montserrat', sans-serif;
+$amatic: 'Amatic SC', cursive;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -28,18 +26,19 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-$brand-color: #98BE7D;
+$brand-color: #EB7260;
 
 $white: #FFFFFF;
 $red: #E45F56;
-$yellow: #FFD041;
+$red-dark : #A65A42;
+$yellow: #FCFF82;
 $orange: #EA812E;
 $green-dark: #93B97A;
-$green-light: #BFD180;
+$green-light: #BBD4AF;
 $blue-dark: #4B8889;
-$blue-darker:#405363;
-$gray-background: #D1D1D1;
-$gray-font: #454545;
+$blue-darker:#354458;
+$gray-background: #F0F0F0;
+$gray-font: #3C465A;
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222
