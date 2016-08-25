@@ -182,14 +182,17 @@ h4:before {
 .recipe-container {
   margin-bottom: 20px;
   width: 100%;
-  border-radius: 6px;
+  border-radius: 4px;
   padding-top: 40px;
+  overflow: hidden;
 }
 
 .recipe-picture {
   height: 220px;
   width: 100%;
   background-size: cover !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .recipe-footer {
@@ -220,7 +223,7 @@ h4:before {
   color: $white;
   border-radius: 4px;
   font-family: $base-font;
-  padding: 8px 12px;
+  padding: 3px 10px;
   font-weight: 300px;
   font-size: 20px;
   &:hover {
@@ -228,6 +231,47 @@ h4:before {
   text-decoration: none;
   color: $white;
   }
+}
+
+.recipe-confirm {
+  background-color: $yellow;
+  opacity: 0.9px;
+  color: $white;
+  border-radius: 4px;
+  font-family: $base-font;
+  padding: 12px 36px;
+  font-weight: 400px;
+  font-size: 30px;
+  &:hover {
+  opacity: 0.2px;
+  text-decoration: none;
+  color: $white;
+  }
+}
+
+.big {
+  background-color: $gray-background;
+  padding-bottom: 50px;
+}
+
+.confirm {
+  display: flex;
+  justify-content: center;
+}
+
+#newsletter h2 {
+  font-family: $amatic;
+  letter-spacing: 0.8px;
+}
+
+#newsletter p {
+  font-size: 16px;
+  font-family: $base-font;
+}
+
+#newsletter {
+   background-color: $yellow;
+  opacity: 0.3;
 }
 
 

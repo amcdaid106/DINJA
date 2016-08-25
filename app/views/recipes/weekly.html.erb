@@ -8,6 +8,8 @@
   </div>
 </div>
 
+ <div class= "big">
+
 <div class="wrapper-grey padded">
   <div class="container">
     <h2 class="text-center"></h2>
@@ -22,7 +24,7 @@
                 <div class="recipe-title"><%= starter.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= starter.price %>€</div>
-                  <%= link_to "+ Add", "#", class: "recipe-select" %>
+                  <%= link_to " + ", "#", class: "recipe-select" %>
                 </div>
               </div>
             </div>
@@ -31,8 +33,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="wrapper-grey padded">
   <div class="container">
@@ -48,7 +48,7 @@
                 <div class="recipe-title"><%= main.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= main.price %>€</div>
-                  <%= link_to "+ Add", "#", class: "recipe-select" %>
+                  <%= link_to " + ", "#", class: "recipe-select" %>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
                 <div class="recipe-title"><%= dessert.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= dessert.price %>€</div>
-                  <%= link_to "+ Add", "#", class: "recipe-select" %>
+                  <%= link_to " + ", "#", class: "recipe-select" %>
                 </div>
               </div>
             </div>
@@ -82,15 +82,22 @@
   </div>
 </div>
 
+<div class="confirm">
+<div>
+  <%= link_to "Order", "#", class: "recipe-confirm text-center" %>
+</div>
 
-  </div>
+</div>
+
+ </div>
 
     <div class="text-center padded" id="newsletter">
-      <h2>Dinja brings joy into your plate!</h2>
-      <p>Get the latest recipes</p>
+      <h2>Forget about grocery duty and repetitive meals !</h2>
+      <p>Every week, Dinja offers you 3 starters / 6 mains / 3 desserts. <br>
+      No more, you would no know what to choose;)</p>
       <form class="form-inline">
         <input type="email" placeholder="contact@dinja.com" class="form-control">
-        <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
+        <input type="submit" value="Receive weekly recipes" class="btn btn-primary btn-bordered btn-bordered-primary">
       </form>
     </div>
 
