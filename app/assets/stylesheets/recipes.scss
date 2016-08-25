@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.test1{
+  width: 50%;
+}
 .title-start {
 text-align:center;
 color:inherit;
@@ -108,7 +111,7 @@ font-family: "amatic";
 }
 
 
-.btn {
+.recipe-add-button {
   background-color: $red;
   opacity: 0.9;
   color: $white;
@@ -117,6 +120,13 @@ font-family: "amatic";
   transition: background 0.3s ease;
   border: none;
   font-family: $base-font;
+
+}
+.recipe-add-button:hover {
+   background: $red;
+  opacity: 0.5;
+  text-decoration: none;
+  color: $white;
 }
 .btn:hover {
   background: $red;
@@ -134,16 +144,19 @@ font-family: "amatic";
   margin: 0px auto;
   display: flex;
   .recipe-image {
-      padding: 30px;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-    }
+      // padding: 30px;
+    // width: 100%;
+    margin: 0 -15px;
+    min-height: 399px;
+    background-size: cover !important;
+    background-position: center center;
+  }
   .tabulation {
     width: 100%;
     flex: 0 0 auto;
     background-color: $white;
     overflow: auto;
+    padding-right: -20px;
   }
   .tab-list {
     padding: 0;
@@ -165,7 +178,7 @@ font-family: "amatic";
  padding-top: 11px;
  padding-bottom: 11px;
  letter-spacing: 0.8px;
- background-color: $red;
+ background-color: #F0F0F0;
  opacity: 0.8;
  text-align: center;
  .details {
@@ -189,19 +202,3 @@ font-family: "amatic";
 }
 
 
-.btn-treehouse {
-  color: white;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
-}
