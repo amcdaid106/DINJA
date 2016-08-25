@@ -104,9 +104,24 @@ color:blue;
   text-align: right;
 }
 
-.recipe-add-button {
-  background-color: #B6CE67;
+
+.btn {
+  background-color: $red;
+  opacity: 0.9;
+  color: $white;
+  padding: 15px 20px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  border: none;
+  font-family: $base-font;
 }
+.btn:hover {
+  background: $red;
+  opacity: 0.5;
+  text-decoration: none;
+  color: $white;
+}
+
 .recipe-info-show-2 {
   // width : 1200px;
   height: 400px;
