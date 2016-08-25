@@ -3,6 +3,10 @@ Ingredient.destroy_all
 Dose.destroy_all
 
 
+Recipe.destroy_all
+Ingredient.destroy_all
+Dose.destroy_all
+
 dummy_instructions = "Set the oven to 400°F. Rinse and dry the parsley and lettuce. Cut the top leaves away from the stems of the parsley and add to the work bowl of a food processor. Measure out 2 teaspoons of the cornstarch and add it to the work bowl, reserving the rest for the onion rings. Peel and slice ⅔ of the onion into thin rounds, then roughly chop the rest. Add the chopped onion to the work bowl.
 
 Drain and rinse the beans. Add the beans, walnuts, oats, garlic powder, cumin, and 1/2 teaspoon of salt and a pinch of pepper to the food processor. Pulse until everything is incorporated but there are still visible pieces of the ingredients. Divide the mixture into 2 patties and put in the refrigerator to chill until you are ready to cook them.
@@ -17,7 +21,9 @@ sesame_pastry =  Ingredient.create(name: "sesame pastry")
 garlic =  Ingredient.create(name: "garlic")
 lemon =  Ingredient.create(name: "lemons")
 
+
 houmous = Recipe.create(name: "Houmous with peanuts", category: "starter", photo: "houmous.png", description: "Hummus is this delicious mashed chickpeas, blended with tahini, the sesame paste. Hummus is native to the Middle East countries. It is eaten raw, with raw vegetables, or with pita bread!", price:3, prep_time:6 , cooking_time:0, calories:150,
+
 vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 chick = Dose.create(measure: "400g of", ingredient:chickpea, recipe: houmous)
