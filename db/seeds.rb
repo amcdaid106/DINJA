@@ -1,3 +1,7 @@
+Recipe.destroy_all
+Ingredient.destroy_all
+Dose.destroy_all
+
 
 Recipe.destroy_all
 Ingredient.destroy_all
@@ -17,7 +21,9 @@ sesame_pastry =  Ingredient.create(name: "sesame pastry")
 garlic =  Ingredient.create(name: "garlic")
 lemon =  Ingredient.create(name: "lemons")
 
-houmous  = Recipe.create(name: "Houmous with peanuts", category: "starter", photo: "houmous.png", description: "Hummus is this delicious mashed chickpeas, blended with tahini, the sesame paste. Hummus is native to the Middle East countries. It is eaten raw, with raw vegetables, or with pita bread!", price:3, prep_time:6 , cooking_time:0, calories:150,
+
+houmous = Recipe.create(name: "Houmous with peanuts", category: "starter", photo: "houmous.png", description: "Hummus is this delicious mashed chickpeas, blended with tahini, the sesame paste. Hummus is native to the Middle East countries. It is eaten raw, with raw vegetables, or with pita bread!", price:3, prep_time:6 , cooking_time:0, calories:150,
+
 vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 chick = Dose.create(measure: "400g of", ingredient:chickpea, recipe: houmous)
