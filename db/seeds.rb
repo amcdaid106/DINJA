@@ -192,3 +192,136 @@ Dose.create(measure: "2 large", recipe: courgette_brownies, ingredient: egg)
 # courgette
 Dose.create(measure: "1.5 cups", recipe: courgette_brownies, ingredient: courgette)
 
+
+
+
+melon =  Ingredient.create(name: "melon")
+mozzarella =  Ingredient.create(name: "mozzarella")
+ham =  Ingredient.create(name: "ham")
+pesto =  Ingredient.create(name: "pesto")
+rocket_salad = Ingredient.create(name: "rocket salad")
+
+italian_salad = Recipe.new(name: "Italian salad with pesto", description: "The perfect italian taste", price: 6, photo: "italian_salad.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "1/4" , ingredient: melon, recipe: italian_salad)
+Dose.create(measure: "2", ingredient: mozzarella, recipe: italian_salad)
+Dose.create(measure:  "100g", ingredient: rocket_salad, recipe: italian_salad)
+Dose.create(measure:  "4 tablespoons", ingredient: pesto, recipe: italian_salad)
+
+
+peppers =  Ingredient.create(name: "peppers")
+tomatoes =  Ingredient.create(name: "tomatoes")
+onions =  Ingredient.create(name: "onions")
+
+gazpacho = Recipe.new(name: "gazpacho of red peppers and tomatoes", description: "Richful mix of vegetables", price: 12, photo: "gazpacho.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "5", ingredient: tomatoes, recipe: gazpacho)
+Dose.create(measure: "3", ingredient: peppers, recipe: gazpacho)
+Dose.create(measure: "2", ingredient: onions, recipe: gazpacho)
+
+
+beans =  Ingredient.create(name: "tomatoes")
+corns =  Ingredient.create(name: "corns")
+lime_juice =  Ingredient.create(name: "lime juice")
+vinegar =  Ingredient.create(name: "vinegar")
+
+mexican_salad = Recipe.new(name: "Mexican salad with beans", description: "The right salad at the right place", price:10, photo: "mexican_salad.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "1 can", ingredient: beans, recipe: mexican_salad)
+Dose.create(measure: "1 can", ingredient: corns, recipe: mexican_salad)
+Dose.create(measure: "2", ingredient: onion, recipe: mexican_salad)
+Dose.create(measure: "1/2 cup", ingredient: vinegar, recipe: mexican_salad)
+Dose.create(measure: "2 tablespoons", ingredient: lime_juice, recipe: mexican_salad)
+
+
+
+
+
+pasta =  Ingredient.create(name: "pasta")
+bacon =  Ingredient.create(name: "bacon")
+thyme=  Ingredient.create(name: "thyme")
+salt =  Ingredient.create(name: "salt")
+
+pasta_carbonara = Recipe.new(name: "Pasta carbonara with thyme", description: "Get the meal rolling with your friends", price: 15, photo: "pasta_carbonara.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+Dose.create(measure: "250g", ingredient: pasta, recipe: pasta_carbonara)
+Dose.create(measure: "2 pieces", ingredient: bacon, recipe: pasta_carbonara)
+Dose.create(measure:  "1 tablespoon", ingredient: thyme, recipe: pasta_carbonara)
+Dose.create(measure: "1 pinch", ingredient: salt, recipe: pasta_carbonara)
+
+
+
+coley =  Ingredient.create(name: "coley")
+potatoes =  Ingredient.create(name: "potatoes")
+parmesan=  Ingredient.create(name: "parmesan")
+
+coley_parmesan = Recipe.new(name: "Coley with potatoes and parmesan cream", description: "For fish lovers, give it a try", price: 20, photo: "coley_parmesan.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "1", ingredient: coley, recipe: coley_parmesan)
+Dose.create(measure: "2", ingredient: potatoes, recipe: coley_parmesan)
+Dose.create(measure:  "75g", ingredient: parmesan, recipe: coley_parmesan)
+
+
+
+beef =  Ingredient.create(name: "beef")
+mash_potatoes =  Ingredient.create(name: "mash_potatoes")
+ginger =  Ingredient.create(name: "ginger")
+honey =  Ingredient.create(name:"honey")
+
+beef_mash = Recipe.new(name: "Beef with rice, honey and ginger", description: "Beef up your evening!", price: 14, photo: "beef_mash.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "150g", ingredient: beef, recipe: beef_mash)
+Dose.create(measure: "2 tablespoons", ingredient: honey, recipe: beef_mash)
+Dose.create(measure: "100g", ingredient: rice, recipe: beef_mash)
+Dose.create(measure: "2 tablespoons", ingredient: ginger, recipe: beef_mash)
+
+
+
+
+
+
+
+dark_chocolate =  Ingredient.create(name: "dark chocolate")
+potatoes =  Ingredient.create(name: "potatoes")
+vanilla=  Ingredient.create(name: "vanilla")
+eggs=  Ingredient.create(name: "vanilla")
+custard_cream= Ingredient.create(name: "custard cream")
+
+
+brownie_custard = Recipe.new(name: "Brownie with custard cream", description:"Not for faint hearted", price: 9, photo: "brownie_custard.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 2000, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "375g", ingredient: dark_chocolate, recipe: brownie_custard)
+Dose.create(measure: "375g", ingredient: butter, recipe: brownie_custard)
+Dose.create(measure: "1 tablespoon", ingredient: vanilla, recipe: brownie_custard)
+Dose.create(measure: "700ml", ingredient: custard_cream, recipe: brownie_custard)
+Dose.create(measure:  "6", ingredient: eggs, recipe: brownie_custard)
+
+
+
+
+strawberries =  Ingredient.create(name: "strawberries")
+walnut_shortbread=  Ingredient.create(name: "walnut shortbread")
+sugar=  Ingredient.create(name: "sugar")
+water = Ingredient.create(name: "water")
+
+strawberry_compote = Recipe.new(name: "Strawberry compote with walnut shortbread", description: "Strawberries are always on top of the world", price: 8, photo: "strawberry_compote.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "250g", ingredient: strawberries, recipe: strawberry_compote)
+Dose.create(measure: "3 slices", ingredient: walnut_shortbread, recipe: strawberry_compote)
+Dose.create(measure:  "½ cup", ingredient: sugar, recipe: strawberry_compote)
+Dose.create(measure:  "½ cup", ingredient: water, recipe: strawberry_compote)
+
+
+
+cottage_cheese =  Ingredient.create(name: "cottage cheese")
+honey =  Ingredient.create(name:"honey")
+
+
+cottage_cheese_honey = Recipe.new(name: "Cottage cheese with honey", description: "The perfect combination in the mouth", price: 7, photo: "cottage_cheese_honey.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+
+Dose.create(measure: "1/2 cup", ingredient: cottage_cheese, recipe: cottage_cheese_honey)
+Dose.create(measure: "2 teaspoons", ingredient: honey, recipe: cottage_cheese_honey)
+
+
+
+
+
