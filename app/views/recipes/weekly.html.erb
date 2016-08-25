@@ -4,94 +4,100 @@
   <p>Sick of hearing 'What's for dinner' ? </p>
     <h1>Get diversified meals - Delivered !</h1>
     <br> <br>
-    <a class="btn btn-primary btn-lg">Discover this week's meals</a>
+    <a href="#starters" class="btn btn-primary btn-lg">Discover this week's meals</a>
   </div>
 </div>
 
+ <div class= "big">
 
 <div class="wrapper-grey padded">
   <div class="container">
     <h2 class="text-center"></h2>
     <div class="row">
-      <div class = "title-start"> <h1>Starters</h1> </div>
+      <div class = "title-start" id="starters"><h4>Starters</h4> </div>
         <% @starters.each do |starter| %>
           <div class="col-xs-12 col-sm-4">
-            <div class="recipe" style="background-image: linear-gradient(-150deg, rgba(0,15,12,0.3) 0%, rgba(0,21,27,0.3) 30%), url('<%= image_path starter.photo %>');">
-              <div class="recipe-category"> <%= starter.name %></div>
-              <div class="recipe-description">
-                <h2>Cool subtitle for the recipe</h2>
-                <p>description of the recipe</p>
+            <div class="recipe-container">
+              <div class="recipe-picture" style="background: url('<%= image_path starter.photo %>');">
               </div>
-              <div class="card-price">
-                <p><%= starter.price%> € </p>
+              <div class="recipe-footer">
+                <div class="recipe-title"><%= starter.name %></div>
+                <div class="recipe-actions">
+                  <div class="recipe-price"><%= starter.price %>€</div>
+                  <%= link_to " + ", "#", class: "recipe-select" %>
+                </div>
               </div>
-              <a class="recipe-link" href="#" ></a>
-            </div>
-          </div>
-       <% end %>
-      </div>
-    </div>
-  </div>
-
-<div class="wrapper-grey padded">
-  <div class="container">
-    <h2 class="text-center"></h2>
-    <div class="row">
-    <div class = "title-start"><h1>Main courses</h1></div>
-      <% @mains.each do |main| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="recipe" style="background: url('<%= image_path main.photo %>');">
-          <div class="recipe-category">
-            <%= main.name%>
-          </div>
-          <div class="recipe-description">
-            <h2>Cool subtitle for the recipe</h2>
-            <p>description of the recipe</p>
-          </div>
-           <div class="card-price">
-            <p><%= main.price%> € </p>
-          </div>
-          <a class="recipe-link" href="#" ></a>
-        </div>
-      </div>
-         <% end %>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="wrapper-grey padded">
-    <div class="container">
-      <h2 class="text-center"></h2>
-        <div class="row">
-          <div class = "title-start"> <h1>Desserts</h1> </div>
-            <% @desserts.each do |dessert| %>
-              <div class="col-xs-12 col-sm-4">
-               <div class="recipe" style="background: url('<%= image_path dessert.photo %>');" >
-                <div class="recipe-category"> <% dessert.name %> </div>
-                  <div class="recipe-description">
-                    <h2>Cool subtitle for the recipe</h2>
-                    <p>description of the recipe</p>
-                  </div>
-                   <div class="card-price">
-                    <p><%= dessert.price%> € </p>
-                  </div>
-                <a class="recipe-link" href="#" ></a>
             </div>
           </div>
         <% end %>
-      </div>
     </div>
   </div>
+</div>
+
+<div class="wrapper-grey padded">
+  <div class="container">
+    <h2 class="text-center"></h2>
+    <div class="row">
+      <div class = "title-start"><h4>Main courses</h4> </div>
+        <% @mains.each do |main| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="recipe-container">
+              <div class="recipe-picture" style="background: url('<%= image_path main.photo %>');">
+              </div>
+              <div class="recipe-footer">
+                <div class="recipe-title"><%= main.name %></div>
+                <div class="recipe-actions">
+                  <div class="recipe-price"><%= main.price %>€</div>
+                  <%= link_to " + ", "#", class: "recipe-select" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-grey padded">
+  <div class="container">
+    <h2 class="text-center"></h2>
+    <div class="row">
+      <div class = "title-start"><h4>Desserts</h4> </div>
+        <% @desserts.each do |dessert| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="recipe-container">
+              <div class="recipe-picture" style="background: url('<%= image_path dessert.photo %>');">
+              </div>
+              <div class="recipe-footer">
+                <div class="recipe-title"><%= dessert.name %></div>
+                <div class="recipe-actions">
+                  <div class="recipe-price"><%= dessert.price %>€</div>
+                  <%= link_to " + ", "#", class: "recipe-select" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="confirm">
+<div>
+  <%= link_to "Order", "#", class: "recipe-confirm text-center" %>
+</div>
+
+</div>
+
+ </div>
 
     <div class="text-center padded" id="newsletter">
-      <h2>Dinja brings joy into your plate!</h2>
-      <p>Get the latest recipes</p>
+      <h2>Forget about grocery duty and repetitive meals !</h2>
+      <p>Every week, Dinja offers you 3 starters / 6 mains / 3 desserts. <br>
+      No more, you would no know what to choose;)</p>
       <form class="form-inline">
         <input type="email" placeholder="contact@dinja.com" class="form-control">
-        <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
+        <input type="submit" value="Receive weekly recipes" class="btn btn-primary btn-bordered btn-bordered-primary">
       </form>
     </div>
 
