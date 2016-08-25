@@ -4,7 +4,6 @@
 
 .order-process-container {
   margin: 80px 250px;
-
 }
 
 // Style for orders#edit
@@ -13,7 +12,6 @@
   background-color: $green-dark;
   border: 1px solid;
   width: 20%;
-
 }
 .order-item-cart {
   margin: 10px 6px;
@@ -22,7 +20,6 @@
   &:hover {
     background-color: $gray-lighter;
   }
-
   h3 {
     margin: 0;
   }
@@ -88,7 +85,7 @@
 }
 .fa-trash {
   color: black;
-  &:hover{
+  &:hover {
     color: $red-dark;
   }
 }

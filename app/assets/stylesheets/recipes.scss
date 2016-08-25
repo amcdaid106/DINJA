@@ -4,13 +4,27 @@
 
 
 
-h4 {
+.recipe-category-title {
     position: relative;
     z-index: 4;
     overflow: hidden;
     text-align: center;
     font-family: $amatic;
     font-size: 48px;
+  &:before, &:after {
+      position: absolute;
+      top: 51%;
+      overflow: hidden;
+      width: 50%;
+      height: 1px;
+      content: '\a0';
+      background-color: $blue-darker;
+  }
+  &:before {
+      margin-left: -50%;
+      text-align: right;
+  }
+}
 .test1{
   width: 50%;
 }
@@ -18,19 +32,6 @@ h4 {
 text-align:center;
 color:inherit;
 font-family: "amatic";
-}
-h4:before, h4:after {
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 50%;
-    height: 1px;
-    content: '\a0';
-    background-color: $blue-darker;
-}
-h4:before {
-    margin-left: -50%;
-    text-align: right;
 }
 
 .padded {
@@ -103,7 +104,6 @@ h4:before {
   padding-right: 20px;
   text-align: right;
 }
-
 
 
 .recipe-add-button {
