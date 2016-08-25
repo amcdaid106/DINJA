@@ -1,51 +1,82 @@
-<div class="container">
-  <h1>Please confirm your order details</h1>
+<div class="order-process-container">
+  <div class="order-confirm-heading text-center">
+    <h2>Please confirm your order details</h2>
+    <hr>
+  </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 confirm-address">
-      <div>
-        <h3>Address for delivery</h3>
-        <br>
-        <p>45 Hemenway Street</p>
-        <p>Boston, Massachusetts 02115</p>
-        <p>USA</p>
-        <hr>
-        <%= link_to edit_user_path(current_user, personal_details: true) do %>
-          <button class="btn btn-warning confirm-order-button">Edit</button>
-        <% end %>
+    <div class="confirm-all-info">
 
-      </div>
 
-    </div>
-      <div class="col-xs-12 col-sm-6 confirm-order" >
-        <h3>Your order</h3>
-        <br>
-        <% @order.order_items.each do |item| %>
-          <h4><%= item.recipe.name %></h4>
-          <div class=confirm-order-numbers>
-            <p>Quantity: <%= item.quantity %></p>
-            <p>Total price: €<%= item.recipe.price*item.quantity %>.00 </p>
+      <div class="col-xs-12 col-sm-6 confirm-address">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Address for delivery</h3>
           </div>
-        <% end %>
-        <div class="line-button">
-          <hr>
-          <%= link_to edit_order_path(@order) do %>
-            <button class="btn btn-warning pull-right confirm-order-button">Edit</button>
-          <% end %>
+          <div class="panel-body">
 
+            <div id="current-address" class="edit-address">
+              <%= render "orders/address", user: @user %>
+            </div>
+
+            <div id="edit-address-form" class="edit-address hidden">
+              <%= simple_form_for @user, remote: true do |f| %>
+                <%= f.input :address, placeholder: 'Address' %>
+                <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary'  %>
+              <% end %>
+
+            </div>
+          </div>
         </div>
-        <h3>Grand total: €<%= @grand_total %>.00</h3>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Your payment information</h3>
+          </div>
+          <div class="panel-body">
+
+            <div id="current-address" class="edit-address">
+              <p>Aoife M McDaid</p>
+              <p>****-****-****-3876</p>
+              <hr>
+              <button class="btn btn-warning">Edit</button>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-4">
+
+      <div class="col-xs-12 col-sm-6 confirm-order" >
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Your order</h3>
+          </div>
+          <div class="panel-body">
+            <% @order.order_items.each do |item| %>
+              <div class="order-item-checkout">
+                <p><%= item.recipe.name %></p>
+                <p>€<%= item.recipe.price %>.00</p>
+                <p><%= item.quantity %></p>
+                <p>€<%= item.recipe.price*item.quantity %></p>
+              </div>
+            <% end %>
+            <div class="line-button">
+              <hr>
+              <%= link_to edit_order_path(@order) do %>
+                <button class="btn btn-warning pull-right confirm-order-button">Edit</button>
+              <% end %>
+              <h4>Grand total: €<%= @grand_total %>.00</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-sm-offset-10">
         <%= link_to order_path(@order) do %>
-          <button class="btn btn-danger orders-checkout-button">
+          <button class="pull-right btn btn-primary orders-confirmation-button">
           Looks good!</button>
         <% end %>
       </div>
     </div>
-
-
-
+  </div>
 </div>
