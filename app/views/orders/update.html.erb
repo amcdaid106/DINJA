@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>Please confirm your order details</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 confirm-address">
+      <div>
+        <h3>Address for delivery</h3>
+        <br>
+        <p>45 Hemenway Street</p>
+        <p>Boston, Massachusetts 02115</p>
+        <p>USA</p>
+        <hr>
+        <%= link_to edit_user_path(current_user, personal_details: true) do %>
+          <button class="btn btn-warning confirm-order-button">Edit</button>
+        <% end %>
+
+      </div>
+
+    </div>
+      <div class="col-xs-12 col-sm-6 confirm-order" >
+        <h3>Your order</h3>
+        <br>
+        <% @order.order_items.each do |item| %>
+          <h4><%= item.recipe.name %></h4>
+          <div class=confirm-order-numbers>
+            <p>Quantity: <%= item.quantity %></p>
+            <p>Total price: €<%= item.recipe.price*item.quantity %>.00 </p>
+          </div>
+        <% end %>
+        <div class="line-button">
+          <hr>
+          <%= link_to edit_order_path(@order) do %>
+            <button class="btn btn-warning pull-right confirm-order-button">Edit</button>
+          <% end %>
+
+        </div>
+        <h3>Grand total: €<%= @grand_total %>.00</h3>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <%= link_to order_path(@order) do %>
+          <button class="btn btn-danger orders-checkout-button">
+          Looks good!</button>
+        <% end %>
+      </div>
+    </div>
+
+
+
+</div>

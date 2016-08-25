@@ -1,0 +1,88 @@
+<div class="container">
+  <h1>Your Shopping Cart</h1>
+  <%= form_tag order_path(@order), method: :patch do %>
+    <% @order.order_items.each do |order_item| %>
+      <%= hidden_field_tag "quantity_order_item_#{order_item.id}", order_item.quantity %>
+      <div class="row order-item" id="order_item_row_<%= order_item.id %>">
+
+        <div class="col-xs-12 col-sm-3">
+          <div class="order-picture">
+            <%= image_tag order_item.recipe.photo, class: "test_picture" %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 order-item-col-centered">
+          <h3 id="recipe_name_<%= order_item.id %>"><%= order_item.recipe.name %></h3>
+        </div>
+
+        <div class="col-sm-6 orders-controls-container order-item-col-centered">
+          <div>Price: €<span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00</div>
+          <div class="orders-controls-quantity">
+            <div>Quantity: <span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
+            <div class="orders-controls-arrows">
+              <i class="fa fa-caret-up" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+              <i class="fa fa-caret-down" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div>Total: €<span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00</div>
+          <%= link_to order_item_path(order_item), method: :delete, data: {confirm: "Are you sure you want to delete #{order_item.recipe.name}?"}, remote: true do %>
+            <i class="fa fa-trash" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h4 class="text-center">Grand Total: €<span id="grand_total"><%= @grand_total %></span>.00</h4>
+        <%= submit_tag "Pay and Checkout", class: "btn btn-warning orders-checkout-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<% content_for :after_js do %>
+  <script>
+    $('.orders-controls-arrows .fa-caret-up').click(function() {
+      var id = $(this).data('order-item-id');
+      var $quantityField = $('#quantity_order_item_' + id)
+      var currentQuantity = $quantityField.val();
+      var newQuantity = parseInt(currentQuantity) + 1;
+      $quantityField.val(newQuantity);
+      var currentQuantityVisible = $('#quantity_' + id).text();
+      var newQuantityVisible = parseInt(currentQuantityVisible) + 1;
+      $('#quantity_' + id).text(newQuantityVisible);
+      var $priceFieldValue = parseInt($('#price_' + id).text());
+      var $totalPriceField = $('#total_price_' + id);
+      $totalPriceField.text(parseInt($priceFieldValue) * newQuantity);
+
+      var oldGrandTotal = parseInt($('#grand_total').text());
+      $('#grand_total').text(oldGrandTotal + $priceFieldValue);
+    });
+    $('.orders-controls-arrows .fa-caret-down').click(function() {
+      var id = $(this).data('order-item-id');
+      var $quantityField = $('#quantity_order_item_' + id)
+      var currentQuantity = $quantityField.val();
+      if (currentQuantity > 1) {
+        var newQuantity = parseInt(currentQuantity) - 1;
+        $quantityField.val(newQuantity);
+        var currentQuantityVisible = $('#quantity_' + id).text();
+        var newQuantityVisible = parseInt(currentQuantityVisible) - 1;
+        $('#quantity_' + id).text(newQuantityVisible);
+        var $priceFieldValue = parseInt($('#price_' + id).text());
+        var $totalPriceField = $('#total_price_' + id);
+        $totalPriceField.text(parseInt($priceFieldValue) * newQuantity);
+
+        var oldGrandTotal = parseInt($('#grand_total').text());
+        $('#grand_total').text(oldGrandTotal - $priceFieldValue);
+      };
+    });
+  </script>
+<% end %>
+
+
+
+
+
+

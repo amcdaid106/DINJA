@@ -8,9 +8,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS
+// Your CSSn
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
 
+@import "recipes";
+@import "users";
+@import "order_items";
+@import "orders"

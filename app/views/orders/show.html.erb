@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Order complete!</h1>
+
+  <h3>Keep an eye out for your Dinja box. <strong>Expected delivery: <%= @order.delivery_date.strftime("%b %d, %Y") %></strong></h3>
+
+
+  <h3>Order details</h3>
+  <% @order.order_items.each do |order_item| %>
+    <div class="row order-item">
+      <div class="col-xs-12 col-sm-3">
+        <div class="order-picture">
+          <%= image_tag order_item.recipe.photo, class: "test_picture" %>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3 order-item-col-centered">
+        <h3><%= order_item.recipe.name %></h3>
+      </div>
+
+      <div class="col-sm-6 orders-controls-container order-item-col-centered">
+        <div>Price: €<%= order_item.recipe.price %>.00 </div>
+        <div>Quantity: <%= order_item.quantity %></div>
+        <div>Total: €<%= order_item.recipe.price * order_item.quantity %>.00</div>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class=>Order total: €<%= @grand_total %>.00</h4>
+    </div>
+  </div>
+</div>
