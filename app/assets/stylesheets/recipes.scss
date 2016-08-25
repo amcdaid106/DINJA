@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.title-start {
+text-align:center;
+color:blue;
+}
+.wrapper-grey {
+  background-color: $gray-background;
+}
+
+.container {
+  background-color: $gray-background;
+}
+
+.card-price {
+  width: 30px;
+  border-radius: 50%;
+}
+.card-price {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+.card-price {
+  width: 50px;
+}
 .recipe {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -14,20 +37,24 @@
 .recipe-category {
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
   font-size: 10px;
   text-transform: uppercase;
 }
+
 .recipe-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
+
 .recipe-description h2 {
   font-size: 24px;
+  text-align: center;
 }
 .recipe-description p {
   font-size: 13px;
+  text-align: center;
   }
 .recipe-link {
   position: absolute;
@@ -42,27 +69,26 @@
   opacity: 0.1;
 }
 
-h1 span {
-  background: #fff;
-  padding: 0 15px;
-  position: relative;
-  text-align: center;
-  z-index: 1;
-}
+//  span {
+//   background-color: #fff;
+//   padding: 0 15px;
+//   position: relative;
+//   text-align: center;
+//   z-index: 1;
+// }
 
-h1 span:before {
-  background: #ddd; // add a grey background?
-  // content: "";
-  display: block;
-  height: 1px;
-  position: absolute;
-    top: 50%;
-  width: 100%;
-}
-
-h1 span:before {
-  left: 0;
-}
+ // span:before {
+ //  background: #ddd; // add a grey background?
+ //  // content: "";
+ //  display: block;
+ //  height: 1px;
+ //  position: absolute;
+ //    top: 50%;
+ //  width: 100%;
+// }
+//  span:before {
+//   left: 0;
+// }
 .info-show-1 {
   // width : 1200px;
   height: 100px;
@@ -116,6 +142,7 @@ flex: 1 0 auto;
  border-bottom: 1px solid #E7E7E7;
   margin: 0px auto;
   display: flex;
+}
   .recipe-image {
     width: 50%;
     background-size: cover;
@@ -123,8 +150,6 @@ flex: 1 0 auto;
   .tabulation {
   width: 50% !important;
   flex: 0 0 auto;
-}
-
 }
 
 .tab-list {
