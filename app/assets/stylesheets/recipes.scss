@@ -62,6 +62,11 @@ font-family: "amatic";
 
 
 // Style for recipes#: show
+//
+.container-recipe-show {
+  margin-top: 100px;
+}
+
 .recipe-info-show-1 {
   height: 100px;
   background-color: $white;
@@ -197,6 +202,7 @@ font-family: "amatic";
   font-weight: 300px;
   font-size: 20px;
   transition: background 0.3s ease;
+  border: none;
   &:hover {
     opacity: 0.7;
     text-decoration: none;
@@ -244,7 +250,7 @@ font-family: "amatic";
 
 .recipe-select {
   background-color: $red;
-  opacity: 0.9px;
+  opacity: 0.9;
   color: $white;
   border-radius: 4px;
   font-family: $base-font;
@@ -253,7 +259,7 @@ font-family: "amatic";
   font-size: 20px;
   border: 0px solid $red;
   &:hover {
-  opacity: 0.2px;
+  opacity: 0.2;
   text-decoration: none;
   color: $white;
   }
@@ -261,17 +267,16 @@ font-family: "amatic";
 
 .recipe-confirm {
   background-color: $yellow;
-  opacity: 0.9px;
-  color: $white;
+  color: $blue-dark;
   border-radius: 4px;
   font-family: $base-font;
   padding: 12px 36px;
   font-weight: 400px;
   font-size: 30px;
   &:hover {
-  opacity: 0.2px;
+  opacity: 0.8;
   text-decoration: none;
-  color: $white;
+  color: $blue-dark;
   }
 }
 
@@ -283,6 +288,7 @@ font-family: "amatic";
 .confirm {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 #newsletter h2 {

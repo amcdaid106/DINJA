@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container container-recipe-show">
   <div class="row">
       <div class= "recipe-info-show-1">
         <div class="col-xs-6 recipe-name">
@@ -7,7 +7,10 @@
         </div>
         <div class="col-xs-6 recipe-info-details">
            <div class="recipe-add">
-            <%= link_to "Add to cart", root_path, method: 'post', class: "btn-add"%>
+            <%= simple_form_for OrderItem.new, remote: true do |f| %>
+            <%= f.association :recipe, as: :hidden, input_html: { value: @recipe.id } %>
+            <%= f.submit "Add to cart", class: "btn-add" %>
+            <% end %>
           </div>
         </div>
       </div>

@@ -41,7 +41,8 @@
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
   <% end %>
   <!-- Cart -->
-  <%= link_to "#", class: "cart-link text-right" do %>
+
+  <%= link_to edit_order_path(current_order), class: "cart-link text-right" do %>
     <i class="fa fa-shopping-cart cart"></i>  <%= t(".profile", default: "") %>
   <% end %>
 </div>

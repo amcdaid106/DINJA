@@ -17,6 +17,7 @@
       <div class = "title-start" id="starters"><h4 class="recipe-category-title">Starters</h4> </div>
         <% @starters.each do |starter| %>
           <div class="col-xs-12 col-sm-4">
+           <%= link_to recipe_path(starter) do  %>
             <div class="recipe-container">
               <div class="recipe-picture" style="background: url('<%= image_path starter.photo %>');">
               </div>
@@ -31,6 +32,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         <% end %>
     </div>
@@ -44,6 +46,7 @@
       <div class = "title-start"><h4 class="recipe-category-title">Main courses</h4> </div>
         <% @mains.each do |main| %>
           <div class="col-xs-12 col-sm-4">
+          <%= link_to recipe_path(main) do  %>
             <div class="recipe-container">
               <div class="recipe-picture" style="background: url('<%= image_path main.photo %>');">
               </div>
@@ -58,6 +61,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         <% end %>
     </div>
@@ -71,6 +75,7 @@
       <div class = "title-start"><h4 class="recipe-category-title">Desserts</h4> </div>
         <% @desserts.each do |dessert| %>
           <div class="col-xs-12 col-sm-4">
+          <%= link_to recipe_path(dessert) do  %>
             <div class="recipe-container">
               <div class="recipe-picture" style="background: url('<%= image_path dessert.photo %>');">
               </div>
@@ -85,6 +90,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         <% end %>
     </div>
