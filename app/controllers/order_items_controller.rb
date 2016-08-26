@@ -1,4 +1,5 @@
 class OrderItemsController < ApplicationController
+  include OrdersHelper
   before_action :create_order, only: [:create]
 
   def destroy
@@ -16,24 +17,21 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    #set_recipe
-    #check in order if recipe exist?
-    #if exist => flash error
-    #else create order item from params
-    @order_item = Order_item.new(quantity: 1)
-
-    redirect_to home_path
+    @recipe = Recipe.find(params[:order_item][:recipe_id])
+    if @order.order_items.find { |oi| oi.recipe_id == @recipe.id }.nil?
+      @order_item = OrderItem.new(quantity: 1)
+      @order_item.order = @order
+      @order_item.recipe = @recipe
+      @order_item.save
+      redirect_to root_path
+    else
+      render :home
+    end
   end
 
 private
 
   def create_order
-    @orders = Order.all
-    unless @orders.where({ user: current_user })
-     @order = Order.new
-     @order.user = current_user
-     @order.status = "pending"
-    end
+    @order = current_order
   end
-
 end
