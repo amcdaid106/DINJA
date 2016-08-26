@@ -235,6 +235,11 @@ font-family: "amatic";
 .recipe-footer {
   background-color: $white;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 115px;
+  position: relative;
 }
 
 .recipe-title {

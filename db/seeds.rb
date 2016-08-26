@@ -1,11 +1,10 @@
-Recipe.destroy_all
-Ingredient.destroy_all
-Dose.destroy_all
 
-
-Recipe.destroy_all
-Ingredient.destroy_all
+OrderItem.destroy_all
+Order.destroy_all
 Dose.destroy_all
+Ingredient.destroy_all
+Recipe.destroy_all
+
 
 dummy_instructions = "Set the oven to 400°F. Rinse and dry the parsley and lettuce. Cut the top leaves away from the stems of the parsley and add to the work bowl of a food processor. Measure out 2 teaspoons of the cornstarch and add it to the work bowl, reserving the rest for the onion rings. Peel and slice ⅔ of the onion into thin rounds, then roughly chop the rest. Add the chopped onion to the work bowl.
 
@@ -281,11 +280,6 @@ Dose.create(measure: "100g", ingredient: rice, recipe: beef_mash)
 Dose.create(measure: "2 tablespoons", ingredient: ginger, recipe: beef_mash)
 
 
-
-
-
-
-
 dark_chocolate =  Ingredient.create(name: "dark chocolate")
 potatoes =  Ingredient.create(name: "potatoes")
 vanilla=  Ingredient.create(name: "vanilla")
@@ -302,8 +296,6 @@ Dose.create(measure: "700ml", ingredient: custard_cream, recipe: brownie_custard
 Dose.create(measure:  "6", ingredient: eggs, recipe: brownie_custard)
 
 
-
-
 strawberries =  Ingredient.create(name: "strawberries")
 walnut_shortbread=  Ingredient.create(name: "walnut shortbread")
 sugar=  Ingredient.create(name: "sugar")
@@ -317,16 +309,20 @@ Dose.create(measure:  "½ cup", ingredient: sugar, recipe: strawberry_compote)
 Dose.create(measure:  "½ cup", ingredient: water, recipe: strawberry_compote)
 
 
-
 cottage_cheese =  Ingredient.create(name: "cottage cheese")
 honey =  Ingredient.create(name:"honey")
-
 
 cottage_cheese_honey = Recipe.new(name: "Cottage cheese with honey", description: "The perfect combination in the mouth", price: 7, photo: "cottage_cheese_honey.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
 
 Dose.create(measure: "1/2 cup", ingredient: cottage_cheese, recipe: cottage_cheese_honey)
 Dose.create(measure: "2 teaspoons", ingredient: honey, recipe: cottage_cheese_honey)
 
+
+
+order = Order.create(user: User.last, delivery_date: Date.today)
+OrderItem.create(order: order, recipe: Recipe.first, quantity: 3)
+OrderItem.create(order: order, recipe: Recipe.last, quantity: 1)
+# OrderItem.create(order: order, recipe_id: 5, quantity: 3)
 
 
 
