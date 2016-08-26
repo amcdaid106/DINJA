@@ -72,7 +72,10 @@
                 <div class="recipe-title"><%= dessert.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= dessert.price %>€</div>
-                  <%= link_to " + ", "#", class: "recipe-select" %>
+                  <%= simple_form_for OrderItem.new do |f| %>
+                    <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
+                    <%= f.submit " + ", class: "recipe-select" %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -100,5 +103,4 @@
         <input type="submit" value="Receive weekly recipes" class="btn btn-primary btn-bordered btn-bordered-primary">
       </form>
     </div>
-
 
