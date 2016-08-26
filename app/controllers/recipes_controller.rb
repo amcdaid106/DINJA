@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :weekly ]
+
   def show
     @recipe = Recipe.find(params[:id])
     @user = current_user

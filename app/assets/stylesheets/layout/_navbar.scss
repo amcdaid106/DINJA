@@ -1,3 +1,7 @@
+.navbar-container {
+  margin: 0;
+  padding: 0;
+}
 .navbar {
   color-background: #FOFOFO;
   transition: all 0.3s ease;
@@ -7,15 +11,13 @@
   height: 94px;
   padding: 0px 55px;
   margin: 0px;
-  .how-it-works,
-  .horizontal-space,
-  .navbar-item,
-  .cart-link {
-    width: 170px;
-  }
+  // .how-it-works,
+  // .horizontal-space,
+  // .navbar-item,
+  // .cart-link {
+  //   width: 170px;
+  // }
 }
-
-
 .how-it-works {
   font-size: 20px;
   font-family: $header-font;
@@ -27,19 +29,23 @@
   margin-top: 0px;
   margin-bottom: 0px;
   }
-  // p {
-  //   border-bottom: 3px solid $red;
-  //   padding-bottom: 10px;
-  //   margin: 0px;
-  // }
 }
 
+.navbar-side {
+  flex: 0 0 30%;
+  &-right {
+    justify-content: flex-end;
+  }
+}
 
 .logo {
   width : 155px;
 }
+.log-in-sign-up-username-cart {
+  display: flex;
+  align-items: center;
 
-
+}
 .cart {
   color: $red;
   font-size: 40px;
@@ -101,6 +107,9 @@
 .navbar-link {
   color: #616668;
   font-size: 14px;
+  &:hover {
+    color: $red;
+  }
 }
 .navbar-link:hover {
   color: #da552f;
