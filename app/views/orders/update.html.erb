@@ -1,81 +1,84 @@
 <div class="order-process-container">
-  <div class="order-confirm-heading text-center">
-    <h2>Please confirm your order details</h2>
-    <hr>
-  </div>
-  <div class="row">
-    <div class="confirm-all-info">
+  <div class="cart-confirm-container">
+
+    <div class="order-confirm-heading text-center">
+      <h2>Please confirm your order details</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="confirm-all-info">
 
 
-      <div class="col-xs-12 col-sm-6 confirm-address">
+        <div class="col-xs-12 col-sm-6 confirm-address">
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Address for delivery</h3>
-          </div>
-          <div class="panel-body">
-
-            <div id="current-address" class="edit-address">
-              <%= render "orders/address", user: @user %>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Address for delivery</h3>
             </div>
+            <div class="panel-body">
 
-            <div id="edit-address-form" class="edit-address hidden">
-              <%= simple_form_for @user, remote: true do |f| %>
-                <%= f.input :address, placeholder: 'Address' %>
-                <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary'  %>
-              <% end %>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Your payment information</h3>
-          </div>
-          <div class="panel-body">
-
-            <div id="current-address" class="edit-address">
-              <p>Aoife M McDaid</p>
-              <p>****-****-****-3876</p>
-              <hr>
-              <button class="btn btn-warning">Edit</button>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 confirm-order" >
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Your order</h3>
-          </div>
-          <div class="panel-body">
-            <% @order.order_items.each do |item| %>
-              <div class="order-item-checkout">
-                <p><%= item.recipe.name %></p>
-                <p>€<%= item.recipe.price %>.00</p>
-                <p><%= item.quantity %></p>
-                <p>€<%= item.recipe.price*item.quantity %></p>
+              <div id="current-address" class="edit-address">
+                <%= render "orders/address", user: @user %>
               </div>
-            <% end %>
-            <div class="line-button">
-              <hr>
-              <%= link_to edit_order_path(@order) do %>
-                <button class="btn btn-warning pull-right confirm-order-button">Edit</button>
+
+              <div id="edit-address-form" class="edit-address hidden">
+                <%= simple_form_for @user, remote: true do |f| %>
+                  <%= f.input :address, placeholder: 'Address' %>
+                  <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary'  %>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Your payment information</h3>
+            </div>
+            <div class="panel-body">
+
+              <div class="edit-payment-info">
+                <p>Aoife M McDaid</p>
+                <p>****-****-****-3876</p>
+                <hr>
+                <button class="btn btn-default">Edit</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 confirm-order" >
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Your order</h3>
+            </div>
+            <div class="panel-body">
+              <% @order.order_items.each do |item| %>
+                <div class="order-item-checkout">
+                  <p><%= item.recipe.name %></p>
+                  <p>€<%= item.recipe.price %>.00</p>
+                  <p><%= item.quantity %></p>
+                  <p>€<%= item.recipe.price*item.quantity %></p>
+                </div>
               <% end %>
-              <h4>Grand total: €<%= @grand_total %>.00</h4>
+              <div class="line-button">
+                <hr>
+                <%= link_to edit_order_path(@order) do %>
+                  <button class="btn btn-default pull-right confirm-order-button">Edit</button>
+                <% end %>
+                <h4>Grand total: €<%= @grand_total %>.00</h4>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-2 col-sm-offset-10">
-        <%= link_to order_path(@order) do %>
-          <button class="pull-right btn btn-primary orders-confirmation-button">
-          Looks good!</button>
-        <% end %>
+        <div class="col-xs-12 col-sm-2 col-sm-offset-10">
+          <%= link_to order_path(@order) do %>
+            <button class="pull-right btn btn-success orders-confirmation-button">
+            Looks good!</button>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

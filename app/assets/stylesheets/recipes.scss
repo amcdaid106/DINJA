@@ -117,8 +117,8 @@ font-family: "amatic";
   text-decoration: none;
   color: $white;
 }
-.btn:hover {
-  background: $red;
+.recipe-add-button:hover {
+  background: $red-dark;
   opacity: 0.5;
   text-decoration: none;
   color: $white;
@@ -229,6 +229,11 @@ font-family: "amatic";
 .recipe-footer {
   background-color: $white;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 115px;
+  position: relative;
 }
 
 .recipe-title {
