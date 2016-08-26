@@ -41,15 +41,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
  <div class="big">
 
 <div class="wrapper-grey padded">
@@ -141,7 +132,9 @@
 
 <div class="confirm">
 <div>
-  <%= link_to "Order", edit_order_path(current_order), class: "recipe-confirm text-center" %>
+  <% if current_user %>
+    <%= link_to "Order", edit_order_path(current_order), class: "recipe-confirm text-center" %>
+  <% end %>
 </div>
 
 </div>
