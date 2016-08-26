@@ -58,21 +58,15 @@ font-family: "amatic";
 }
 
 
-.recipe-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  z-index:2;
-  background: $gray-background;
-  opacity: 0;
-}
-.recipe-link:hover{
-  opacity: 0.1;
-}
+
 
 
 // Style for recipes#: show
+//
+.container-recipe-show {
+  margin-top: 100px;
+}
+
 .recipe-info-show-1 {
   height: 100px;
   background-color: $white;
@@ -86,6 +80,7 @@ font-family: "amatic";
 }
 .recipe-name h3 {
   margin-top: 11px;
+  padding: 12px;
 }
 .recipe-info-details {
   display: flex;
@@ -101,8 +96,7 @@ font-family: "amatic";
   // padding: 10px;
 }
 .recipe-add {
-  padding-right: 20px;
-  text-align: right;
+  margin-right: 3px;
 }
 
 
@@ -170,8 +164,8 @@ font-family: "amatic";
 .tabs {
  flex: 0 0 33%;
  font-size: 18px;
- padding-top: 11px;
- padding-bottom: 11px;
+ padding-top: 15px;
+ padding-bottom: 15px;
  letter-spacing: 0.8px;
  background-color: #F0F0F0;
  opacity: 0.8;
@@ -187,7 +181,7 @@ font-family: "amatic";
   }
 }
 .tabs.active {
-  border-bottom: 5px solid $green-dark;
+  border-bottom: 5px solid $blue-dark;
   opacity: 1;
 }
 .setting {
@@ -198,23 +192,23 @@ font-family: "amatic";
 
 
 
-.btn-treehouse {
-  color: white;
+.btn-add {
+  color: $white;
+  background-color: $red;
+  font-family: $base-font;
+  opacity: 0.9px;
   padding: 10px 15px;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 300px;
+  font-size: 20px;
   transition: background 0.3s ease;
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
+  border: none;
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    color: $white;
+  }
 }
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
-}
-
 
 .recipe-container {
   margin-bottom: 20px;
@@ -261,15 +255,16 @@ font-family: "amatic";
 
 .recipe-select {
   background-color: $red;
-  opacity: 0.9px;
+  opacity: 0.9;
   color: $white;
   border-radius: 4px;
   font-family: $base-font;
   padding: 3px 10px;
   font-weight: 300px;
   font-size: 20px;
+  border: 0px solid $red;
   &:hover {
-  opacity: 0.2px;
+  opacity: 0.2;
   text-decoration: none;
   color: $white;
   }
@@ -277,17 +272,16 @@ font-family: "amatic";
 
 .recipe-confirm {
   background-color: $yellow;
-  opacity: 0.9px;
-  color: $white;
+  color: $blue-dark;
   border-radius: 4px;
   font-family: $base-font;
   padding: 12px 36px;
   font-weight: 400px;
   font-size: 30px;
   &:hover {
-  opacity: 0.2px;
+  opacity: 0.8;
   text-decoration: none;
-  color: $white;
+  color: $blue-dark;
   }
 }
 
@@ -299,6 +293,7 @@ font-family: "amatic";
 .confirm {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 #newsletter h2 {

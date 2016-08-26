@@ -59,6 +59,7 @@
       <div class = "title-start" id="starters"><h4 class="recipe-category-title">Starters</h4> </div>
         <% @starters.each do |starter| %>
           <div class="col-xs-12 col-sm-4">
+           <%= link_to recipe_path(starter) do  %>
             <div class="recipe-container">
               <div class="recipe-picture" style="background: url('<%= image_path starter.photo %>');">
               </div>
@@ -66,10 +67,14 @@
                 <div class="recipe-title"><%= starter.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= starter.price %>€</div>
-                  <%= link_to " + ", "#", class: "recipe-select" %>
+                  <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                    <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
+                    <%= f.submit " + ", class: "recipe-select" %>
+                    <% end %>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         <% end %>
     </div>
@@ -83,6 +88,7 @@
       <div class = "title-start"><h4 class="recipe-category-title">Main courses</h4> </div>
         <% @mains.each do |main| %>
           <div class="col-xs-12 col-sm-4">
+          <%= link_to recipe_path(main) do  %>
             <div class="recipe-container">
               <div class="recipe-picture" style="background: url('<%= image_path main.photo %>');">
               </div>
@@ -90,10 +96,14 @@
                 <div class="recipe-title"><%= main.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= main.price %>€</div>
-                  <%= link_to " + ", "#", class: "recipe-select" %>
+                  <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                    <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
+                    <%= f.submit " + ", class: "recipe-select" %>
+                    <% end %>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         <% end %>
     </div>
@@ -107,6 +117,7 @@
       <div class = "title-start"><h4 class="recipe-category-title">Desserts</h4> </div>
         <% @desserts.each do |dessert| %>
           <div class="col-xs-12 col-sm-4">
+          <%= link_to recipe_path(dessert) do  %>
             <div class="recipe-container">
               <div class="recipe-picture" style="background: url('<%= image_path dessert.photo %>');">
               </div>
@@ -114,10 +125,14 @@
                 <div class="recipe-title"><%= dessert.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= dessert.price %>€</div>
-                  <%= link_to " + ", "#", class: "recipe-select" %>
+                  <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                    <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
+                    <%= f.submit " + ", class: "recipe-select" %>
+                  <% end %>
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         <% end %>
     </div>
@@ -126,7 +141,7 @@
 
 <div class="confirm">
 <div>
-  <%= link_to "Order", "#", class: "recipe-confirm text-center" %>
+  <%= link_to "Order", edit_order_path(current_order), class: "recipe-confirm text-center" %>
 </div>
 
 </div>
@@ -142,5 +157,4 @@
         <input type="submit" value="Receive weekly recipes" class="btn btn-primary btn-bordered btn-bordered-primary">
       </form>
     </div>
-
 
