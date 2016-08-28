@@ -1,0 +1,39 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 70vh;
+  display: flex;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 75px;
+    text-shadow: 0px 1px ;
+    font-family: $banner-font;
+    letter-spacing: 1px;
+  }
+  p {
+    font-size: 40px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: $banner-font;
+    letter-spacing: 1px;
+  }
+  .btn {
+    background-color: $red;
+    opacity: 0.9;
+    color: $white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    border: none;
+    font-family: $base-font;
+  }
+  .btn:hover {
+    background: $red;
+    opacity: 0.5;
+    text-decoration: none;
+    color: $white;
+  }
+}
+

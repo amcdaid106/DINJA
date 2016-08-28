@@ -5,13 +5,13 @@
 .edit-user-profile-container {
   padding: 40px 0;
 }
-.tab-list {
+.user-profile-tab-list {
   display: flex;
   justify-content: space-between;
   background-color: $gray-background;
   padding: 30px;
 }
-.liner {
+.user-profile-tabs-liner {
   height: 2px;
   background: #ddd;
   position: absolute;
@@ -22,18 +22,18 @@
   top: 50%;
   z-index: 1;
 }
-.tab-list > div a:after {
+.user-profile-tab-list > div a:after {
   content: " ";
   position: absolute;
   // left: 48.5%;
   margin: 0 auto 0 auto;
   bottom: -1px;
   border: 10px solid transparent;
-  border-bottom-color: $gray-lighter;
+  border-bottom-color: $white;
   opacity: 0;
 }
 
-.tab-list > div.active a:after {
+.user-profile-tab-list > div.active a:after {
     content: " ";
     position: absolute;
     // left: 48.5%;
@@ -41,10 +41,11 @@
     margin: 0 auto;
     bottom: -1px;
     border: 10px solid transparent;
-    border-bottom-color: $gray-lighter;
+    border-bottom-color: $white;
 }
-
 .edit-user-tabs {
+  border-width: 1px;
+  border-style: dotted;
   height: 70px;
   width: 70px;
   background-color: $white;
@@ -53,42 +54,53 @@
   display: flex;
   justify-content: space-around;
   z-index: 2;
+  i {
+    opacity: 0.6;
+  }
+  &.active {
+    i {
+      opacity: 1;
+    }
+    border-style: solid;
+    border-width: 2px;
+  }
   a {
     text-decoration: none;
     padding: 20px;
   }
   &.food {
-    border: 2px solid $green-dark;
+    border-color: $green-dark;
     i {
     color: $green-dark;
     }
   }
   &.personal {
-    border: 2px solid $orange;
+    border-color: $orange;
     i {
       color: $orange;
     }
   }
   &.account {
-    border: 2px solid $blue-dark;
+    border-color: $blue-dark;
     i {
       color: $blue-dark;
     }
   }
 }
-
-.card {
-  background-color: $gray-lighter;
+.user-profile-content-card {
+  background-color: $white;
   padding: 50px;
   border-radius: 3px;
+  border: 2px solid $gray-background;
+  border-top: none;
 }
-.tab-content h3 {
+.user-profile-tab-content h3 {
   margin-bottom: 30px;
 }
 .food-checks {
   display: flex;
   justify-content: space-between;
 }
-.button {
+.user-profile-button {
   border-radius: 5px;
 }

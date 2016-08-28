@@ -1,8 +1,8 @@
 <div class="container edit-user-profile-container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <div class="tab-list">
-        <div class="liner"></div>
+      <div class="user-profile-tab-list">
+        <div class="user-profile-tabs-liner"></div>
         <div role="presentation" data-target="food-preferences" class="edit-user-tabs food active">
           <a href="#" class="tooltip-link" data-placement="top" title="Edit food preferences">
             <span class="round-tabs">
@@ -19,7 +19,6 @@
         </div>
         <div role="presentation" id="user-account" data-target="account-details" class="edit-user-tabs account">
           <a href="#" class="tooltip-link" data-placement="top" title="Edit account settings">
-          <!-- <a href="edit_user_registration_path" class="tooltip-link" data-placement="top" title="Edit account settings"> -->
             <span class="round-tabs">
               <i class="fa fa-key"></i>
             </span>
@@ -30,8 +29,8 @@
   </div>
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <div class="card">
-          <div class= "tab-content" id="food-preferences">
+        <div class="user-profile-content-card">
+          <div class= "user-profile-tab-content" id="food-preferences">
             <%= simple_form_for(@user) do |f| %>
               <h3>Edit your food preferences</h3>
               <div class="food-checks">
@@ -43,21 +42,21 @@
               </div>
             <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'E.g. 400' %>
             <%= f.input :max_prep_time, label: "Max prep time (in minutes) per dish", placeholder: 'E.g. 25' %>
-            <%= f.button :submit, 'Save changes', class: 'button btn btn-primary'  %>
+            <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
           <% end %>
           </div>
 
-          <div class="tab-content hidden" id="personal-details">
+          <div class="user-profile-tab-content hidden" id="personal-details">
             <h3>Edit your personal details</h3>
               <%= simple_form_for(@user) do |f| %>
                 <%= f.input :first_name, placeholder: 'First name' %>
                 <%= f.input :last_name, placeholder: 'Last name' %>
                 <%= f.input :address, placeholder: 'Address' %>
-                <%= f.button :submit, 'Save changes', class: 'button btn btn-primary'  %>
+                <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
               <% end %>
           </div>
 
-          <div id="account-details" class="tab-content hidden">
+          <div id="account-details" class="user-profile-tab-content hidden">
             <h3>Change your password</h3>
             <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
               <%= f.error_notification %>
@@ -73,7 +72,7 @@
               </div>
 
               <div class="form-actions">
-                <%= f.button :submit, "Change my password", class: 'button btn btn-primary' %>
+                <%= f.button :submit, "Change my password", class: 'user-profile-button btn btn-primary' %>
               </div>
             <% end %>
           </div>
@@ -82,12 +81,4 @@
     </div>
   </div>
 </div>
-<% content_for :after_js do  %>
-  <script>
-    $(document).ready(function() {
-      if ('<%= params[:personal_details] %>' === 'true') {
-        $('#personal-details-link').click();
-      }
-    })
-  </script>
-<% end %>
+
