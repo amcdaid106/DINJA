@@ -18,14 +18,22 @@ class OrderItemsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:order_item][:recipe_id])
-    if @order.order_items.find { |oi| oi.recipe_id == @recipe.id }.nil?
-      @order_item = OrderItem.new(quantity: 1)
-      @order_item.order = @order
-      @order_item.recipe = @recipe
-      @order_item.save
-      redirect_to root_path
-    else
-      render :home
+
+    @order_item = @order.order_items.where(recipe_id: @recipe.id).first
+    @order_item ||= OrderItem.new(
+      order: @order,
+      recipe: @recipe,
+      recipe_name: @recipe.name,
+      recipe_price: @recipe.price,
+      quantity: 0
+    )
+
+    @order_item.quantity += 1
+    @order_item.save
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
   end
 

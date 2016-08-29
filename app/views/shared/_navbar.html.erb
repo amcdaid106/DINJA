@@ -2,7 +2,7 @@
   <!-- <div class="row"> -->
     <div class="navbar navbar-fixed">
       <!-- <div class="col-xs-4"> -->
-        <div class="navbar-side how-it-works">
+        <div class="navbar-side navbar-how-it-works">
           <%= link_to "#how-it-works" do %>
             <p>How it works</p>
           <% end %>
@@ -11,13 +11,13 @@
       <!-- <div class="col-xs-4 navbar-center"> -->
         <!-- <div class="horizontal-space"></div> -->
         <%= link_to root_path do %>
-          <%= image_tag "logo3.png", class: "logo" %>
+          <%= image_tag "logo3.png", class: "navbar-logo" %>
         <% end %>
       <!-- </div> -->
       <!-- <div class="col-xs-4 navbar-right"> -->
         <!-- Different navigation if login or not -->
         <!-- <div class="navbar-right-items"> -->
-          <div class="navbar-side navbar-side-right log-in-sign-up-username-cart text-right">
+          <div class="navbar-side navbar-side-right text-right">
             <% if user_signed_in? %>
               <!-- Profile picture and dropdown -->
               <div class="navbar-item">
@@ -50,7 +50,7 @@
               </div>
               <!-- Cart -->
               <%= link_to "#{}", class: "cart-link text-right" do %>
-                <i class="fa fa-shopping-cart cart"></i>  <%= t(".profile", default: "") %>
+                <i class="fa fa-shopping-cart navbar-cart"></i>  <%= t(".profile", default: "") %>
               <% end %>
             <% else %>
               <!-- Login text link -->

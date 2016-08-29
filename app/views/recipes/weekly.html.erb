@@ -1,8 +1,8 @@
 
-<div class="banner" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 30%), url('<%= asset_path 'shutterstock.png' %>');">
+<div class="banner" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 70%), url('<%= asset_path 'shutterstock.png' %>');">
   <div class="banner-content">
-  <p>Sick of hearing 'What's for dinner' ? </p>
-    <h1>Get diversified meals - Delivered !</h1>
+  <p>Sick of hearing "What's for dinner?" </p>
+    <h1>Let us do the shopping, you do the cooking!</h1>
     <br> <br>
     <a href="#starters" class="btn btn-primary btn-lg">Discover this week's meals</a>
   </div>
@@ -10,21 +10,21 @@
 
 
 
-<div class="wrapper-grey padded">
+<div class="weekly-section">
   <div id="how-it-works" class="container features-container">
     <div class="row">
        <div class="col-xs-12 col-sm-6 col-md-4">
          <div class="features text-center" style = "padding-top: 15px">
           <img  src="<%= asset_path "numero1.png" %>"/>
-          <h3>Fill in your profile</h3>
-          <p> Dinner should be delicious and as easy as possible. At Dinja, we’ve figured out how to make that dream a reality.</p>
+          <h3>Complete your profile</h3>
+          <p>Let us know if you have any food preferences, restrictions, or allergies, and we'll only suggest dishes that suit you.</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="features text-center" style = "padding-top: 15px">
           <img src="<%= asset_path "numero2.png" %>" />
           <h3>Order online</h3>
-          <p> Choose between a selection of weekly starters, courses and desserts.</p>
+          <p> Choose between a selection of weekly starters, main courses, and desserts; as many or as few as you need! No commitment required.</p>
 
         </div>
       </div>
@@ -33,21 +33,18 @@
           <img src="<%= asset_path "numero3.png" %>" />
           <h3>Delivery straight to your door</h3>
           <p> Choose the best suited delivery. That is all you’re going to need to do. All the satisfaction of cooking a homemade dinner with none of the hassle.</p>
+          <h3>Delivery right to your door</h3>
+          <p> Let us know when you'd like to get your groceries at your doorstep. Enjoy all the satisfaction of cooking a homemade dinner without the hassle!</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
-
- <div class="big">
-
-<div class="wrapper-grey padded">
-  <div class="container">
-    <h2 class="text-center"></h2>
+<div class="weekly-section">
+  <div class="container weekly-container">
     <div class="row">
-      <div class = "title-start" id="starters"><h4 class="recipe-category-title">Starters</h4> </div>
+      <div class="recipe-category-recipe-category-title-start" id="starters"><h4 class="recipe-category-title">Starters</h4> </div>
         <% @starters.each do |starter| %>
           <div class="col-xs-12 col-sm-4">
            <%= link_to recipe_path(starter) do  %>
@@ -60,6 +57,7 @@
                   <div class="recipe-price"><%= starter.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
+                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <%= f.submit " + ", class: "recipe-select" %>
                     <% end %>
                 </div>
@@ -72,11 +70,10 @@
   </div>
 </div>
 
-<div class="wrapper-grey padded">
-  <div class="container">
-    <h2 class="text-center"></h2>
+<div class="weekly-section">
+  <div class="container weekly-container">
     <div class="row">
-      <div class = "title-start"><h4 class="recipe-category-title">Main courses</h4> </div>
+      <div class="recipe-category-title-start"><h4 class="recipe-category-title">Main courses</h4> </div>
         <% @mains.each do |main| %>
           <div class="col-xs-12 col-sm-4">
           <%= link_to recipe_path(main) do  %>
@@ -89,6 +86,7 @@
                   <div class="recipe-price"><%= main.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
+                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <%= f.submit " + ", class: "recipe-select" %>
                     <% end %>
                 </div>
@@ -101,11 +99,10 @@
   </div>
 </div>
 
-<div class="wrapper-grey padded">
-  <div class="container">
-    <h2 class="text-center"></h2>
+<div class="weekly-section">
+  <div class="container weekly-container">
     <div class="row">
-      <div class = "title-start"><h4 class="recipe-category-title">Desserts</h4> </div>
+      <div class="recipe-category-title-start"><h4 class="recipe-category-title">Desserts</h4> </div>
         <% @desserts.each do |dessert| %>
           <div class="col-xs-12 col-sm-4">
           <%= link_to recipe_path(dessert) do  %>
@@ -118,6 +115,7 @@
                   <div class="recipe-price"><%= dessert.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
+                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <%= f.submit " + ", class: "recipe-select" %>
                   <% end %>
                 </div>
@@ -130,24 +128,19 @@
   </div>
 </div>
 
-<div class="confirm">
-<div>
+<div class="recipe-place-order-button-container">
   <% if current_user %>
-    <%= link_to "Order", edit_order_path(current_order), class: "recipe-confirm text-center" %>
+    <%= link_to "Order", edit_order_path(current_order), class: "recipe-place-order-button text-center" %>
   <% end %>
 </div>
 
+<div class="text-center weekly-section" id="newsletter">
+  <h2>Unleash your inner dinner ninja!</h2>
+  <p>Sign up for our newsletter to find out in advance what's on the menu for the following week.<br>
+  Waste no time wondering what to cook from now on!</p>
+  <form class="form-inline contact-dinja-form">
+    <input type="email" placeholder="contact@dinja.com" class="form-control">
+    <input type="submit" value="Receive weekly recipes" class="btn btn-primary btn-bordered btn-bordered-primary">
+  </form>
 </div>
-
- </div>
-
-    <div class="text-center padded" id="newsletter">
-      <h2>Forget about grocery duty and repetitive meals !</h2>
-      <p>Every week, Dinja offers you 3 starters / 6 mains / 3 desserts. <br>
-      No more, you would no know what to choose;)</p>
-      <form class="form-inline">
-        <input type="email" placeholder="contact@dinja.com" class="form-control">
-        <input type="submit" value="Receive weekly recipes" class="btn btn-primary btn-bordered btn-bordered-primary">
-      </form>
-    </div>
 

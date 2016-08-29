@@ -33,16 +33,33 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Your payment information</h3>
+              <h3 class="panel-title">Payment with Stripe</h3>
             </div>
             <div class="panel-body">
 
-              <div class="edit-payment-info">
+            <%= form_tag order_payments_path(@order) do %>
+              <article>
+                <label class="price">
+                  <span>Amount: <%= humanized_money_with_symbol(@order.price) %></span>
+                </label>
+              </article>
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-name="My Order"
+                data-description="<%= @order.order_items.size %> recipes"
+                data-amount="<%= @order.price_cents %>"
+                data-currency="EUR"
+                data-email="@user.email"></script>
+
+            <% end %>
+
+<!--               <div class="edit-payment-info">
                 <p>Aoife M McDaid</p>
                 <p>****-****-****-3876</p>
                 <hr>
                 <button class="btn btn-default">Edit</button>
-              </div>
+              </div> -->
 
             </div>
           </div>

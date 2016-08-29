@@ -218,7 +218,7 @@ peppers =  Ingredient.create(name: "peppers")
 tomatoes =  Ingredient.create(name: "tomatoes")
 onions =  Ingredient.create(name: "onions")
 
-gazpacho = Recipe.new(name: "gazpacho of red peppers and tomatoes", description: "Richful mix of vegetables", price: 12, photo: "gazpacho.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+gazpacho = Recipe.new(name: "Gazpacho of red peppers and tomatoes", description: "Richful mix of vegetables", price: 12, photo: "gazpacho.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
 
 Dose.create(measure: "5", ingredient: tomatoes, recipe: gazpacho)
 Dose.create(measure: "3", ingredient: peppers, recipe: gazpacho)

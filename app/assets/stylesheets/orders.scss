@@ -32,13 +32,14 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.test_picture {
-  height: 100px;
-  border-radius: 5px;
-  width: 100%;
-  // box-shadow:
+.order-picture {
+  margin: 0 20px;
+  img {
+    height: 100px;
+    border-radius: 5px;
+    width: 100%;
+  }
 }
-
 .orders-edit-quantity {
   display: flex;
   justify-content: space-around;
@@ -55,14 +56,17 @@
     padding-left: 10px;
   }
 }
-.order-picture {
-  margin: 0 20px;
-}
 .orders-controls-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
   font-size: larger;
+  .fa-trash {
+    color: black;
+    &:hover {
+      color: $red-dark;
+    }
+  }
 }
 .orders-controls-quantity {
   display: flex;
@@ -79,20 +83,13 @@
     padding-right: 20px;
   }
   .fa-plus:hover {
-    // font-size: 25px;
     color: $green-dark;
   }
   .fa-minus:hover {
-    // font-size: 25px;
     color: $green-dark;
   }
 }
-.fa-trash {
-  color: black;
-  &:hover {
-    color: $red-dark;
-  }
-}
+
 .orders-checkout-button {
   width: 100%;
   margin: 20px 0;
@@ -138,21 +135,15 @@
   margin: 10px;
 }
 .order-item-conf {
-    margin: 6px;
-    padding: 6px;
-    transition: background-color 0.3s ease;
-    h3 {
-      margin: 0;
-    }
+  margin: 6px;
+  padding: 6px;
+  transition: background-color 0.3s ease;
+  h3 {
+    margin: 0;
+  }
   .order-item-col-centered {
     padding-top: 20px;
     padding-bottom: 20px;
-  }
-  .test_picture {
-    height: 100px;
-    border-radius: 5px;
-    width: 100%;
-    // box-shadow:
   }
 }
 
