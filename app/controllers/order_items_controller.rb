@@ -22,6 +22,8 @@ class OrderItemsController < ApplicationController
       @order_item = OrderItem.new(quantity: 1)
       @order_item.order = @order
       @order_item.recipe = @recipe
+      @order_item.recipe_name = @recipe.name
+      @order_item.recipe_price = @recipe.price
       @order_item.save
       redirect_to root_path
     else

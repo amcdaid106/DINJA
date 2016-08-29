@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824142304) do
+ActiveRecord::Schema.define(version: 20160829100452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 20160824142304) do
     t.integer  "order_id"
     t.integer  "recipe_id"
     t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "recipe_name"
+    t.integer  "recipe_price"
     t.index ["order_id"], name: "index_order_items_on_order_id", using: :btree
     t.index ["recipe_id"], name: "index_order_items_on_recipe_id", using: :btree
   end
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160824142304) do
     t.date     "delivery_date"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.json     "payment"
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 

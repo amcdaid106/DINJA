@@ -16,11 +16,8 @@ class OrdersController < ApplicationController
       order_item.quantity = params["quantity_order_item_#{order_item.id}"]
       order_item.save
     end
-    @grand_total = 0
-    @order.order_items.each do |item|
-      @grand_total += (item.quantity * item.recipe.price)
-    end
-    @order.price = @grand_total
+
+    redirect_to new_order_payment_path(@order)
   end
 
   def show
