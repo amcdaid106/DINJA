@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :recipes, only: [:show]
 
-  resources :users, only: [:edit, :create, :update]
+  resources :users, only: [:edit, :create, :update] do
+      resources :recipes, only: [:index]
+      resources :orders, only: [:index]
+  end
+
 
   # resources :orders, only: [:edit], as: 'cart'
 
@@ -15,4 +19,5 @@ Rails.application.routes.draw do
   resources :orders, only: [ :update, :show ]
   # get '/order_confirmation/:id', to: 'orders#show', as: :order
   resources :order_items, only: [ :destroy, :create]
+
 end

@@ -34,6 +34,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def index
+    @orders = Order.where({ user_id: params[:user_id] })
+    @orders_confirmed = @orders.where(status: "confirmed").map(&:recipes).flatten
+  end
+
 end
 
 # Ajouter une semaine aux meals (ex: 1, 2, 3, 4...)
