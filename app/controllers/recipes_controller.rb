@@ -35,10 +35,16 @@ class RecipesController < ApplicationController
     end
   end
 
+
   private
 
   def set_order
     @order = current_user.orders.where(status: 'pending').first
+  end
+
+  def index
+    @orders = Order.where({ user_id: params[:user_id] })
+    @orders_confirmed = @orders.where(status: "confirmed").map(&:recipes).flatten
   end
 end
 

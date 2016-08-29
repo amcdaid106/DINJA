@@ -23,12 +23,12 @@
                       <% end %>
                     </li>
                     <li>
-                      <%= link_to "#" do %>
+                      <%= link_to user_orders_path(current_user) do %>
                         <i class="fa fa-check-square-o"></i>  <%= t(".profile", default: "My orders") %>
                       <% end %>
                     </li>
                     <li>
-                      <%= link_to "#" do %>
+                      <%= link_to user_recipes_path(current_user) do %>
                         <i class="fa fa-cutlery"></i>  <%= t(".profile", default: "My recipes") %>
                       <% end %>
                     </li>
