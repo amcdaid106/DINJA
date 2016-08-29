@@ -1,22 +1,27 @@
+<div class="order-process-container">
+  <div class="cart-confirm-container">
+    <div class="cart-heading text-center">
+      <h2>My orders</h2>
+      <hr>
+    </div>
 
-<div class="wrapper-grey padded text-center">
+    <% @orders_pending.each do |orders_pending| %>
+    <div class="row order-item-cart">
+      <div class="col-xs-12 col-sm-3">
+        <p><%= orders_pending.name%></p>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p><%= orders_pending.created_at.strftime("%B, %d, %Y")%></p>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p><%= orders_pending.price%></p>
+      </div>
+    </div>
+    <%end%>
 
-<div class="cart-heading text-center">
-<h1> My orders </h1>
+
+  </div>
 </div>
-
-
-<% @orders_confirmed.each do |orders_confirmed| %>
-
- <div class="col-xs-12 col-sm-3 order-item-col-centered">
-  <div class="order-picture">
-    <p><%= orders_confirmed.name%></p>
-
-    <% end %>
-</div>
-</div>
-</div>
-
 
 
 
