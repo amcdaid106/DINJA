@@ -2,6 +2,13 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:edit, :update, :show]
   # before_action :set_grand_total, [:edit, :update, :show]
 
+  def index
+    @orders = Order.where({ user_id: params[:user_id] })
+    @orders_pending = @orders.where(status: "pending").map(&:recipes).flatten
+    @orders_confirmed = @orders.where(status: "confirmed").map(&:recipes).flatten
+    @orders_cancelled = @orders.where(status: "cancelled").map(&:recipes).flatten
+  end
+
   def edit
     @grand_total = 0
     @order.order_items.each do |item|
