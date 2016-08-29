@@ -42,6 +42,12 @@
               </div>
             <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'E.g. 400' %>
             <%= f.input :max_prep_time, label: "Max prep time (in minutes) per dish", placeholder: 'E.g. 25' %>
+
+            <input type="text" id="banished_ingredients_autocomplete" value="" />
+
+            <ul id="banished_ingredients_list">
+              <!-- Empty list, will be filled by js -->
+            </ul>
             <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
           <% end %>
           </div>

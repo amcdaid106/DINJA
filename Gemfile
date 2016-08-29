@@ -10,6 +10,8 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'redis'
 gem 'nokogiri'
 
+gem 'rails-assets-typeahead.js', source: 'https://rails-assets.org'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
