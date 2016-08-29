@@ -1,22 +1,14 @@
-
-<div class="wrapper-grey padded text-center">
-
-<div class="cart-heading text-center">
-<h1> My Recipes </h1>
+<div class="order-process-container">
+  <div class="cart-confirm-container">
+    <div class="cart-heading text-center">
+     <h1> My Recipes </h1>
+    </div>
+   </div>
 </div>
 
-  <% @orders_confirmed.each do |order_confirmed| %>
-    <div class="col-xs-12 col-sm-3">
-      <div class="order-picture">
-        <%= image_tag order_confirmed.photo, class: "test_picture" %>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-3 order-item-col-centered">
-        <%= order_confirmed.name %>
-        <%= order_confirmed.description %>
-        <%= order_confirmed.photo %>
-      </p>
-    </div>
-    <% end %>
+
+
+
+
 

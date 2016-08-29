@@ -44,7 +44,7 @@ class RecipesController < ApplicationController
 
   def index
     @orders = Order.where({ user_id: params[:user_id] })
-    @orders_confirmed = @orders.where(status: "confirmed").map(&:recipes).flatten
+    @orders_confirmed = @orders.where(status: "pending").map(&:recipes).flatten
   end
 end
 
