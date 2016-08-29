@@ -24,13 +24,13 @@
           </div>
 
           <div class="col-xs-12 col-sm-3 order-item-col-centered">
-            <h4><%= order_item.recipe.name %></h4>
+            <h4><%= order_item.recipe_name %></h4>
           </div>
 
           <div class="col-sm-6 orders-controls-container order-item-col-centered">
             <div>€<%= order_item.recipe.price %>.00</div>
             <div><%= order_item.quantity %></div>
-            <div>€<%= order_item.recipe.price * order_item.quantity %>.00</div>
+            <div>€<%= order_item.recipe_price * order_item.quantity %>.00</div>
           </div>
         </div>
       <% end %>

@@ -1,14 +1,18 @@
 class Order < ApplicationRecord
-  STATUS = ["Pending", "Confirmed", "Paid", "Delivered"]
+  STATUS = ["pending", "confirmed", "paid", "delivered"]
   belongs_to :user
   has_many :order_items, dependent: :destroy
   has_many :recipes, through: :order_items
 
   def update_price
     total_price = 0
-    order.order_items.each do |order_item|
-      price += (order_item.recipe.price * order_item.quantity)
+    self.order_items.each do |order_item|
+      total_price += (order_item.recipe.price * order_item.quantity)
     end
-    order.price = total_price
+    self.price = total_price
+  end
+
+  def price_cents
+    (self.price * 100).to_i
   end
 end
