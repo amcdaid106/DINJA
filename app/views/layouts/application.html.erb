@@ -9,6 +9,9 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
+    <div class="loading hidden">
+      <i class="fa fa-circle-o-notch fa-spin"></i>
+    </div>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <div class="wrapper">
