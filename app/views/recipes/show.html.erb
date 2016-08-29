@@ -9,6 +9,9 @@
           <div>
             <%= simple_form_for OrderItem.new, remote: true do |f| %>
             <%= f.association :recipe, as: :hidden, input_html: { value: @recipe.id } %>
+            <span id='added-button-<%= @recipe.id %>'>
+              <%= order_item_quantity_label_in_show(@order, @recipe) %>
+            </span>
             <%= f.submit "Add to cart", class: "recipe-add-to-cart-button" %>
             <% end %>
           </div>

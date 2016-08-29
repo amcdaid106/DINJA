@@ -4,7 +4,7 @@
   <p>Sick of hearing "What's for dinner?" </p>
     <h1>Let us do the shopping, you do the cooking!</h1>
     <br> <br>
-    <a href="#starters" class="btn btn-primary btn-lg">Discover this week's meals</a>
+    <a id="link-to-starters" href="#starters" class="btn btn-primary btn-lg">Discover this week's meals</a>
   </div>
 </div>
 
@@ -44,6 +44,7 @@
     <div class="row">
       <div class="recipe-category-recipe-category-title-start" id="starters"><h4 class="recipe-category-title">Starters</h4> </div>
         <% @starters.each do |starter| %>
+
           <div class="col-xs-12 col-sm-4">
            <%= link_to recipe_path(starter) do  %>
             <div class="recipe-container">
@@ -53,9 +54,12 @@
                 <div class="recipe-title"><%= starter.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= starter.price %>€</div>
+
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
-                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <span id='added-button-<%= starter.id %>'>
+                      <%= order_item_quantity_label(@order, starter) %>
+                    </span>
                     <%= f.submit " + ", class: "recipe-select" %>
                     <% end %>
                 </div>
@@ -84,7 +88,9 @@
                   <div class="recipe-price"><%= main.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
-                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <span id='added-button-<%= main.id %>'>
+                      <%= order_item_quantity_label(@order, main) %>
+                    </span>
                     <%= f.submit " + ", class: "recipe-select" %>
                     <% end %>
                 </div>
@@ -113,7 +119,9 @@
                   <div class="recipe-price"><%= dessert.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
-                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <span id='added-button-<%= dessert.id %>'>
+                      <%= order_item_quantity_label(@order, dessert) %>
+                    </span>
                     <%= f.submit " + ", class: "recipe-select" %>
                   <% end %>
                 </div>
