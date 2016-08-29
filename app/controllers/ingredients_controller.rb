@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
       @ingredients = @ingredients.where("name LIKE ?", "#{@query}%")
     end
 
-    @ingredients = @ingredients.order(:name).limit(20)
+    @ingredients = @ingredients.order(:name).limit(30)
 
     respond_to do |format|
       format.json { render json: @ingredients.to_json }

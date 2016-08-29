@@ -17,21 +17,28 @@ class RecipesController < ApplicationController
         @recipes = @recipes.where(vegan: true) if current_user.vegan
         @recipes = @recipes.where("recipes.calories < ?", current_user.max_calories) if current_user.max_calories != nil
         @recipes = @recipes.where("recipes.prep_time < ?", current_user.max_prep_time) if current_user.max_prep_time != nil
-        @mains = @recipes.where(category: "Main course").sample(6)
-        @starters = @recipes.where(category: "Starter").sample(3)
-        @desserts = @recipes.where(category: "Dessert").sample(3)
       else
         @recipes = Recipe.all
-        @mains = @recipes.where(category: "Main course").sample(6)
-        @starters = @recipes.where(category: "Starter").sample(3)
-        @desserts = @recipes.where(category: "Dessert").sample(3)
       end
+      # meals expired
+      if (current_user.last_meals_update + 7.days) >= Date.today
+        current_user.week_starters = @recipes.where(category: "Starter").sample(3).map(&:id)
+        current_user.week_meals = @recipes.where(category: "Main course").sample(6).map(&:id)
+        current_user.week_desserts = @recipes.where(category: "Dessert").sample(3).map(&:id)
+        current_user.last_meals_update = Date.today
+        current_user.save
+      end
+
+      @starters = @recipes.where(id: current_user.week_starters)
+      @mains = @recipes.where(id: current_user.week_meals)
+      @desserts = @recipes.where(id: current_user.week_desserts)
     else
       @recipes = Recipe.all
-      @mains = @recipes.where(category: "Main course").sample(6)
       @starters = @recipes.where(category: "Starter").sample(3)
+      @mains = @recipes.where(category: "Main course").sample(6)
       @desserts = @recipes.where(category: "Dessert").sample(3)
     end
+
   end
 
 end

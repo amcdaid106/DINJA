@@ -6,6 +6,12 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    current_user.banished_ingredients.destroy_all
+    if params[:banned_ingredients]
+      params[:banned_ingredients].each do |banned_ingredient_id|
+        BanishedIngredient.create(user: current_user, ingredient_id: banned_ingredient_id)
+      end
+    end
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js

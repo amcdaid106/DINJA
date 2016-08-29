@@ -40,8 +40,15 @@ $(function() {
     var element = "<li>";
     element = element + suggestion.name;
     element = element + '<input type="hidden" name="banned_ingredients[]" value="' + suggestion.id +'" />';
+    element = element + "<i class='fa fa-close remove-ingredient'></i>"
     element = element + "</li>";
 
     $("#banished_ingredients_list").append(element);
   });
+
+  $("#banished_ingredients_list").on("click", ".remove-ingredient", function(){
+    $(this).parent().remove();
+  });
+
+
 });
