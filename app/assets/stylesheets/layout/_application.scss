@@ -1,10 +1,7 @@
 body {
-  background-color: #F7F3F3;
+  background-color: $gray-background;
 }
 
 .container {
   background-color: $white;
-  h1 {
-    margin-bottom: 30px;
-  }
 }

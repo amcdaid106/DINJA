@@ -3,7 +3,6 @@
   padding: 0;
 }
 .navbar {
-  color-background: #FOFOFO;
   transition: all 0.3s ease;
   display: flex;
   justify-content: space-between;
@@ -11,51 +10,27 @@
   height: 94px;
   padding: 0px 55px;
   margin: 0px;
-  // .how-it-works,
-  // .horizontal-space,
-  // .navbar-item,
-  // .cart-link {
-  //   width: 170px;
-  // }
 }
-.how-it-works {
+.navbar-how-it-works {
   font-size: 20px;
   font-family: $header-font;
-  hr {
-  color: $red;
-  background-color: $red;
-  border: 1px solid;
-  width: 55%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  }
 }
 
 .navbar-side {
   flex: 0 0 30%;
   &-right {
     justify-content: flex-end;
+    display: flex;
+    align-items: center;
   }
 }
-
-.logo {
+.navbar-logo {
   width : 155px;
 }
-.log-in-sign-up-username-cart {
-  display: flex;
-  align-items: center;
-
-}
-.cart {
+.navbar-cart {
   color: $red;
   font-size: 30px;
 }
-
-
-.fa-caret-down {
-  size: 12px;
-}
-
 .navbar-item {
   cursor: pointer;
   padding: 0 20px;
@@ -67,24 +42,23 @@
     margin: 0px;
   }
 }
-
 .navbar-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px $gray-lighter;
+  border-color: $gray-lighter;
   flex: 0 0 30%;
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: #999999 !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
+  font-weight: lighter;
+  color: $gray-font;
+  font-size: 15px;
+  line-height: 22px;
   padding: 10px 20px;
 }
 .navbar-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: black !important;
+  background: transparent;
+  color: black;
 }
 .navbar-dropdown-menu:before {
   content: ' ';
@@ -95,8 +69,8 @@
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid $gray-lighter;
+  border-top: 1px solid $gray-lighter;
 }
 
 .navbar:before,
@@ -105,13 +79,13 @@
 }
 
 .navbar-link {
-  color: #616668;
+  color: $gray;
   font-size: 14px;
   &:hover {
     color: $red;
   }
 }
 .navbar-link:hover {
-  color: #da552f;
+  color: $red;
   text-decoration: none;
 }
