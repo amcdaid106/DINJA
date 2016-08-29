@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def humanized_money_with_symbol(price)
+    "€#{price}.00"
+  end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payments/new'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: "recipes#weekly"
@@ -12,7 +14,9 @@ Rails.application.routes.draw do
 
 
   get '/cart/:id', to: 'orders#edit', as: :edit_order
-  resources :orders, only: [ :update, :show ]
+  resources :orders, only: [ :update, :show ] do
+    resources :payments, only: [:new, :create]
+  end
   # get '/order_confirmation/:id', to: 'orders#show', as: :order
   resources :order_items, only: [ :destroy, :create]
 end

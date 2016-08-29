@@ -55,6 +55,7 @@
                   <div class="recipe-price"><%= starter.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
+                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <%= f.submit " + ", class: "recipe-select" %>
                     <% end %>
                 </div>
@@ -83,6 +84,7 @@
                   <div class="recipe-price"><%= main.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
+                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <%= f.submit " + ", class: "recipe-select" %>
                     <% end %>
                 </div>
@@ -111,6 +113,7 @@
                   <div class="recipe-price"><%= dessert.price %>€</div>
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
+                    <button class="hidden btn btn-success recipe-added-count"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <%= f.submit " + ", class: "recipe-select" %>
                   <% end %>
                 </div>
