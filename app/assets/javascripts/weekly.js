@@ -1,8 +1,14 @@
  $(function() {
-  var count = 0;
 
-  $('.recipe-select').click(function() {
-    count++;
-    $(this).prev().removeClass('hidden').text(count + " added");
+  $("#link-how-it-works").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#how-it-works").offset().top
+      }, 1000);
+  });
+
+  $("#link-to-starters").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#starters").offset().top
+      }, 1000);
   });
 });

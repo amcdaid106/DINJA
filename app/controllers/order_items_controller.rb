@@ -18,6 +18,7 @@ class OrderItemsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:order_item][:recipe_id])
+    @referral = params[:referral]
 
     @order_item = @order.order_items.where(recipe_id: @recipe.id).first
     @order_item ||= OrderItem.new(
