@@ -18,11 +18,11 @@
             <div class="panel-body">
 
               <div id="current-address" class="edit-address">
-                <%= render "orders/address", user: @user %>
+                <%= render "orders/address", order: @order %>
               </div>
 
               <div id="edit-address-form" class="edit-address hidden">
-                <%= simple_form_for @user, remote: true do |f| %>
+                <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true do |f| %>
                   <%= f.input :address, placeholder: 'Address' %>
                   <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary'  %>
                 <% end %>

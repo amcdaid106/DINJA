@@ -1,0 +1,3 @@
+$('#edit-address-form').addClass('hidden');
+$('#current-address').removeClass('hidden');
+$("#current-address").html("<%= j render 'orders/address', order: @order %>");
