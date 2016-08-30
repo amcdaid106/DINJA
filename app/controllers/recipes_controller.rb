@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @orders = Order.where({ user_id: params[:user_id] })
-    @recipes = @orders.where(status: "pending").map(&:recipes).flatten
+    @recipes = @orders.where(status: "paid").map(&:recipes).flatten.uniq
   end
 
   def show
