@@ -89,10 +89,12 @@
     color: $green-dark;
   }
 }
-
 .orders-checkout-button {
   width: 100%;
   margin: 20px 0;
+}
+.no-items-in-cart {
+  text-align: center;
 }
 
 // Style for orders#update

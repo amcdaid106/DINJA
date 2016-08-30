@@ -11,6 +11,6 @@ module OrderItemsHelper
       css_class_name = 'recipe-added-count'
     end
 
-    content_tag :button, "#{order_item.quantity} added", class: "btn btn-success #{css_class_name}"
+    content_tag :button, "#{order_item.quantity} added", class: "btn btn-primary #{css_class_name}"
   end
 end
