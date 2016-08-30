@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @orders_pending = @orders.where(status: "pending")#.map(&:recipes).flatten
     @orders_confirmed = @orders.where(status: "confirmed").map(&:recipes).flatten
     @orders_cancelled = @orders.where(status: "cancelled").map(&:recipes).flatten
-    @orders_confirmed = @orders.where(status: "paid").map(&:recipes).flatten
+    @orders_paid = @orders.where(status: "paid")#.map(&:recipes).flatten
   end
 
   def edit
