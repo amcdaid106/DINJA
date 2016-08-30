@@ -37,7 +37,7 @@
             </div>
             <div class="panel-body">
 
-            <%= form_tag order_payments_path(@order) do %>
+            <%= form_tag order_payments_path(@order), id: "payment_form" do %>
               <article>
                 <label class="price">
                   <span>Amount: <%= humanized_money_with_symbol(@order.price) %></span>
@@ -63,13 +63,13 @@
                       locale: 'auto',
                       name: 'Dinja',
                       description: '<%= @order.order_items.size %> recipes',
-                      amount: '<%= @order.price_cents %>',
+                      amount: <%= @order.price_cents %>,
                       currency: 'EUR',
                       email: '<%= @user.email %>',
-                      zipCode: true,
                       token: function(token) {
-                        console.log(token);
                         $('.loading').removeClass('hidden');
+                        var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+                        $('#payment_form').append($input).submit();
                       }
                     });
 
@@ -79,10 +79,6 @@
                     });
                   </script>
                 <% end %>
-
-
-
-
 
 
             <% end %>

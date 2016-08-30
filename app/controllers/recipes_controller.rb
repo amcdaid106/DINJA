@@ -39,7 +39,9 @@ class RecipesController < ApplicationController
   private
 
   def set_order
-    @order = current_user.orders.where(status: 'pending').first
+    if current_user
+      @order = current_user.orders.where(status: 'pending').first
+    end
   end
 
   def index
