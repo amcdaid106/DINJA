@@ -1,0 +1,5 @@
+# config/meta.yml
+meta_title: "Sick of hearing 'What's for dinner?'"
+meta_description: "Dinja shops diversified meals for you, you do the cooking."
+meta_image: "facebook.png" # Une image dans votre dossier app/assets/images/
+twitter_account: "@coconst" # indispensable pour les Twitter Cards
