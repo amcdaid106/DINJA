@@ -8,4 +8,8 @@ $(document).ready(function() {
     target = $(this).data('target');
     $('#' + target).removeClass('hidden');
   })
+  $('.modal-recipe').on('shown.bs.modal', function() {
+    $('.details').addClass('active');
+    $('.details-content').removeClass('hidden');
+  })
 })
