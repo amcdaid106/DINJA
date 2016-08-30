@@ -44,7 +44,9 @@ class RecipesController < ApplicationController
   private
 
   def set_order
+    if current_user
     @order = current_user.orders.where(status: 'pending').first
+  end
   end
 
 
