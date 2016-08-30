@@ -37,20 +37,49 @@
             </div>
             <div class="panel-body">
 
-            <%= form_tag order_payments_path(@order) do %>
+            <%= form_tag order_payments_path(@order), id: "payment_form" do %>
               <article>
                 <label class="price">
                   <span>Amount: <%= humanized_money_with_symbol(@order.price) %></span>
                 </label>
               </article>
 
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+<!--               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-name="My Order"
+                data-name="Dinja"
                 data-description="<%= @order.order_items.size %> recipes"
                 data-amount="<%= @order.price_cents %>"
                 data-currency="EUR"
-                data-email="@user.email"></script>
+                data-email="<%= @user.email %>"></script> -->
+
+                <button class="payment-button">Purchase</button>
+
+                <% content_for :after_js do %>
+                  <script src="https://checkout.stripe.com/checkout.js"></script>
+                  <script>
+                    var handler = StripeCheckout.configure({
+                      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+                      image: '<%= asset_path "logo3.png" %>',
+                      locale: 'auto',
+                      name: 'Dinja',
+                      description: '<%= @order.order_items.size %> recipes',
+                      amount: <%= @order.price_cents %>,
+                      currency: 'EUR',
+                      email: '<%= @user.email %>',
+                      token: function(token) {
+                        $('.loading').removeClass('hidden');
+                        var $input = $('<input type=hidden name=stripeToken />').val(token.id);
+                        $('#payment_form').append($input).submit();
+                      }
+                    });
+
+                    $('.payment-button').on('click', function(e) {
+                      e.preventDefault();
+                      handler.open();
+                    });
+                  </script>
+                <% end %>
+
 
             <% end %>
 
