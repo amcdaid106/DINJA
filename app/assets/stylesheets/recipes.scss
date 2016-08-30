@@ -120,23 +120,23 @@
   padding-bottom: 50px;
 }
 .recipe-place-order-button {
-  background-color: $yellow;
-  color: $blue-dark;
+  background-color: $red;
+  color: $white;
   border-radius: 4px;
   font-family: $base-font;
   padding: 12px 36px;
   font-weight: 400px;
-  font-size: 30px;
+  font-size: 20px;
   &:hover {
   opacity: 0.8;
   text-decoration: none;
-  color: $blue-dark;
   }
 }
 
 #newsletter {
-  background-color: $yellow;
-  opacity: 0.6;
+  background-color: $gray-darker;
+  opacity: 0.8;
+  color: $white;
   p {
     font-size: 16px;
     font-family: $base-font;
@@ -147,6 +147,7 @@
   }
 }
 .contact-dinja-form {
+  opacity: 1;
   margin-bottom: 40px;
 }
 
