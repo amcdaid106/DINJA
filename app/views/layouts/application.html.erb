@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= favicon_link_tag "favicon.ico" %>
   </head>
   <body>
+    <div class="loading hidden">
+      <i class="fa fa-circle-o-notch fa-spin"></i>
+    </div>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <div class="wrapper">
