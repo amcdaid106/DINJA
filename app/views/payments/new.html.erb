@@ -14,6 +14,8 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Address for delivery</h3>
+                <div class="banner-map" style='background-image: url("https://maps.googleapis.com/maps/api/staticmap?center=<%= @order.address %>&zoom=17&key=AIzaSyB43mAjLeq18-tumQ8ytChKGtMM_Rr1Wx0&size=1200x600&sensor=false&maptype=roadmap&markers=color:red|<%= @order.address %>"); height: 200px; background-size: cover;background-position: center center'>
+              </div>
             </div>
             <div class="panel-body">
 
