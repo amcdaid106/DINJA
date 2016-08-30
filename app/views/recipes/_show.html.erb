@@ -12,15 +12,15 @@
               <%= simple_form_for OrderItem.new, remote: true do |f| %>
                 <%= hidden_field_tag :referral, 'recipe_show' %>
                 <%= f.association :recipe, as: :hidden, input_html: { value: recipe.id } %>
-                <span id='added-button-<%= recipe.id %>'>
-                  <%= order_item_quantity_label(@order, recipe, 'recipe_show') %>
+                <span id='modal-added-button-<%= recipe.id %>'>
+                  <%= order_item_quantity_label_in_show(@order, recipe) %>
                 </span>
                 <%= f.submit "Add to cart", class: "recipe-add-to-cart-button" %>
               <% end %>
-              <%= link_to edit_order_path(current_order), class: "text-right" do %>
-                <i class="fa fa-shopping-cart recipe-show-cart"></i>  <%= t(".profile", default: "") %>
-              <% end %>
             </div>
+            <%= link_to edit_order_path(current_order), class: "text-right" do %>
+              <i class="fa fa-shopping-cart recipe-show-cart"></i>  <%= t(".profile", default: "") %>
+            <% end %>
           </div>
         </div>
       </div>
