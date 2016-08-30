@@ -16,9 +16,11 @@
         <div class="col-xs-12 col-sm-4 order-item-col-centered">
           <p><%= recipe.name %></p>
         </div>
+
         <div class="col-xs-12 col-sm-4 order-item-col-centered">
           <%= link_to recipe_path(recipe) do %>
-            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width: 15px;">
+            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width: 15px; display: flex;
+  align-items: flex-end;">
               <% end %>
         </div>
 

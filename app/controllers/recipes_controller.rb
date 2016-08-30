@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @orders = Order.where({ user_id: params[:user_id] })
-    @recipes = @orders.where(status: "paid").map(&:recipes).flatten.uniq
+    @recipes = @orders.where(status: "paid").map(&:recipes).flatten.uniq.sort_by!{ |recipe| recipe.name.downcase}
   end
 
   def show
