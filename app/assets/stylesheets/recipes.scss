@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 115px;
+  min-height: 130px;
   position: relative;
 }
 
@@ -88,8 +88,12 @@
   font-size: 22px;
   font-weight: 400;
 }
-
+.buttons-inline {
+  display: flex;
+  align-items: center;
+}
 .recipe-select {
+  margin-left: 5px;
   background-color: $red;
   opacity: 0.9;
   color: $white;
@@ -106,7 +110,6 @@
   }
 }
 .recipe-added-count {
-  margin-bottom: 7px;
   height: 34px;
 }
 
