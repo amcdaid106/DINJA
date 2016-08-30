@@ -1,5 +1,11 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :weekly ]
+  before_action :set_order
+
+  def index
+    @orders = Order.where({ user_id: params[:user_id] })
+    @recipes = @orders.where(status: "paid").map(&:recipes).flatten.uniq
+  end
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -50,6 +56,16 @@ class RecipesController < ApplicationController
     end
 
   end
+
+
+  private
+
+  def set_order
+    if current_user
+      @order = current_user.orders.where(status: 'pending').first
+    end
+  end
+
 
 end
 

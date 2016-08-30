@@ -1,0 +1,35 @@
+<div class="order-process-container">
+  <div class="cart-confirm-container">
+    <div class="cart-heading text-center">
+      <h2> My Recipes </h2>
+      <hr>
+    </div>
+
+    <% @recipes.each do |recipe|  %>
+      <div class="row order-item-cart">
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="order-picture">
+            <%= image_tag recipe.photo %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 order-item-col-centered">
+          <p><%= recipe.name %></p>
+        </div>
+        <div class="col-xs-12 col-sm-4 order-item-col-centered">
+          <p><%= recipe.description %></p>
+        </div>
+
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

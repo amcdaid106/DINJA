@@ -1,0 +1,28 @@
+<div class="order-process-container">
+  <div class="cart-confirm-container">
+    <div class="cart-heading text-center">
+      <h2>My orders</h2>
+      <hr>
+    </div>
+
+    <% @orders_paid.each do |orders_paid| %>
+    <div class="row order-item-cart">
+      <div class="col-xs-12 col-sm-3">
+        <p> Order number : <%= orders_paid.id%></p>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p><%= orders_paid.created_at.strftime("%B, %d, %Y")%></p>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p><%= orders_paid.price%> €</p>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p> Paid <i class="fa fa-check" aria-hidden="true"></i></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+

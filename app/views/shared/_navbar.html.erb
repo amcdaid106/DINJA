@@ -1,25 +1,17 @@
 <div class="navbar-container">
-  <!-- <div class="row"> -->
     <div class="navbar navbar-fixed">
-      <!-- <div class="col-xs-4"> -->
-        <div class="navbar-side navbar-how-it-works">
-          <%= link_to "#how-it-works" do %>
-            <p>How it works</p>
-          <% end %>
-        </div>
-      <!-- </div> -->
-      <!-- <div class="col-xs-4 navbar-center"> -->
-        <!-- <div class="horizontal-space"></div> -->
+        <% if controller_name == "recipes" && action_name == "weekly" %>
+          <div class="navbar-side navbar-how-it-works">
+            <%= link_to "#how-it-works", id: "link-how-it-works" do %>
+              <p>How it works</p>
+            <% end %>
+          </div>
+        <% end %>
         <%= link_to root_path do %>
           <%= image_tag "logo3.png", class: "navbar-logo" %>
         <% end %>
-      <!-- </div> -->
-      <!-- <div class="col-xs-4 navbar-right"> -->
-        <!-- Different navigation if login or not -->
-        <!-- <div class="navbar-right-items"> -->
           <div class="navbar-side navbar-side-right text-right">
             <% if user_signed_in? %>
-              <!-- Profile picture and dropdown -->
               <div class="navbar-item">
                 <div class="dropdown">
                  <p class="dropdown-toggle text-right" id="navbar-wagon-menu" data-toggle="dropdown" > <%=current_user.first_name %> <i class="fa fa-caret-down" aria-hidden="true"></i></p>
@@ -31,12 +23,12 @@
                       <% end %>
                     </li>
                     <li>
-                      <%= link_to "#" do %>
+                      <%= link_to user_orders_path(current_user) do %>
                         <i class="fa fa-check-square-o"></i>  <%= t(".profile", default: "My orders") %>
                       <% end %>
                     </li>
                     <li>
-                      <%= link_to "#" do %>
+                      <%= link_to user_recipes_path(current_user) do %>
                         <i class="fa fa-cutlery"></i>  <%= t(".profile", default: "My recipes") %>
                       <% end %>
                     </li>
@@ -49,7 +41,7 @@
                 </div>
               </div>
               <!-- Cart -->
-              <%= link_to "#{}", class: "cart-link text-right" do %>
+              <%= link_to edit_order_path(current_order), class: "text-right" do %>
                 <i class="fa fa-shopping-cart navbar-cart"></i>  <%= t(".profile", default: "") %>
               <% end %>
             <% else %>
@@ -60,10 +52,5 @@
 
 
           </div>
-        <!-- </div> -->
       </div>
-
-      <!-- </div> -->
-
-<!-- </div> -->
 </div>
