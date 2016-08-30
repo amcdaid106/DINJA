@@ -42,9 +42,8 @@
 <div class="weekly-section">
   <div class="container weekly-container">
     <div class="row">
-      <div class="recipe-category-title-start"><h4 class="recipe-category-title">Starters</h4> </div>
+      <div id="starters" class="recipe-category-title-start"><h4 class="recipe-category-title">Starters</h4></div>
         <% @starters.each do |starter| %>
-
           <div class="col-xs-12 col-sm-4">
             <div class="recipe-container">
             <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{starter.id}" do %>
@@ -70,8 +69,7 @@
               </div>
             </div>
           </div>
-
-          <%= render 'recipes/show', recipe: starter %>
+        <%= render 'recipes/show', recipe: starter %>
         <% end %>
     </div>
   </div>
