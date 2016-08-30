@@ -175,6 +175,29 @@
   display: flex;
   justify-content: flex-end;
 }
+
+// .recipe-close {
+//   display: flex;
+// }
+
+.close {
+  position: absolute;
+  right: -53px;
+  top: -25px;
+  color: white;
+  opacity: 1;
+  border: 2px solid white !important;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.modal-recipe {
+  .modal-dialog {
+    width:1200px;
+  }
+}
+
 .recipe-add-to-cart-button {
   color: $white;
   background-color: $red;
@@ -260,10 +283,11 @@
   border-left: 0.2px solid $gray-lighter;
   border-right: 0.2px solid $gray-lighter;
   border-bottom: 0.2px solid $gray-lighter;
-  height: calc(400px - 54px);
+  height: calc(400px - 60px);
   overflow: scroll;
   text-align: left;
   padding: 30px;
   font-size: 18px;
 }
+
 

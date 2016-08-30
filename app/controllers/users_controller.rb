@@ -1,11 +1,23 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  # before_action :set_user, only: [:edit, :update]
 
   def edit
+    @user = current_user
   end
 
   def update
-    @user.update(user_params)
+    current_user.assign_attributes(user_params)
+    current_user.last_meals_update = Date.today - 14.days
+    current_user.banished_ingredients.destroy_all
+
+    if params[:banned_ingredients]
+      params[:banned_ingredients].each do |banned_ingredient_id|
+        BanishedIngredient.create(user: current_user, ingredient_id: banned_ingredient_id)
+      end
+    end
+
+    current_user.save
+
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js
@@ -20,8 +32,8 @@ class UsersController < ApplicationController
       :max_calories, :max_prep_time)
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
 
 end
