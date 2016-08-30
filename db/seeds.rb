@@ -2,7 +2,7 @@
 OrderItem.destroy_all
 Order.destroy_all
 Dose.destroy_all
-Ingredient.destroy_all
+#Ingredient.destroy_all
 Recipe.destroy_all
 
 
@@ -13,12 +13,12 @@ Drain and rinse the beans. Add the beans, walnuts, oats, garlic powder, cumin, a
 Keeping the corn in the husk, place the ears on the middle rack for 15 to 20 minutes or until the husk is golden brown.Keeping the corn in the husk, place the ears on the middle rack for 15 to 20 minutes or until the husk is golden brown."
 
 
-chickpea =  Ingredient.create(name: "chickpea")
-peanut =  Ingredient.create(name: "peanut")
-sesame_oil =  Ingredient.create(name: "sesame oil")
-sesame_pastry =  Ingredient.create(name: "sesame pastry")
-garlic =  Ingredient.create(name: "garlic")
-lemon =  Ingredient.create(name: "lemons")
+#chickpea =  Ingredient.create(name: "chickpea")
+#peanut =  Ingredient.create(name: "peanut")
+#sesame_oil =  Ingredient.create(name: "sesame oil")
+#sesame_pastry =  Ingredient.create(name: "sesame pastry")
+#garlic =  Ingredient.create(name: "garlic")
+#lemon =  Ingredient.create(name: "lemons")
 
 
 houmous = Recipe.create(name: "Houmous with peanuts", category: "starter", photo: "houmous.png", description: "Hummus is this delicious mashed chickpeas, blended with tahini, the sesame paste. Hummus is native to the Middle East countries. It is eaten raw, with raw vegetables, or with pita bread!", price:3, prep_time:6 , cooking_time:0, calories:150,
@@ -35,7 +35,7 @@ lemon = Dose.create(measure: "2" , ingredient: lemon, recipe: houmous)
 
 bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 9, photo: "bean_burger.png", instructions: dummy_instructions, prep_time: 15, cooking_time: 20, category: "Main course", calories: 907, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
-parsley = Ingredient.create(name: "Fresh parsley")
+#parsley = Ingredient.create(name: "Fresh parsley")
 Dose.create(measure: "a bunch", recipe: bean_burger, ingredient: parsley)
 romaine = Ingredient.create(name: "Romaine lettuce")
 Dose.create(measure: "2 leaves", recipe: bean_burger, ingredient: romaine)
@@ -101,15 +101,15 @@ tuscan_chicken = Recipe.create(name: "Tuscan Chicken", description: "Tuscan Chic
 
 # garlic
 Dose.create(measure: "2 cloves", recipe: tuscan_chicken, ingredient: garlic)
-chicken = Ingredient.create(name: "Skinless Chicken")
+#chicken = Ingredient.create(name: "Skinless Chicken")
 Dose.create(measure: "2 breasts", recipe: tuscan_chicken, ingredient: chicken)
-red_onion = Ingredient.create(name: "Red onion")
+#red_onion = Ingredient.create(name: "Red onion")
 Dose.create(measure: "1", recipe: tuscan_chicken, ingredient: red_onion)
-red_bell_pepper = Ingredient.create(name: "Red Bell Pepper")
+#red_bell_pepper = Ingredient.create(name: "Red Bell Pepper")
 Dose.create(measure: "1", recipe: tuscan_chicken, ingredient: red_bell_pepper)
 # courgette
 Dose.create(measure: "1", recipe: tuscan_chicken, ingredient: courgette)
-orange_bell_pepper = Ingredient.create(name: "Orange Bell Pepper")
+#orange_bell_pepper = Ingredient.create(name: "Orange Bell Pepper")
 Dose.create(measure: "1", recipe: tuscan_chicken, ingredient: orange_bell_pepper)
 
 

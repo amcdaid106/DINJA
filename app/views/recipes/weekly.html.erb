@@ -42,13 +42,14 @@
 <div class="weekly-section">
   <div class="container weekly-container">
     <div class="row">
-      <div class="recipe-category-recipe-category-title-start" id="starters"><h4 class="recipe-category-title">Starters</h4> </div>
+      <div class="recipe-category-title-start"><h4 class="recipe-category-title">Starters</h4> </div>
         <% @starters.each do |starter| %>
           <div class="col-xs-12 col-sm-4">
-           <%= link_to recipe_path(starter) do  %>
             <div class="recipe-container">
+            <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{starter.id}" do %>
               <div class="recipe-picture" style="background: url('<%= image_path starter.photo %>');">
               </div>
+              <% end %>
               <div class="recipe-footer">
                 <div class="recipe-title"><%= starter.name %></div>
                 <div class="recipe-actions">
@@ -60,12 +61,14 @@
                 </div>
               </div>
             </div>
-            <% end %>
           </div>
+
+          <%= render 'recipes/show', recipe: starter %>
         <% end %>
     </div>
   </div>
 </div>
+
 
 <div class="weekly-section">
   <div class="container weekly-container">
@@ -75,8 +78,10 @@
           <div class="col-xs-12 col-sm-4">
           <%= link_to recipe_path(main) do  %>
             <div class="recipe-container">
+            <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{main.id}" do %>
               <div class="recipe-picture" style="background: url('<%= image_path main.photo %>');">
               </div>
+              <% end %>
               <div class="recipe-footer">
                 <div class="recipe-title"><%= main.name %></div>
                 <div class="recipe-actions">
@@ -90,6 +95,8 @@
             </div>
             <% end %>
           </div>
+
+         <%= render 'recipes/show', recipe: main %>
         <% end %>
     </div>
   </div>
@@ -103,8 +110,10 @@
           <div class="col-xs-12 col-sm-4">
           <%= link_to recipe_path(dessert) do  %>
             <div class="recipe-container">
+            <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{dessert.id}" do %>
               <div class="recipe-picture" style="background: url('<%= image_path dessert.photo %>');">
               </div>
+              <% end %>
               <div class="recipe-footer">
                 <div class="recipe-title"><%= dessert.name %></div>
                 <div class="recipe-actions">
@@ -117,6 +126,8 @@
               </div>
             </div>
             <% end %>
+            <%= render 'recipes/show', recipe: dessert %>
+
           </div>
         <% end %>
     </div>

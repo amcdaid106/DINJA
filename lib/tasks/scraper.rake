@@ -14,8 +14,8 @@ namespace :dinja do
         html_doc = Nokogiri::HTML(html_file)
 
         html_doc.search('h3>a').each do |ingred|
-
-          Ingredient.create(name: ingred.attribute('title'))
+          puts ingred.attributes['title'].value.capitalize
+          Ingredient.where(name: ingred.attributes['title'].value.capitalize).first_or_create
         end
       end
     end
