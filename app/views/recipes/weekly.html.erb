@@ -54,14 +54,17 @@
                 <div class="recipe-title"><%= starter.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= starter.price %>€</div>
-
-                  <%= simple_form_for OrderItem.new, remote: true do |f| %>
-                    <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
-                    <span id='added-button-<%= starter.id %>'>
-                      <%= order_item_quantity_label(@order, starter) %>
-                    </span>
-                    <%= f.submit " + ", class: "recipe-select" %>
+                  <% if current_user %>
+                    <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                      <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
+                      <div class="buttons-inline">
+                        <span id='added-button-<%= starter.id %>'>
+                          <%= order_item_quantity_label(@order, starter) %>
+                        </span>
+                        <%= f.submit " + ", class: "recipe-select" %>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -86,13 +89,17 @@
                 <div class="recipe-title"><%= main.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= main.price %>€</div>
-                  <%= simple_form_for OrderItem.new, remote: true do |f| %>
-                    <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
-                    <span id='added-button-<%= main.id %>'>
-                      <%= order_item_quantity_label(@order, main) %>
-                    </span>
-                    <%= f.submit " + ", class: "recipe-select" %>
+                  <% if current_user %>
+                    <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                      <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
+                      <div class="buttons-inline">
+                        <span id='added-button-<%= main.id %>'>
+                          <%= order_item_quantity_label(@order, main) %>
+                        </span>
+                        <%= f.submit " + ", class: "recipe-select" %>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -117,12 +124,16 @@
                 <div class="recipe-title"><%= dessert.name %></div>
                 <div class="recipe-actions">
                   <div class="recipe-price"><%= dessert.price %>€</div>
-                  <%= simple_form_for OrderItem.new, remote: true do |f| %>
-                    <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
-                    <span id='added-button-<%= dessert.id %>'>
-                      <%= order_item_quantity_label(@order, dessert) %>
-                    </span>
-                    <%= f.submit " + ", class: "recipe-select" %>
+                  <% if current_user %>
+                    <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                      <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
+                      <div class="buttons-inline">
+                        <span id='added-button-<%= dessert.id %>'>
+                          <%= order_item_quantity_label(@order, dessert) %>
+                        </span>
+                        <%= f.submit " + ", class: "recipe-select" %>
+                      </div>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
