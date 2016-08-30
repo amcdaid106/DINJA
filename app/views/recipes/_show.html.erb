@@ -18,8 +18,10 @@
                 <%= f.submit "Add to cart", class: "recipe-add-to-cart-button" %>
               <% end %>
             </div>
-            <%= link_to edit_order_path(current_order), class: "text-right" do %>
-              <i class="fa fa-shopping-cart recipe-show-cart"></i>  <%= t(".profile", default: "") %>
+            <% if current_user %>
+              <%= link_to edit_order_path(current_order), class: "text-right" do %>
+                <i class="fa fa-shopping-cart recipe-show-cart"></i>  <%= t(".profile", default: "") %>
+              <% end %>
             <% end %>
           </div>
         </div>
