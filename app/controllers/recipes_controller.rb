@@ -2,6 +2,11 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :weekly ]
   before_action :set_order
 
+  def index
+    @orders = Order.where({ user_id: params[:user_id] })
+    @recipes = @orders.where(status: "pending").map(&:recipes).flatten
+  end
+
   def show
     @recipe = Recipe.find(params[:id])
     @user = current_user
@@ -42,10 +47,7 @@ class RecipesController < ApplicationController
     @order = current_user.orders.where(status: 'pending').first
   end
 
-  def index
-    @orders = Order.where({ user_id: params[:user_id] })
-    @orders_confirmed = @orders.where(status: "pending").map(&:recipes).flatten
-  end
+
 end
 
 # Ajouter une semaine aux meals (ex: 1, 2, 3, 4...)

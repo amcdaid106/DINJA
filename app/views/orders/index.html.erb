@@ -7,19 +7,20 @@
 
     <% @orders_pending.each do |orders_pending| %>
     <div class="row order-item-cart">
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3">
         <p> Order number : <%= orders_pending.id%></p>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3">
         <p><%= orders_pending.created_at.strftime("%B, %d, %Y")%></p>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3">
         <p><%= orders_pending.price%> €</p>
       </div>
+      <div class="col-xs-12 col-sm-3">
+        <p> Paid <i class="fa fa-check" aria-hidden="true"></i></p>
+      </div>
     </div>
-    <%end%>
-
-
+    <% end %>
   </div>
 </div>
 
