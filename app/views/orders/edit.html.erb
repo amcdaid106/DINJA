@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-sm-6 orders-controls-container order-item-col-centered">
-              <div>€<span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00</div>
+              <div><span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00€</div>
               <div class="orders-controls-quantity">
                 <div class="orders-controls-plus-minus">
                   <i class="fa fa-minus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
@@ -30,7 +30,7 @@
                 </div>
               </div>
 
-              <div>€<span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00</div>
+              <div><span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00€</div>
               <%= link_to order_item_path(order_item), method: :delete, data: {confirm: "Are you sure you want to delete #{order_item.recipe.name}?"}, remote: true do %>
                 <i class="fa fa-trash" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
               <% end %>
@@ -39,7 +39,7 @@
         <% end %>
         <div class="row">
           <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-9">
-            <h4 class="text-right">Grand Total: €<span id="grand_total"><%= @grand_total %></span>.00</h4>
+            <h4 class="text-right">Grand Total: <span id="grand_total"><%= @grand_total %></span>.00€</h4>
             <%= submit_tag "Pay and Checkout", class: "btn btn-success orders-checkout-button" %>
           </div>
         </div>

@@ -17,7 +17,7 @@
          <div class="features text-center" style = "padding-top: 15px">
           <img  src="<%= asset_path "compose.png" %>"/>
           <h3>Complete your profile</h3>
-          <p>Let us know if you have any food preferences, restrictions, or allergies, and we'll only suggest dishes that suit you.</p>
+          <p>Let us know if you have any food preferences, restrictions, or allergies, and you'll only see dishes that match your profile.</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -53,7 +53,7 @@
               <div class="recipe-footer">
                 <div class="recipe-title"><%= starter.name %></div>
                 <div class="recipe-actions">
-                  <div class="recipe-price"><%= starter.price %>€</div>
+                  <div class="recipe-price"><%= starter.price %>.00€</div>
                   <% if current_user %>
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
@@ -88,7 +88,7 @@
               <div class="recipe-footer">
                 <div class="recipe-title"><%= main.name %></div>
                 <div class="recipe-actions">
-                  <div class="recipe-price"><%= main.price %>€</div>
+                  <div class="recipe-price"><%= main.price %>.00€</div>
                   <% if current_user %>
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
@@ -123,7 +123,7 @@
               <div class="recipe-footer">
                 <div class="recipe-title"><%= dessert.name %></div>
                 <div class="recipe-actions">
-                  <div class="recipe-price"><%= dessert.price %>€</div>
+                  <div class="recipe-price"><%= dessert.price %>.00€</div>
                   <% if current_user %>
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>

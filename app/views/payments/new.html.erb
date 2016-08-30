@@ -17,9 +17,9 @@
               <% @order.order_items.each do |item| %>
                 <div class="order-item-checkout">
                   <p><%= item.recipe.name %></p>
-                  <p>€<%= item.recipe.price %>.00</p>
+                  <p><%= item.recipe.price %>.00€</p>
                   <p><%= item.quantity %></p>
-                  <p>€<%= item.recipe.price*item.quantity %></p>
+                  <p><%= item.recipe.price*item.quantity %>.00€</p>
                 </div>
               <% end %>
               <div class="line-button">
@@ -27,7 +27,7 @@
                 <%= link_to edit_order_path(@order) do %>
                   <button class="btn btn-default pull-right confirm-order-button">Edit</button>
                 <% end %>
-                <h4>Grand total: €<%= @grand_total %>.00</h4>
+                <h4>Grand total: <%= @grand_total %>.00€</h4>
               </div>
             </div>
           </div>

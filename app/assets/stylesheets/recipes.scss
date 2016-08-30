@@ -28,6 +28,18 @@
 }
 .features-container {
   margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: $gray-background;
+  .features {
+    p {
+      margin: 0 38px;
+    }
+    img {
+      height: 110px;
+      margin-bottom: 25px;
+    }
+
+  }
 }
 
 .weekly-section {
@@ -130,6 +142,7 @@
   &:hover {
   opacity: 0.8;
   text-decoration: none;
+  color: white;
   }
 }
 

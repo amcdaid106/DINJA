@@ -12,6 +12,6 @@ module ApplicationHelper
   end
 
   def humanized_money_with_symbol(price)
-    "€#{price}.00"
+    "#{price}.00€"
   end
 end
