@@ -13,6 +13,9 @@ class RecipesController < ApplicationController
   end
 
   def weekly
+    if params[:target]
+      @target = params[:target]
+    end
     if user_signed_in?
       if current_user.has_user_completed_food_preferences?
         @recipes = Recipe.all
