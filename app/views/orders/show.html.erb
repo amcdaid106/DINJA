@@ -1,11 +1,11 @@
 <div class="order-process-container">
   <div class="order-confirmation-heading text-center">
-    <h2>Order complete!</h2>
+    <h2>ORDER COMPLETE!</h2>
     <hr>
   </div>
 
 
-  <h4 class="text-center">Keep an eye out for your Dinja box. <strong>Expected delivery: Aug 29, 2016</strong></h4>
+  <h4 class="text-center">Keep an eye out for your Dinja box. <strong>Delivery: Aug 29, 2016</strong></h4>
 
   <br>
 
@@ -36,8 +36,9 @@
       <% end %>
       <hr>
       <div class="row">
-        <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-9">
-          <h4>Grand total: <%= @grand_total %>.00€</h4>
+        <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-10">
+          <h4>€<%= @grand_total %>.00</h4>
+          <div> <%= link_to "And now back to home !", "/" %><div>
         </div>
       </div>
     </div>

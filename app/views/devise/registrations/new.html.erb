@@ -4,6 +4,18 @@
     <hr>
   </div>
 
+
+  <% resource_class.omniauth_providers.each do |provider| %>
+    <div class="facebook-button text-center">
+      <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+        <i class="fa fa-facebook"></i><%= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %>
+      <% end %>
+    </div>
+    <br />
+  <% end %>
+
+ <div class="recipe-category-title-start"><p class="option">  or  </p></div>
+
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 

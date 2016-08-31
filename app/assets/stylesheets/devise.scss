@@ -45,6 +45,7 @@
   font-weight: 400px;
   font-size: 20px;
   border: none;
+  width: 100%;
   &:hover {
   background-color: $blue;
   opacity: 0.8;
@@ -52,4 +53,52 @@
   color: $white;
   }
 }
+
+
+.facebook-button {
+  background: #3A5B9A;
+  padding: 15px 30px;
+  border-radius: 5px;
+  width: 100%;
+  a {
+    color: white;
+  }
+  i {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+
+.police-links {
+  font-family: $base-font;
+  font-size: 15px;
+  color : $gray;
+}
+
+
+.option {
+  color: gray;
+  font-style: italic;
+  font-family: $base-font;
+  font-size: 20px;
+   position: relative;
+   z-index: 4;
+   overflow: hidden;
+   text-align: center;
+ &:before, &:after {
+     position: absolute;
+     top: 51%;
+     overflow: hidden;
+     width: 50%;
+     height: 1px;
+     content: '\a0';
+     background-color: $gray-background;
+ }
+ &:before {
+     margin-left: -50%;
+     text-align: right;
+ }
+}
+
+
 

@@ -9,9 +9,16 @@
   border-color: none;
 }
 .alert-info {
-  background: $green-light;
-  border-color: $green-light;
+  background: $blue;
+  border-color: $blue;
+  opacity: 0.5;
 }
 .alert-warning {
   background: $red;
+  opacity: 0.5;
+}
+
+.close {
+  opacity: 1;
+  color: white;
 }

@@ -7,15 +7,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 94px;
+  height: 96px;
   padding: 0px 55px;
   margin: 0px;
 }
 .navbar-how-it-works {
-  font-size: 20px;
+  font-size: 18px;
   font-family: $header-font;
   a {
-    color: $gray-dark;
+    color: $gray;
+  }
+  p {
+    margin-bottom: 0px;
   }
 }
 
@@ -54,7 +57,7 @@
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter;
-  color: $gray-font;
+  color: $gray;
   font-size: 15px;
   line-height: 22px;
   padding: 10px 20px;
@@ -85,10 +88,16 @@
   color: $gray;
   font-size: 14px;
   &:hover {
-    color: $red;
+    color: $blue;
   }
 }
 .navbar-link:hover {
-  color: $red;
+  color: $blue;
   text-decoration: none;
+}
+
+.police {
+  color: $gray;
+  font-size: 18px;
+  font-family: $header-font;
 }

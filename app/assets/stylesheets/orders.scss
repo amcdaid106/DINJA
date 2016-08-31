@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .order-process-container {
-  margin: 80px 250px;
+  margin: 60px 250px;
 }
 .cart-confirm-container {
   background-color: $white;
@@ -134,8 +134,8 @@
 
 // Style for orders#update
 .order-confirm-heading hr {
-  color: $green-light;
-  background-color: $green-dark;
+  color: $blue;
+  background-color: $blue;
   border: 1px solid;
   width: 40%;
 }
@@ -151,8 +151,8 @@
 
 // Style for orders#show
 .order-confirmation-heading hr {
-  color: $green-light;
-  background-color: $green-dark;
+  color: $blue;
+  background-color: $blue;
   border: 1px solid;
   width: 20%;
 }
@@ -184,6 +184,9 @@
   }
 }
 
+.order-confirmation-heading h2 {
+  font-size: 28px;
+}
 
 
 
