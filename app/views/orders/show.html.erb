@@ -6,7 +6,7 @@
   </div>
 
 
-  <h4 class="text-center">Keep an eye out for your Dinja box. <strong>Delivery: Aug 29, 2016</strong></h4>
+  <h4 class="text-center">Keep an eye out for your Dinja box. <strong>Delivery: <%= @order.delivery_date.strftime("%A, %b %d") %>   </strong></h4>
 
   <br>
   <div class="panel panel-default">

@@ -11,7 +11,7 @@
         <p> Order number : <%= orders_paid.id%></p>
       </div>
       <div class="col-xs-12 col-sm-3">
-        <p><%= orders_paid.created_at.strftime("%B, %d, %Y")%></p>
+        <p><%= orders_paid.delivery_date.strftime("%B, %d, %Y")%></p>
       </div>
       <div class="col-xs-12 col-sm-3">
         <p><%= orders_paid.price%> €</p>
