@@ -1,0 +1,55 @@
+Searching 162 files for ".btn" (case sensitive)
+
+/Users/Constance/code/ConstanceToul/DINJA/app/assets/stylesheets/pages/_weekly.scss:
+   20      letter-spacing: 1px;
+   21    }
+   22:   .btn {
+   23      background-color: $red;
+   24      opacity: 0.9;
+   ..
+   30      font-family: $base-font;
+   31    }
+   32:   .btn:hover {
+   33      background: $red;
+   34      opacity: 0.7;
+
+/Users/Constance/code/ConstanceToul/DINJA/public/404.html:
+   19
+   20
+   21:   .btn {
+   22    color: white;
+   23    padding: 20px 30px;
+   ..
+   31  }
+   32
+   33: .btn:hover {
+   34    opacity: 1;
+   35    background: #3ac162;
+
+/Users/Constance/code/ConstanceToul/DINJA/public/422.html:
+   19
+   20
+   21:   .btn {
+   22    color: white;
+   23    padding: 20px 30px;
+   ..
+   31  }
+   32
+   33: .btn:hover {
+   34    opacity: 1;
+   35    background: #3ac162;
+
+/Users/Constance/code/ConstanceToul/DINJA/public/500.html:
+   19
+   20
+   21:   .btn {
+   22    color: white;
+   23    padding: 20px 30px;
+   ..
+   31  }
+   32
+   33: .btn:hover {
+   34    opacity: 1;
+   35    background: #3ac162;
+
+8 matches across 4 files

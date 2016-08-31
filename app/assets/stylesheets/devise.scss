@@ -6,32 +6,50 @@
 
 .devise-login-heading {
   h2 {
-    text-align: left;
-    color: $green-light;
+    color: $blue;
     font-size: 24px;
     text-transform: uppercase;
     margin-top: 0;
   }
-  hr {
-    color: $green-light;
-    background-color: $green-dark;
-    border: 1px solid;
-    width: 22%;
-    margin-left: 0;
-    margin-top: 5px;
-  }
-  .sign-up {
-    hr {
-        width: 27%;
-    }
-  }
+  //hr {
+    //text-align: center;
+    //color: $blue;
+    //background-color: $blue;
+    //border: 1px solid;
+    //width: 22%;
+    //margin-left: 0;
+    //margin-top: 5px;
+  //}
+  //.sign-up {
+   // hr {
+    //    width: 27%;
+    //}
+  // }
 }
 .devise-form-inputs {
   label {
     opacity: 0.5;
   }
   input:focus {
-    border-color: $green-light;
+    border-color: $blue;
     box-shadow: none;
   }
 }
+
+.btn-log-in {
+  background-color: $blue;
+  color: $white;
+  border-radius: 4px;
+  font-family: $base-font;
+  padding: 10px 30px;
+  font-weight: 400px;
+  font-size: 20px;
+  border: none;
+  &:hover {
+  background-color: $blue;
+  opacity: 0.8;
+  text-decoration: none;
+  color: $white;
+  }
+}
+

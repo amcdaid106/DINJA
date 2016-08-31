@@ -1,7 +1,7 @@
 <div class="order-process-container">
   <div class="cart-confirm-container">
     <div class="cart-heading text-center">
-      <h2>Your Shopping Cart</h2>
+      <h2>YOUR SHOPPING CART</h2>
       <hr>
     </div>
     <% if @order.order_items.count > 0 %>
@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-9">
             <h4 class="text-right">Grand Total: <span id="grand_total"><%= @grand_total %></span>.00€</h4>
-            <%= submit_tag "Pay and Checkout", class: "btn btn-success orders-checkout-button" %>
+            <%= submit_tag "Pay", class: "btn orders-checkout-button" %>
           </div>
         </div>
       <% end %>
@@ -49,7 +49,7 @@
         <h4 class="text-center">There are currently no items in your cart. Time to get clicking and start cooking!</h4>
         <hr>
         <%= link_to root_path({target: 'starters'}) do  %>
-          <button class="btn btn-danger btn-lg">Check out this week's meals</button>
+          <button class="btn btn-check-meals btn-lg">Check out this week's meals</button>
         <% end %>
       </div>
     <% end %>
