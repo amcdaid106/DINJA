@@ -37,10 +37,10 @@ $(function() {
   });
 
   $('#banished_ingredients_autocomplete').bind('typeahead:select', function(ev, suggestion) {
-    var element = "<li>";
+    var element = "<li class='ingredient-and-delete'>";
     element = element + suggestion.name;
     element = element + '<input type="hidden" name="banned_ingredients[]" value="' + suggestion.id +'" />';
-    element = element + "<i class='fa fa-close remove-ingredient'></i>"
+    element = element + " <i class='fa fa-close remove-ingredient'></i>" // space is required
     element = element + "</li>";
 
     $('.no-excluded-ingredients').addClass('hidden');

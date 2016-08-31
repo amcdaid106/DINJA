@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     current_user.save
 
-    flash[:notice] = "Changes saved..."
+    flash[:notice] = "Changes saved!"
 
     respond_to do |format|
       format.html { redirect_to edit_user_path(current_user) }

@@ -10,8 +10,14 @@
     <%= f.input :vegetarian, as: :boolean %>
     <%= f.input :vegan, as: :boolean %>
   </div>
-  <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'E.g. 400' %>
-  <%= f.input :max_prep_time, label: "Max prep time (in minutes) per dish", placeholder: 'E.g. 25' %>
+  <div class="max-cals-prep-time">
+    <div class="cals-limit">
+      <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'E.g. 400' %>
+    </div>
+    <div class="prep-time-limit">
+      <%= f.input :max_prep_time, label: "Max prep time (in minutes) per dish", placeholder: 'E.g. 25' %>
+    </div>
+  </div>
   <div class="banished-ingredients-section">
     <div class="banished-ingredients-input">
       <div>
@@ -25,7 +31,7 @@
       <ul id="banished_ingredients_list" class="list-inline">
           <!-- Empty list, will be filled by js -->
         <% current_user.ingredients.each do |banned_ingredient| %>
-          <li>
+          <li class="ingredient-and-delete">
             <%= banned_ingredient.name %>
             <input type="hidden" name="banned_ingredients[]" value="<%= banned_ingredient.id %>"/>
             <i class="fa fa-close remove-ingredient"></i>
