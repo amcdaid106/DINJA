@@ -83,10 +83,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .fa-trash {
+  .fa-times {
     color: black;
     &:hover {
-      color: $red-dark;
+      color: $blue;
     }
   }
 }
@@ -105,10 +105,10 @@
     padding-right: 20px;
   }
   .fa-plus:hover {
-    color: $green-dark;
+    color: $blue;
   }
   .fa-minus:hover {
-    color: $green-dark;
+    color: $blue;
   }
 }
 

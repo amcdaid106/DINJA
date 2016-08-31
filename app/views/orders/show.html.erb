@@ -34,7 +34,7 @@
       <% end %>
       <hr>
       <div class="link-price">
-          <div class="link-home"> <%= link_to "Back to home!", "/" %></div>
+          <div class="link-home"> <%= link_to "Go to my orders", user_orders_path(current_user) %></div>
           <div class="total-price"><h4>€<%= @grand_total %>.00</h4></div>
       </div>
     </div>
