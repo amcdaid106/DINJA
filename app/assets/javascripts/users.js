@@ -43,12 +43,16 @@ $(function() {
     element = element + "<i class='fa fa-close remove-ingredient'></i>"
     element = element + "</li>";
 
+    $('.no-excluded-ingredients').addClass('hidden');
     $('#banished_ingredients_list').append(element);
-    $('.ingredient-list-heading').removeClass('hidden');
   });
 
-  $("#banished_ingredients_list").on("click", ".remove-ingredient", function(){
+  $(".user-profile-tab-content").on("click", ".remove-ingredient", function(){
     $(this).parent().remove();
+
+    if ($('#banished_ingredients_list li').length == 0) {
+      $('.no-excluded-ingredients').removeClass('hidden');
+    }
   });
 
 

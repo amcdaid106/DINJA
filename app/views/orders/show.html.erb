@@ -9,16 +9,13 @@
   <h4 class="text-center">Keep an eye out for your Dinja box. <strong>Delivery: <%= @order.delivery_date.strftime("%A, %b %d") %>   </strong></h4>
 
   <br>
-
   <div class="panel panel-default">
 
     <div class="panel-body">
       <% @order.order_items.each do |order_item| %>
-        <div class="row order-item-conf">
-          <div class="col-xs-12 col-sm-3">
-            <div class="order-picture">
-              <%= image_tag order_item.recipe.photo %>
-            </div>
+        <div class="cart-order-items" id="order_item_row_<%= order_item.id %>">
+          <div class="cart-order-picture">
+            <%= image_tag order_item.recipe.photo %>
           </div>
 
           <div class="cart-order-item-text">
@@ -26,18 +23,18 @@
             <div><span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00€</div>
             <div class="orders-controls-container">
               <div class="orders-controls-quantity">
-                <div class="orders-controls-plus-minus">
-                  <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
-                </div>
+                <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
               </div>
             </div>
             <div><span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00€</div>
           </div>
+
         </div>
+
       <% end %>
       <hr>
       <div class="link-price">
-          <div class="link-home"> <%= link_to "Back to home !", "/" %></div>
+          <div class="link-home"> <%= link_to "Back to home!", "/" %></div>
           <div class="total-price"><h4>€<%= @grand_total %>.00</h4></div>
       </div>
     </div>
