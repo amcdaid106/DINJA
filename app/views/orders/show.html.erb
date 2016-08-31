@@ -1,4 +1,5 @@
 <div class="order-process-container">
+  <div class="order-confirm-container">
   <div class="order-confirmation-heading text-center">
     <h2>ORDER COMPLETE!</h2>
     <hr>
@@ -11,9 +12,7 @@
 
 
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Order details</h3>
-    </div>
+
     <div class="panel-body">
       <% @order.order_items.each do |order_item| %>
         <div class="row order-item-conf">
@@ -35,12 +34,11 @@
         </div>
       <% end %>
       <hr>
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-6 col-sm-3 col-sm-offset-10">
-          <h4>€<%= @grand_total %>.00</h4>
-          <div> <%= link_to "And now back to home !", "/" %><div>
-        </div>
+      <div class="link-price">
+          <div class="link-home"> <%= link_to "Back to home !", "/" %></div>
+          <div class="total-price"><h4>€<%= @grand_total %>.00</h4></div>
       </div>
     </div>
+  </div>
   </div>
 </div>

@@ -8,6 +8,7 @@
 .cart-confirm-container {
   background-color: $white;
   padding: 30px;
+  border-radius: 3px;
 }
 
 // Style for orders#edit
@@ -186,6 +187,28 @@
 
 .order-confirmation-heading h2 {
   font-size: 28px;
+}
+
+.order-confirm-container {
+  background-color: $white;
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.link-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-home {
+  margin-left: 15px;
+  padding-left: 20px;
+}
+
+.total-price {
+  margin-right: 15px;
+  padding-right: 30px;
 }
 
 
