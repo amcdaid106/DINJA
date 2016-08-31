@@ -135,6 +135,9 @@
   justify-content: space-between;
   padding: 10px;
   margin: 10px;
+  &-name{
+    flex: 0 0 50%;
+  }
 }
 .order-item-conf {
   margin: 6px;

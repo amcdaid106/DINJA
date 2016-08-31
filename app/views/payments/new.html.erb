@@ -5,10 +5,9 @@
       <h2>Please confirm your order details</h2>
       <hr>
     </div>
-    <div class="row">
+
       <div class="confirm-all-info">
 
-        <div class="col-xs-12 col-sm-6 confirm-order" >
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Your order</h3>
@@ -16,10 +15,10 @@
             <div class="panel-body">
               <% @order.order_items.each do |item| %>
                 <div class="order-item-checkout">
-                  <p><%= item.recipe.name %></p>
-                  <p><%= item.recipe.price %>.00€</p>
-                  <p><%= item.quantity %></p>
-                  <p><%= item.recipe.price*item.quantity %>.00€</p>
+                  <p class="order-item-checkout-name"><%= item.recipe.name %></p>
+                  <p class="order-item-checkout-price"><%= item.recipe.price %>.00€</p>
+                  <p class="order-item-checkout-quantity"><%= item.quantity %></p>
+                  <p class="order-item-checkout-price"><%= item.recipe.price*item.quantity %>.00€</p>
                 </div>
               <% end %>
               <div class="line-button">
@@ -34,25 +33,38 @@
         </div>
 
 
-        <div class="col-xs-12 col-sm-6 confirm-address">
-
-
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title" style = "margin-bottom: 10px";>Address for delivery:
+                <div id="current-address" class="edit-address">
+                  <%= render "orders/address", order: @order %>
+                </div>
+              </h3>
+              <div id="edit-address-form" class="edit-address hidden">
+                <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true do |f| %>
+                  <%= f.input :address, placeholder: 'Address' %>
+                  <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary pull-right'  %>
+                <% end %>
+              </div>
+              <div id="address_map">
+                <%= render "payments/address_map", order: @order %>
+              </div>
+            </div>
+          </div>
 
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Pay with card</h3>
             </div>
             <div class="panel-body">
-
-            <%= form_tag order_payments_path(@order), id: "payment_form" do %>
-              <article>
-                <label class="price">
-                  <span>Total due: <%= humanized_money_with_symbol(@order.price) %></span>
-                </label>
-              </article>
-              <hr>
-
-              <button class="payment-button btn btn-success pull-right">Pay now</button>
+              <%= form_tag order_payments_path(@order), id: "payment_form" do %>
+                <article>
+                  <label class="price">
+                    <span>Total due: <%= humanized_money_with_symbol(@order.price) %></span>
+                  </label>
+                  <button class="payment-button btn btn-success pull-right">Pay now</button>
+                </article>
+                <hr>
 
               <% content_for :after_js do %>
                 <script src="https://checkout.stripe.com/checkout.js"></script>
@@ -79,36 +91,8 @@
                   });
                 </script>
               <% end %>
-
-
             <% end %>
-
             </div>
           </div>
-        </div>
       </div>
-    </div>
-
-    <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Address for delivery: </h3>
-              <div id="address_map">
-                <%= render "payments/address_map", order: @order %>
-              </div>
-            </div>
-            <div class="panel-body">
-
-              <div id="current-address" class="edit-address">
-                <%= render "orders/address", order: @order %>
-              </div>
-
-              <div id="edit-address-form" class="edit-address hidden">
-                <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true do |f| %>
-                  <%= f.input :address, placeholder: 'Address' %>
-                  <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary pull-right'  %>
-                <% end %>
-              </div>
-            </div>
-          </div>
   </div>
-</div>
