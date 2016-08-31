@@ -128,7 +128,7 @@
   font-size: 20px;
   border: 0px solid $red;
   &:hover {
-  opacity: 0.2;
+  opacity: 0.8;
   text-decoration: none;
   color: $white;
   }
@@ -157,15 +157,16 @@
 .recipe-place-order-button {
   background-color: $red;
   color: $white;
+  opacity: 0.9;
   border-radius: 4px;
   font-family: $base-font;
   padding: 12px 36px;
   font-weight: 400px;
   font-size: 20px;
   &:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   text-decoration: none;
-  color: white;
+  color: $white;
   }
 }
 
@@ -206,6 +207,7 @@
   h3 {
   margin-top: 11px;
   padding: 12px;
+  font-size: 21px;
   }
 }
 .recipe-info-details {
@@ -217,7 +219,7 @@
 //   display: flex;
 // }
 
-.close {
+.close-modal {
   position: absolute;
   right: -53px;
   top: -25px;
@@ -239,7 +241,7 @@
   color: $white;
   background-color: $red;
   font-family: $base-font;
-  opacity: 0.9px;
+  opacity: 0.9;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: 300px;
@@ -247,7 +249,7 @@
   transition: background 0.3s ease;
   border: none;
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
     text-decoration: none;
     color: $white;
   }
@@ -308,7 +310,7 @@
   }
 }
 .recipe-show-tab.active {
-  border-bottom: 5px solid $blue-dark;
+  border-bottom: 5px solid $blue;
   opacity: 1;
 }
 .recipe-show-tab-content {
