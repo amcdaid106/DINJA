@@ -8,33 +8,30 @@
       <%= form_tag order_path(@order), method: :patch do %>
         <% @order.order_items.each do |order_item| %>
           <%= hidden_field_tag "quantity_order_item_#{order_item.id}", order_item.quantity %>
-          <div class="row order-item-cart" id="order_item_row_<%= order_item.id %>">
+          <div class="cart-order-items" id="order_item_row_<%= order_item.id %>">
 
-            <div class="col-xs-12 col-sm-3">
-              <div class="order-picture">
-                <%= image_tag order_item.recipe.photo %>
-              </div>
+            <div class="cart-order-picture">
+              <%= image_tag order_item.recipe.photo %>
             </div>
 
-            <div class="col-xs-12 col-sm-3 order-item-col-centered">
+            <div class="cart-order-item-text">
               <h4 id="recipe_name_<%= order_item.id %>"><%= order_item.recipe.name %></h4>
-            </div>
-
-            <div class="col-sm-6 orders-controls-container order-item-col-centered">
               <div><span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00€</div>
-              <div class="orders-controls-quantity">
-                <div class="orders-controls-plus-minus">
-                  <i class="fa fa-minus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
-                  <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
-                  <i class="fa fa-plus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+              <div class="orders-controls-container">
+                <div class="orders-controls-quantity">
+                  <div class="orders-controls-plus-minus">
+                    <i class="fa fa-minus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+                    <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
+                    <i class="fa fa-plus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+                  </div>
                 </div>
               </div>
-
               <div><span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00€</div>
               <%= link_to order_item_path(order_item), method: :delete, data: {confirm: "Are you sure you want to delete #{order_item.recipe.name}?"}, remote: true do %>
                 <i class="fa fa-trash" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
               <% end %>
             </div>
+
           </div>
         <% end %>
         <div class="row">
