@@ -11,6 +11,7 @@
   <br>
 
 
+<<<<<<< HEAD
   <div class="panel panel-default">
 
     <div class="panel-body">
@@ -22,14 +23,17 @@
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-3 order-item-col-centered">
-            <h4><%= order_item.recipe_name %></h4>
-          </div>
-
-          <div class="col-sm-6 orders-controls-container order-item-col-centered">
-            <div>€<%= order_item.recipe.price %>.00</div>
-            <div><%= order_item.quantity %></div>
-            <div>€<%= order_item.recipe_price * order_item.quantity %>.00</div>
+          <div class="cart-order-item-text">
+            <h4 id="recipe_name_<%= order_item.id %>"><%= order_item.recipe.name %></h4>
+            <div><span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00€</div>
+            <div class="orders-controls-container">
+              <div class="orders-controls-quantity">
+                <div class="orders-controls-plus-minus">
+                  <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
+                </div>
+              </div>
+            </div>
+            <div><span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00€</div>
           </div>
         </div>
       <% end %>

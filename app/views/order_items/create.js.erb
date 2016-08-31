@@ -1,2 +1,2 @@
 $('#added-button-<%= @recipe.id %>').html("<%= j order_item_quantity_label(@order, @recipe) %>");
-$('#modal-added-button-<%= @recipe.id %>').html("<%= j order_item_quantity_label_in_show(@order, @recipe) %>");
+$('#modal-added-button-<%= @recipe.id %>').html("<%= j order_item_quantity(@order, @recipe, 'recipe_show') %>");

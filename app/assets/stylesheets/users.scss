@@ -8,7 +8,7 @@
 .user-profile-tab-list {
   display: flex;
   justify-content: space-between;
-  background-color: $gray-background;
+  background-size: cover;
   padding: 30px;
 }
 .user-profile-tabs-liner {
@@ -70,24 +70,6 @@
     text-decoration: none;
     padding: 20px;
   }
-  // &.food {
-  //   border-color: $gray-lighter;
-  //   i {
-  //   color: $gray-lighter;
-  //   }
-  // }
-  // &.personal {
-  //   border-color: $gray-lighter;
-  //   i {
-  //     color: $gray-lighter;
-  //   }
-  // }
-  // &.account {
-  //   border-color: $gray-lighter;
-  //   i {
-  //     color: $gray-lighter;
-  //   }
-  // }
 }
 .user-profile-content-card {
   background-color: $white;
@@ -105,4 +87,14 @@
 }
 .user-profile-button {
   border-radius: 5px;
+  margin: 30px 30px 30px 0;
+}
+.banished-ingredients-section{
+  display: flex;
+  .banished-ingredients-input{
+    width: 50%;
+  }
+}
+#banished_ingredients_list {
+  list-style: none;
 }

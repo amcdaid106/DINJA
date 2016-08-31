@@ -38,7 +38,9 @@
     <div class="loading hidden">
       <i class="fa fa-circle-o-notch fa-spin"></i>
     </div>
-    <%= render 'shared/flashes' %>
+    <div class="flashes">
+      <%= render 'shared/flashes' %>
+    </div>
     <%= render 'shared/navbar' %>
     <div class="wrapper">
       <%= yield %>

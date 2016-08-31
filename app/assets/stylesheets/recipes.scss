@@ -64,6 +64,10 @@
   border-radius: 4px;
   padding-top: 40px;
   overflow: hidden;
+
+  a:focus {
+    outline: none;
+  }
 }
 
 .recipe-picture {
@@ -104,6 +108,14 @@
   display: flex;
   align-items: center;
 }
+.weekly-buttons {
+  display: table;
+  vertical-align: middle;
+}
+.added-weekly-text {
+  display: table-cell;
+
+}
 .recipe-select {
   margin-left: 5px;
   background-color: $red;
@@ -122,9 +134,20 @@
   }
 }
 .recipe-added-count {
-  height: 34px;
+  //height: 34px;
+  margin: 0;
 }
-
+//this is for recipe#show
+.recipe-added-count-in-show {
+  margin-bottom: 7px;
+  height: 48px;
+  font-size: 20px;
+}
+.added-text-in-show {
+  display: inline-block;
+  margin-right: 10px;
+}
+//back to recipes#weekly
 .recipe-place-order-button-container {
   display: flex;
   justify-content: center;
@@ -231,11 +254,6 @@
     color: $white;
   }
 }
-.recipe-added-count-in-show {
-  margin-bottom: 7px;
-  height: 48px;
-  font-size: 20px;
-}
 .recipe-show-cart {
   color: #E45F56;
   font-size: 46px;
@@ -304,6 +322,13 @@
   text-align: left;
   padding: 30px;
   font-size: 18px;
+}
+.iconTick{
+  background-color:red !important;
+}
+
+.payment-body {
+  text-align: center;
 }
 
 

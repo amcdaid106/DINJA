@@ -1,7 +1,7 @@
-<div class="container edit-user-profile-container">
+<div class="edit-user-profile-container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <div class="user-profile-tab-list">
+      <div class="user-profile-tab-list" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 70%), url('<%= asset_path 'shutterstock.png' %>');">
         <div class="user-profile-tabs-liner"></div>
         <div role="presentation" data-target="food-preferences" class="edit-user-tabs food active">
           <a href="#" class="tooltip-link" data-placement="top" title="Edit food preferences">
@@ -31,38 +31,7 @@
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="user-profile-content-card">
           <div class= "user-profile-tab-content" id="food-preferences">
-            <%= simple_form_for(@user) do |f| %>
-              <h3>Edit your food preferences</h3>
-              <div class="food-checks">
-                <%= f.input :no_gluten, as: :boolean %>
-                <%= f.input :no_eggs, as: :boolean %>
-                <%= f.input :no_dairy, as: :boolean %>
-                <%= f.input :vegetarian, as: :boolean %>
-                <%= f.input :vegan, as: :boolean %>
-              </div>
-            <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'E.g. 400' %>
-            <%= f.input :max_prep_time, label: "Max prep time (in minutes) per dish", placeholder: 'E.g. 25' %>
-            <div>
-            <label for="banished_ingredients_autocomplete">Which ingredients to banish?</label>
-            </div>
-            <input type="text" id="banished_ingredients_autocomplete" class="form-control" value="" />
-
-             <ul id="banished_ingredients_list">
-                <!-- Empty list, will be filled by js -->
-                <% current_user.ingredients.each do |banned_ingredient| %>
-                  <li>
-                    <%= banned_ingredient.name %>
-                    <input type="hidden" name="banned_ingredients[]" value="<%= banned_ingredient.id %>"/>
-                    <i class="fa fa-close remove-ingredient"></i>
-                  </li>
-                <% end %>
-              </ul>
-
-
-
-
-            <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
-          <% end %>
+            <%= render 'form', user: @user %>
           </div>
 
           <div class="user-profile-tab-content hidden" id="personal-details">
