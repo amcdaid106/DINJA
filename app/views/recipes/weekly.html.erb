@@ -96,7 +96,7 @@
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
                       <div class="buttons-inline">
-                        <span id='added-button-<%= main.id %>'>
+                        <span class="added-weekly-text" id='added-button-<%= main.id %>'>
                           <%= order_item_quantity_label(@order, main) %>
                         </span>
                         <%= f.submit " + ", class: "recipe-select" %>
@@ -135,7 +135,7 @@
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
                       <div class="buttons-inline">
-                        <span id='added-button-<%= dessert.id %>'>
+                        <span class="added-weekly-text" id='added-button-<%= dessert.id %>'>
                           <%= order_item_quantity_label(@order, dessert) %>
                         </span>
                         <%= f.submit " + ", class: "recipe-select" %>
