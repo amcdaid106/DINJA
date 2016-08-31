@@ -4,7 +4,7 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all
 
     if @query.present?
-      @ingredients = @ingredients.where("name LIKE ?", "#{@query}%")
+      @ingredients = @ingredients.where("name ILIKE ?", "#{@query}%")
     end
 
     @ingredients = @ingredients.order(:name).limit(30)

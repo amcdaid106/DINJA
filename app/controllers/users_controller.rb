@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
     current_user.assign_attributes(user_params)
     current_user.last_meals_update = Date.today - 14.days
     current_user.banished_ingredients.destroy_all
@@ -18,8 +19,10 @@ class UsersController < ApplicationController
 
     current_user.save
 
+    flash[:notice] = "Changes saved..."
+
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to edit_user_path(current_user) }
       format.js
     end
   end
