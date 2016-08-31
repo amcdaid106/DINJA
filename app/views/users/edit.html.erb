@@ -1,7 +1,7 @@
-<div class="container edit-user-profile-container">
+<div class="edit-user-profile-container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <div class="user-profile-tab-list">
+      <div class="user-profile-tab-list" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 70%), url('<%= asset_path 'shutterstock.png' %>');">
         <div class="user-profile-tabs-liner"></div>
         <div role="presentation" data-target="food-preferences" class="edit-user-tabs food active">
           <a href="#" class="tooltip-link" data-placement="top" title="Edit food preferences">
@@ -33,6 +33,9 @@
           <div class= "user-profile-tab-content" id="food-preferences">
             <%= simple_form_for(@user) do |f| %>
               <h3>Edit your food preferences</h3>
+   <!--            <% unless current_user.has_user_completed_food_preferences? %>
+                <p>Looks like you haven't listed any restrictions. Not a fussy eater!</p>
+              <% end %> -->
               <div class="food-checks">
                 <%= f.input :no_gluten, as: :boolean %>
                 <%= f.input :no_eggs, as: :boolean %>
@@ -42,22 +45,27 @@
               </div>
             <%= f.input :max_calories, label: "Max calories per dish", placeholder: 'E.g. 400' %>
             <%= f.input :max_prep_time, label: "Max prep time (in minutes) per dish", placeholder: 'E.g. 25' %>
-            <div>
-            <label for="banished_ingredients_autocomplete">Which ingredients to banish?</label>
+            <div class="banished-ingredients-section">
+              <div class="banished-ingredients-input">
+                <div>
+                  <label for="banished_ingredients_autocomplete">Ingredients to avoid in recipes</label>
+                </div>
+                <input type="text" id="banished_ingredients_autocomplete" class="form-control" value="" placeholder="E.g. onions" />
+              </div>
+              <div class="banished-ingredients-ul">
+                <label for="banished_ingredients_list" class="indredient-list-heading hidden">Ingredients you'll never see</label>
+                <ul id="banished_ingredients_list" class="list-inline">
+                    <!-- Empty list, will be filled by js -->
+                  <% current_user.ingredients.each do |banned_ingredient| %>
+                    <li>
+                      <%= banned_ingredient.name %>
+                      <input type="hidden" name="banned_ingredients[]" value="<%= banned_ingredient.id %>"/>
+                      <i class="fa fa-close remove-ingredient"></i>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
-            <input type="text" id="banished_ingredients_autocomplete" class="form-control" value="" />
-
-             <ul id="banished_ingredients_list">
-                <!-- Empty list, will be filled by js -->
-                <% current_user.ingredients.each do |banned_ingredient| %>
-                  <li>
-                    <%= banned_ingredient.name %>
-                    <input type="hidden" name="banned_ingredients[]" value="<%= banned_ingredient.id %>"/>
-                    <i class="fa fa-close remove-ingredient"></i>
-                  </li>
-                <% end %>
-              </ul>
-
 
 
 

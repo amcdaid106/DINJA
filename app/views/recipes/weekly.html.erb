@@ -57,8 +57,8 @@
                   <% if current_user %>
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
-                      <div class="buttons-inline">
-                        <span id='added-button-<%= starter.id %>'>
+                      <div class="buttons-inline weekly-buttons">
+                        <span class="added-weekly-text" id='added-button-<%= starter.id %>'>
                           <%= order_item_quantity_label(@order, starter) %>
                         </span>
                         <%= f.submit " + ", class: "recipe-select" %>

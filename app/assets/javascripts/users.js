@@ -43,12 +43,14 @@ $(function() {
     element = element + "<i class='fa fa-close remove-ingredient'></i>"
     element = element + "</li>";
 
-    $("#banished_ingredients_list").append(element);
+    $('#banished_ingredients_list').append(element);
+    $('.ingredient-list-heading').removeClass('hidden');
   });
 
   $("#banished_ingredients_list").on("click", ".remove-ingredient", function(){
     $(this).parent().remove();
   });
+
 
 
 });
