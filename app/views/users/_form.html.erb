@@ -20,7 +20,8 @@
       <input type="text" id="banished_ingredients_autocomplete" class="form-control" value="" placeholder="E.g. onions" />
     </div>
     <div class="banished-ingredients-ul">
-      <label for="banished_ingredients_list" class="indredient-list-heading <%= 'hidden' if current_user.ingredients.empty? %> ">Ingredients you'll never see</label>
+      <label for="banished_ingredients_list" class="indredient-list-heading">Ingredients you'll never see</label>
+      <p class="no-excluded-ingredients <%= "hidden" if current_user.ingredients.exists? %>">You haven't excluded any ingredients yet</p>
       <ul id="banished_ingredients_list" class="list-inline">
           <!-- Empty list, will be filled by js -->
         <% current_user.ingredients.each do |banned_ingredient| %>
