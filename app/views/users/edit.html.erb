@@ -1,4 +1,4 @@
-<div class="edit-user-profile-container">
+<div id="edit-user-profile-container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="user-profile-tab-list" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 70%), url('<%= asset_path 'shutterstock.png' %>');">
@@ -27,43 +27,42 @@
       </div>
     </div>
   </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <div class="user-profile-content-card">
-          <div class= "user-profile-tab-content" id="food-preferences">
-            <%= render 'form', user: @user %>
-          </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="user-profile-content-card">
+        <div class= "user-profile-tab-content" id="food-preferences">
+          <%= render 'form', user: @user %>
+        </div>
 
-          <div class="user-profile-tab-content hidden" id="personal-details">
-            <h3>Edit your personal details</h3>
-              <%= simple_form_for(@user) do |f| %>
-                <%= f.input :first_name, placeholder: 'First name' %>
-                <%= f.input :last_name, placeholder: 'Last name' %>
-                <%= f.input :address, placeholder: 'Address' %>
-                <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
-              <% end %>
-          </div>
-
-          <div id="account-details" class="user-profile-tab-content hidden">
-            <h3>Change your password</h3>
-            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-              <%= f.error_notification %>
-
-              <%= f.input :email, label: "Email", placeholder: @user.email, disabled: true %>
-
-              <%= f.input :reset_password_token, as: :hidden %>
-              <%= f.full_error :reset_password_token %>
-
-              <div class="form-inputs">
-                <%= f.input :password, label: "New password", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-                <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
-              </div>
-
-              <div class="form-actions">
-                <%= f.button :submit, "Change my password", class: 'user-profile-button btn btn-primary' %>
-              </div>
+        <div class="user-profile-tab-content hidden" id="personal-details">
+          <h3>Edit your personal details</h3>
+            <%= simple_form_for(@user) do |f| %>
+              <%= f.input :first_name, placeholder: 'First name' %>
+              <%= f.input :last_name, placeholder: 'Last name' %>
+              <%= f.input :address, placeholder: 'Address' %>
+              <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
             <% end %>
-          </div>
+        </div>
+
+        <div id="account-details" class="user-profile-tab-content hidden">
+          <h3>Change your password</h3>
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+
+            <%= f.input :email, label: "Email", placeholder: @user.email, disabled: true %>
+
+            <%= f.input :reset_password_token, as: :hidden %>
+            <%= f.full_error :reset_password_token %>
+
+            <div class="form-inputs">
+              <%= f.input :password, label: "New password", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+              <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Change my password", class: 'user-profile-button btn btn-primary' %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

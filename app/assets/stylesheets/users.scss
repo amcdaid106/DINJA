@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.edit-user-profile-container {
+#edit-user-profile-container {
   padding: 40px 0;
 }
 .user-profile-tab-list {
@@ -81,26 +81,25 @@
 .user-profile-tab-content h3 {
   margin-bottom: 30px;
 }
+.food-card {
+  background-color: $gray-background;
+  padding: 15px;
+  margin: 10px;
+}
 .food-checks {
   display: flex;
   justify-content: space-between;
 }
 .max-cals-prep-time {
   display: flex;
-  .cals-limit {
-    flex: 0 0 50%;
-    input {
-      width: 25%;
-    }
-  }
-  .prep-time-limit {
-    flex: 0 0 50%;
-    input {
-      width: 25%;
-    }
+  justify-content: space-between;
+}
+.cals-limit, .prep-time-limit {
+  flex-grow: 1;
+  input {
+    width: 50%;
   }
 }
-
 .user-profile-button {
   border-radius: 5px;
   margin: 30px 30px 30px 0;
@@ -116,6 +115,9 @@
 }
 #banished_ingredients_list {
   list-style: none;
+}
+.tt-hint {
+  height: 100%;
 }
 .ingredient-and-delete {
   display: flex;
