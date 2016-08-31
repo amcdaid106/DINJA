@@ -31,11 +31,16 @@ class OrdersController < ApplicationController
     if @order.address.blank?
       @order.address = current_user.address
     end
-
+    @order.delivery_date = Date.today + 3.days
     @order.update_price
-    @order.save
+    if @order.save
+      redirect_to new_order_payment_path(@order)
+    else
+      render :edit
+    end
 
-    redirect_to new_order_payment_path(@order)
+
+
   end
 
   def update_address
