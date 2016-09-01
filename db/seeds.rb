@@ -44,6 +44,7 @@ egg = Ingredient.where(name: "Egg").first_or_create!
 garlic =  Ingredient.where(name: "Garlic").first_or_create!
 ginger =  Ingredient.where(name: "Ginger").first_or_create!
 green_onion = Ingredient.where(name: "Green Onion").first_or_create!
+fries =  Ingredient.where(name: "Fries").first_or_create!
 ham =  Ingredient.where(name: "Ham").first_or_create!
 honey =  Ingredient.where(name:"Honey").first_or_create!
 hot_pepper_sauce = Ingredient.where(name: "Frank’s RedHot Sauce").first_or_create!
@@ -64,14 +65,17 @@ olive_oil = Ingredient.where(name: "Olive oil").first_or_create!
 onion = Ingredient.where(name: "Onion").first_or_create!
 orange_bell_pepper = Ingredient.where(name: "Bell pepper").first_or_create!
 oregano = Ingredient.where(name: "Dried Oregano").first_or_create!
+pancetta = Ingredient.where(name: "Pancetta").first_or_create!
 parmesan_cheese = Ingredient.where(name: "Parmesan cheese").first_or_create!
 parsley = Ingredient.where(name: "Parsley").first_or_create!
 pasta =  Ingredient.where(name: "Pasta").first_or_create!
 peanuts =  Ingredient.where(name: "Peanuts").first_or_create!
 peas = Ingredient.where(name: "Peas").first_or_create!
+pepper =  Ingredient.where(name: "Pepper").first_or_create!
 pepper_jack_cheese = Ingredient.where(name: "Pepper Jack Cheese").first_or_create!
 peppers =  Ingredient.where(name: "peppers").first_or_create!
 pesto =  Ingredient.where(name: "pesto").first_or_create!
+pork = Ingredient.where(name: "Pork").first_or_create!
 potatoes =  Ingredient.where(name: "Potatoes").first_or_create!
 quinoa = Ingredient.where(name: "Quinoa").first_or_create!
 red_bell_pepper = Ingredient.where(name: "Bell pepper").first_or_create!
@@ -99,6 +103,25 @@ water = Ingredient.where(name: "Water").first_or_create!
 wheat = Ingredient.where(name: "Wheat").first_or_create!
 whole_wheat_flour = Ingredient.where(name: "Whole wheat flour").first_or_create!
 wine = Ingredient.where(name: "Red wine").first_or_create!
+
+
+cassoulet = Recipe.create(name: "Real french cassoulet", category: "Main course", photo: "cassoulet.jpg", description: "Although there are innumerable versions of cassoulet, most are based on a stew of white beans and various forms of pork.", price: 7, prep_time: 25 , cooking_time: 40, calories: 870,
+vegetarian: false, gluten_free: false, egg_free: false, dairy_free: false, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "2 fresh", ingredient: ham, recipe: cassoulet)
+Dose.create(measure: "1 pound boneless", ingredient: pork, recipe: cassoulet)
+Dose.create(measure: "3 small", ingredient: carrot, recipe: cassoulet)
+Dose.create(measure: "2 medium", ingredient: onion, recipe: cassoulet)
+Dose.create(measure: "One 5-ounce piece of", ingredient: pancetta, recipe: cassoulet)
+Dose.create(measure: "1 large plum", ingredient: tomatoes, recipe: cassoulet)
+
+steak = Recipe.create(name: "Tradional steak / frites", category: "Main course", photo: "steak.jpg", description: "Steak-frites is a very common and popular dish served in brasseries throughout Europe consisting of steak paired with French fries.", price: 6, prep_time: 17 , cooking_time: 20, calories: 670,
+vegetarian: false, gluten_free: false, egg_free: false, dairy_free: false, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "4 steaks of", ingredient: beef, recipe: steak
+Dose.create(measure: "5 tablespoons unsalted", ingredient: butter, recipe: steak)
+Dose.create(measure: "Belgian", ingredient: fries, recipe: steak)
+Dose.create(measure: "Freshly ground black", ingredient: pepper, recipe: steak)
 
 summer_lemon_salad = Recipe.create(name: "Summer Lemon Salad", category: "Main course", photo: "lemon_salad.png", description: "Summery salad with bitter lemon flavours, great a hot day.", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
 vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: true, instructions: dummy_instructions)
