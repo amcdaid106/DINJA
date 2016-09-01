@@ -1,2 +1,5 @@
 $('.flashes').html("<%= j render 'shared/flashes' %>");
+$('html, body').animate({
+    scrollTop: $("body").offset().top
+}, 300);
 <% flash.discard %>
