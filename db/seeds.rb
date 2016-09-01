@@ -100,7 +100,7 @@ whole_wheat_flour = Ingredient.where(name: "Whole wheat flour").first_or_create!
 wine = Ingredient.where(name: "Red wine").first_or_create!
 
 
-butternut_squash_salad = Recipe.create(name: "Butternut Squash Salad", category: "Main course", photo: "kale_quinoa_salad.jpg", description: "Super healthy summery salad. Great for vegans and vegetarians and it's also dairy-free!", price: 7, prep_time: 10 , cooking_time: 5, calories: 350,
+butternut_squash_salad = Recipe.create(name: "Butternut Squash Salad", category: "Main course", photo: "butternut_squash_salad.jpg", description: "Super healthy summery salad. Great for vegans and vegetarians and it's also dairy-free!", price: 7, prep_time: 10 , cooking_time: 5, calories: 350,
 vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
 
 Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: butternut_squash_salad)
@@ -133,7 +133,7 @@ Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: paella_primavera)
 Dose.create(measure: "1" , ingredient: egg, recipe: paella_primavera)
 
 
-banana_chocolate_muffins = Recipe.create(name: "Banana Chocolate Chip Muffins", category: "dessert", photo: "banana_choc_chip.jpg", description: "Great for those who can't eat dairy and a great way to get rid of old bananas!", price: 4, prep_time: 10 , cooking_time: 10, calories: 250,
+banana_chocolate_muffins = Recipe.create(name: "Banana Chocolate Chip Muffins", category: "Dessert", photo: "banana_choc_chip.jpg", description: "Great for those who can't eat dairy and a great way to get rid of old bananas!", price: 4, prep_time: 10 , cooking_time: 10, calories: 250,
 vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
 
 Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: banana_chocolate_muffins)
@@ -144,7 +144,7 @@ Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: banana_chocolate_
 Dose.create(measure: "1" , ingredient: egg, recipe: banana_chocolate_muffins)
 
 
-chocolate_quinoa_strawberries = Recipe.create(name: "Chocolate Almond Qunioa Strawberries", category: "dessert", photo: "chocolate_quinoa_strawberries.jpg", description: "Great dairy-free dessert full of nutrition. Light, fresh, and summery!", price: 6, prep_time: 15 , cooking_time: 5, calories: 150,
+chocolate_quinoa_strawberries = Recipe.create(name: "Chocolate Almond Qunioa Strawberries", category: "Dessert", photo: "chocolate_quinoa_strawberries.jpg", description: "Great dairy-free dessert full of nutrition. Light, fresh, and summery!", price: 6, prep_time: 15 , cooking_time: 5, calories: 150,
 vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "1/4 cup", ingredient: quinoa, recipe: chocolate_quinoa_strawberries)
@@ -155,7 +155,7 @@ Dose.create(measure: "12", ingredient: almonds, recipe: chocolate_quinoa_strawbe
 Dose.create(measure: "1/2 teaspoon" , ingredient: cinnamon, recipe: chocolate_quinoa_strawberries)
 
 
-banoffee_tart = Recipe.create(name: "Banoffee Tarts", category: "dessert", photo: "banoffee_tart.jpg", description: "Delicious vegan version of traditional banoffee tarts!", price: 5, prep_time: 10 , cooking_time: 5, calories: 200,
+banoffee_tart = Recipe.create(name: "Banoffee Tarts", category: "Dessert", photo: "banoffee_tart.jpg", description: "Delicious vegan version of traditional banoffee tarts!", price: 5, prep_time: 10 , cooking_time: 5, calories: 200,
 vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "1/4 cup", ingredient: chocolate_cake_mix, recipe: chocolate_quinoa_strawberries)
@@ -336,20 +336,20 @@ cottage_cheese_honey = Recipe.create(name: "Cottage cheese with honey", descript
 Dose.create(measure: "1/2 cup", ingredient: cottage_cheese, recipe: cottage_cheese_honey)
 Dose.create(measure: "2 teaspoons", ingredient: honey, recipe: cottage_cheese_honey)
 
-taboulet_aux_herbes = Recipe.new(name: "Tabouleh", category: "starter", photo: "taboulet_aux_herbes.png", description: "A magical experience into your mouth, that’s how they call it", price: 5, prep_time: 10 , cooking_time: 0, calories: 300, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+taboulet_aux_herbes = Recipe.new(name: "Tabouleh", category: "Starter", photo: "taboulet_aux_herbes.png", description: "A magical experience into your mouth, that’s how they call it", price: 5, prep_time: 10 , cooking_time: 0, calories: 300, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "1cup of ", ingredient: wheat, recipe: taboulet_aux_herbes)
 Dose.create(measure: "3", ingredient: tomatoes, recipe: taboulet_aux_herbes )
 Dose.create(measure: "2 tablespoons" , ingredient: olive_oil, recipe: taboulet_aux_herbes)
 
-salad_broccolis = Recipe.new(name: "Broccoli salad with peanuts and pesto", category: "starter", photo: "salad_broccolis.png", description: "Fresh and healthy, the broccoli salad brings joy into your plate, blended with tahini and sesame.", price:3, prep_time:15 , cooking_time:0, calories: 250, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+salad_broccolis = Recipe.new(name: "Broccoli salad with peanuts and pesto", category: "Starter", photo: "salad_broccolis.png", description: "Fresh and healthy, the broccoli salad brings joy into your plate, blended with tahini and sesame.", price:3, prep_time:15 , cooking_time:0, calories: 250, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "400g of", ingredient: broccoli, recipe: salad_broccolis)
 Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_broccolis)
 Dose.create(measure: "1", ingredient: garlic, recipe: salad_broccolis)
 Dose.create(measure: "2 tablespoons" , ingredient: pesto, recipe: salad_broccolis)
 
-salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "Starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "400g", ingredient: mozzarella, recipe: salad_mozzarella)
 Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_mozzarella)
