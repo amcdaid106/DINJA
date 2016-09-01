@@ -4,6 +4,7 @@
       <h2>MY ORDERS</h2>
       <hr>
     </div>
+    <% if @orders_paid.count > 0 %>
     <% @orders_paid.each do |orders_paid| %>
     <div class="row order-item-cart">
       <div class="col-xs-12 col-sm-3">
@@ -18,7 +19,16 @@
       <div class="col-xs-12 col-sm-3">
         <p> Paid <i class="fa fa-check" aria-hidden="true"></i></p>
       </div>
+      <% end %>
     </div>
+    <% else %>
+     <div class="no-items-in-cart">
+        <h4 class="text-center">You have currently no orders. Time to get clicking and start cooking!</h4>
+        <hr>
+        <%= link_to root_path({target: 'starters'}) do  %>
+          <button class="btn btn-check-meals btn-lg">Check out this week's meals</button>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
