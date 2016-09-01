@@ -39,7 +39,8 @@ cottage_cheese =  Ingredient.where(name: "Cottage cheese").first_or_create!
 courgette = Ingredient.where(name: "Courgette").first_or_create!
 cream_cheese = Ingredient.where(name: "Cream cheese").first_or_create!
 custard_cream= Ingredient.where(name: "custard cream").first_or_create!
-dark_chocolate =  Ingredient.where(name: "dark chocolate").first_or_create!
+dark_chocolate =  Ingredient.where(name: "Dark chocolate").first_or_create!
+duck =  Ingredient.where(name: "Duck").first_or_create!
 egg = Ingredient.where(name: "Egg").first_or_create!
 garlic =  Ingredient.where(name: "Garlic").first_or_create!
 ginger =  Ingredient.where(name: "Ginger").first_or_create!
@@ -52,8 +53,8 @@ ketchup = Ingredient.where(name: "Ketchup").first_or_create!
 kidney_beans = Ingredient.where(name: "Kidney beans").first_or_create!
 lemon = Ingredient.where(name: "Lemon").first_or_create!
 lime = Ingredient.where(name: "Lime").first_or_create!
-lime_juice =  Ingredient.where(name: "lime juice").first_or_create!
-mashed_potatoes =  Ingredient.where(name: "mashed_potatoes").first_or_create!
+lime_juice =  Ingredient.where(name: "Lime juice").first_or_create!
+mashed_potatoes =  Ingredient.where(name: "Mashed_potatoes").first_or_create!
 melon =  Ingredient.where(name: "melon").first_or_create!
 melted_chocolate = Ingredient.where(name: "Melted Dark Chocolate").first_or_create
 milk = Ingredient.where(name: "Milk").first_or_create!
@@ -109,6 +110,14 @@ Dose.create(measure: "3 cloves", ingredient: garlic, recipe: summer_lemon_salad)
 Dose.create(measure: "1/2", ingredient: avocado, recipe: summer_lemon_salad)
 Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: summer_lemon_salad)
 Dose.create(measure: "1 bag" , ingredient: spinach, recipe: summer_lemon_salad)
+
+magret_canard = Recipe.create(name: "Magret de canard", category: "Starter", photo: "magret_canard.png", description: "Hopefully you are very hungry to start with this. It's very tasty!", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
+vegetarian: false, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: olive_oil, recipe: magret_canard)
+Dose.create(measure: "1/2", ingredient: duck, recipe: magret_canard)
+Dose.create(measure: "3 cloves", ingredient: garlic, recipe: magret_canard)
+Dose.create(measure: "1/4 teaspoon", ingredient: honey, recipe: magret_canard)
 
 
 butternut_squash_salad = Recipe.create(name: "Butternut Squash Salad", category: "Main course", photo: "butternut_squash_salad.jpg", description: "Super healthy summery salad. Great for vegans and vegetarians and it's also dairy-free!", price: 7, prep_time: 10 , cooking_time: 5, calories: 350,
