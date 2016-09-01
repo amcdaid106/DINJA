@@ -40,8 +40,13 @@
               <%= f.input :first_name, placeholder: 'First name' %>
               <%= f.input :last_name, placeholder: 'Last name' %>
               <%= f.input :address, placeholder: 'Address' %>
+              <br>
+              <div class="text-center">
               <%= f.button :submit, 'Save changes', class: 'user-profile-button btn btn-primary'  %>
+              </div>
             <% end %>
+
+
         </div>
 
         <div id="account-details" class="user-profile-tab-content hidden">
@@ -60,7 +65,11 @@
             </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Change my password", class: 'user-profile-button btn btn-primary' %>
+            <br>
+              <div class="text-center">
+              <%= f.button :submit, 'Change my password', class: 'user-profile-button btn btn-primary'  %>
+              </div>
+
             </div>
           <% end %>
         </div>
