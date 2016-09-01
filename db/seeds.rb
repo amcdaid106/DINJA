@@ -116,13 +116,13 @@ Dose.create(measure: "2 medium", ingredient: onion, recipe: cassoulet)
 Dose.create(measure: "One 5-ounce piece of", ingredient: pancetta, recipe: cassoulet)
 Dose.create(measure: "1 large plum", ingredient: tomatoes, recipe: cassoulet)
 
-steak = Recipe.create(name: "Tradional steak / frites", category: "Main course", photo: "steak.jpg", description: "Steak-frites is a very common and popular dish served in brasseries throughout Europe consisting of steak paired with French fries.", price: 6, prep_time: 17 , cooking_time: 20, calories: 670,
+steak_frites = Recipe.create(name: "Traditional steak-frites", category: "Main course", photo: "steak.jpg", description: "Steak-frites is a very common and popular dish served in brasseries throughout Europe consisting of steak paired with French fries.", price: 6, prep_time: 17 , cooking_time: 20, calories: 670,
 vegetarian: false, gluten_free: false, egg_free: false, dairy_free: false, vegan: false, instructions: dummy_instructions)
 
-Dose.create(measure: "4 steaks of", ingredient: beef, recipe: steak
-Dose.create(measure: "5 tablespoons unsalted", ingredient: butter, recipe: steak)
-Dose.create(measure: "Belgian", ingredient: fries, recipe: steak)
-Dose.create(measure: "Freshly ground black", ingredient: pepper, recipe: steak)
+Dose.create(measure: "4 steaks of", ingredient: beef, recipe: steak_frites)
+Dose.create(measure: "5 tablespoons unsalted", ingredient: butter, recipe: steak_frites)
+Dose.create(measure: "Belgian", ingredient: fries, recipe: steak_frites)
+Dose.create(measure: "Freshly ground black", ingredient: pepper, recipe: steak_frites)
 
 summer_lemon_salad = Recipe.create(name: "Summer Lemon Salad", category: "Main course", photo: "lemon_salad.png", description: "Summery salad with bitter lemon flavours, great a hot day.", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
 vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: true, instructions: dummy_instructions)
