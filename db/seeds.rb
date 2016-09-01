@@ -108,8 +108,7 @@ Dose.create(measure: "10g of", ingredient: sesame_pastry, recipe: houmous)
 Dose.create(measure: "some", ingredient: garlic, recipe: houmous)
 Dose.create(measure: "2" , ingredient: lemon, recipe: houmous)
 
-
-bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 9, photo: "salad_broccolis.png", instructions: dummy_instructions, prep_time: 15, cooking_time: 20, category: "Main course", calories: 907, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
+bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 8, photo: "bean_burger.png", instructions: dummy_instructions, prep_time: 15, cooking_time: 15, category: "Main course", calories: 807, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
 Dose.create(measure: "a bunch", recipe: bean_burger, ingredient: parsley)
 Dose.create(measure: "2 leaves", recipe: bean_burger, ingredient: romaine)
@@ -119,7 +118,7 @@ Dose.create(measure: "3 tablespoons", recipe: bean_burger, ingredient: ketchup)
 Dose.create(measure: "2 ears", recipe: bean_burger, ingredient: corn)
 
 
-rice_risotto = Recipe.create(name: "Lemon Rice Risotto", description: "Meyer lemon forbidden rice risotto with sweet peas", price: 8, photo: "rice_risotto.png", instructions: dummy_instructions, prep_time: 30, cooking_time: 10, category: "Main course", calories: 433, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
+rice_risotto = Recipe.create(name: "Lemon Rice Risotto", description: "Meyer lemon forbidden rice risotto with sweet peas", price: 6, photo: "rice_risotto.png", instructions: dummy_instructions, prep_time: 30, cooking_time: 10, category: "Main course", calories: 433, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
 Dose.create(measure: "1", recipe: rice_risotto, ingredient: shallots)
 Dose.create(measure: "1 cup", recipe: rice_risotto, ingredient: rice)
@@ -129,7 +128,7 @@ Dose.create(measure: "3 tablespoons", recipe: rice_risotto, ingredient: vegetabl
 Dose.create(measure: "1", recipe: rice_risotto, ingredient: lemon)
 
 
-asado_negro = Recipe.create(name: "Venezuelan Asado Negro", description: "Venezuelan asado negro with roasted vegetables and tostones", price: 10, photo: "asado_negro.jpg", instructions: dummy_instructions, prep_time: 20, cooking_time: 15, category: "Main course", calories: 527, gluten_free: true, dairy_free: false, egg_free: true, vegetarian: false, vegan: false)
+asado_negro = Recipe.create(name: "Venezuelan Asado Negro", description: "Venezuelan asado negro with roasted vegetables and tostones", price: 5, photo: "asado_negro.jpg", instructions: dummy_instructions, prep_time: 12, cooking_time: 15, category: "Main course", calories: 527, gluten_free: true, dairy_free: false, egg_free: true, vegetarian: false, vegan: false)
 
 Dose.create(measure: "2 cloves", recipe: asado_negro, ingredient: shallots)
 Dose.create(measure: "2", recipe: asado_negro, ingredient: courgette)
@@ -139,7 +138,7 @@ Dose.create(measure: "3 fluid oz", recipe: asado_negro, ingredient: wine)
 Dose.create(measure: "⅗ oz", recipe: asado_negro, ingredient: butter)
 
 
-tofu_pad_thai = Recipe.create(name: "Tofu Pad Thai", description: "Tofu Pad Thai with carrots and sweet chili sauce", price: 10, photo: "tofu_pad_thai.jpg", instructions: dummy_instructions, prep_time: 25, cooking_time: 10, category: "Main course", calories: 837, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: true, vegan: true)
+tofu_pad_thai = Recipe.create(name: "Tofu Pad Thai", description: "Tofu Pad Thai with carrots and sweet chili sauce", price: 10, photo: "tofu_pad_thai.jpg", instructions: dummy_instructions, prep_time: 25, cooking_time: 10, category: "Main course", calories: 437, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: true, vegan: true)
 
 Dose.create(measure: "2 cloves", recipe: tofu_pad_thai, ingredient: tofu)
 Dose.create(measure: "2", recipe: tofu_pad_thai, ingredient: green_onion)
@@ -149,7 +148,7 @@ Dose.create(measure: "6 fluid oz", recipe: tofu_pad_thai, ingredient: chili_sauc
 Dose.create(measure: "4 oz", recipe: tofu_pad_thai, ingredient: carrot)
 
 
-tuscan_chicken = Recipe.create(name: "Tuscan Chicken", description: "Tuscan Chicken with rainbow vegetable skewers", price: 10, photo: "tuscan_chicken.jpg", instructions: dummy_instructions, prep_time: 25, cooking_time: 0, category: "Main course", calories: 406, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: false, vegan: false)
+tuscan_chicken = Recipe.create(name: "Tuscan Chicken", description: "Tuscan Chicken with rainbow vegetable skewers", price: 7, photo: "tuscan_chicken.jpg", instructions: dummy_instructions, prep_time: 15, cooking_time: 0, category: "Main course", calories: 406, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: false, vegan: false)
 
 # garlic
 Dose.create(measure: "2 cloves", recipe: tuscan_chicken, ingredient: garlic)
@@ -171,19 +170,8 @@ Dose.create(measure: "12", recipe: stuffed_mushrooms, ingredient: mushrooms)
 Dose.create(measure: "¼ cup", recipe: stuffed_mushrooms, ingredient: parmesan_cheese)
 Dose.create(measure: "¼ teaspoon", recipe: stuffed_mushrooms, ingredient: cayenne)
 
-buffalo_chicken_dip = Recipe.create(name: "Baked Buffalo Chicken Dip", description: "Baked buffalo rotisserie chicken dip, great for parties", price: 9, photo: "buffalo_chicken_dip.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 10, category: "Starter", calories: 500, gluten_free: true, dairy_free: false, egg_free: true, vegetarian: false, vegan: false)
 
-# chicken
-Dose.create(measure: "3 cups diced", recipe: buffalo_chicken_dip, ingredient: chicken)
-# cream_cheese
-Dose.create(measure: "2 packages", recipe: buffalo_chicken_dip, ingredient: cream_cheese)
-Dose.create(measure: "¾ cup", recipe: buffalo_chicken_dip, ingredient: hot_pepper_sauce)
-Dose.create(measure: "½ cup", recipe: buffalo_chicken_dip, ingredient: pepper_jack_cheese)
-Dose.create(measure: "½ cup", recipe: buffalo_chicken_dip, ingredient: blue_cheese_dressing)
-# cayenne
-Dose.create(measure: "1 pinch", recipe: buffalo_chicken_dip, ingredient: cayenne)
-
-artichoke_hearts_gratin = Recipe.create(name: "Artichoke Hearts Gratin", description: "Tasty all-veggie appetizer", price: 10, photo: "artichoke_gratin.jpg", instructions: dummy_instructions, prep_time: 15, cooking_time: 15, category: "Starter", calories: 460, gluten_free: false, dairy_free: false, egg_free: true, vegetarian: true, vegan: false)
+artichoke_hearts_gratin = Recipe.create(name: "Artichoke Hearts Gratin", description: "Tasty all-veggie appetizer", price: 4, photo: "artichoke_gratin.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 15, category: "Starter", calories: 360, gluten_free: false, dairy_free: false, egg_free: true, vegetarian: true, vegan: false)
 
 Dose.create(measure: "6", recipe: artichoke_hearts_gratin, ingredient: artichoke_hearts)
 # vegatable_oil
@@ -194,7 +182,7 @@ Dose.create(measure: "1 tablespoon", recipe: artichoke_hearts_gratin, ingredient
 Dose.create(measure: "½ in wedges", recipe: artichoke_hearts_gratin, ingredient: lemon)
 Dose.create(measure: "1 pinch", recipe: artichoke_hearts_gratin, ingredient: salt)
 
-mocha_bundt_cake = Recipe.create(name: "Mexican Mocha Bundt Cake", description: "Delicious choclatey crowd-pleaser", price: 6, photo: "mocha_cake.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 460, gluten_free: false, dairy_free: false, egg_free: false, vegetarian: true, vegan: false)
+mocha_bundt_cake = Recipe.create(name: "Mexican Mocha Bundt Cake", description: "Delicious choclatey crowd-pleaser", price: 5, photo: "mocha_cake.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 460, gluten_free: false, dairy_free: false, egg_free: false, vegetarian: true, vegan: false)
 
 Dose.create(measure: "1 package", recipe: mocha_bundt_cake, ingredient: vanilla_pudding_mix)
 Dose.create(measure: "1 cup", recipe: mocha_bundt_cake, ingredient: milk)
@@ -204,7 +192,7 @@ Dose.create(measure: "1 package", recipe: mocha_bundt_cake, ingredient: chocolat
 Dose.create(measure: "4", recipe: mocha_bundt_cake, ingredient: egg)
 Dose.create(measure: "1 tablespoon", recipe: mocha_bundt_cake, ingredient: cinnamon)
 
-courgette_brownies = Recipe.create(name: "Whole-Wheat Chocolate Courgette Brownies", description: "Moist, chocolatey, delicious, double-chocolate brownies", price: 8, photo: "courgette_brownies.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 420, gluten_free: false, dairy_free: true, egg_free: false, vegetarian: true, vegan: false)
+courgette_brownies = Recipe.create(name: "Whole-Wheat Chocolate Courgette Brownies", description: "Moist, chocolatey, delicious, double-chocolate brownies", price: 4, photo: "courgette_brownies.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 320, gluten_free: false, dairy_free: true, egg_free: false, vegetarian: true, vegan: false)
 
 Dose.create(measure: "1 cup", recipe: courgette_brownies, ingredient: whole_wheat_flour)
 Dose.create(measure: "⅓ cup", recipe: courgette_brownies, ingredient: cocoa)
@@ -215,20 +203,20 @@ Dose.create(measure: "2 large", recipe: courgette_brownies, ingredient: egg)
 # courgette
 Dose.create(measure: "1.5 cups", recipe: courgette_brownies, ingredient: courgette)
 
-italian_salad = Recipe.new(name: "Italian salad with pesto", description: "The perfect italian taste", price: 6, photo: "italian_salad.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+italian_salad = Recipe.create(name: "Italian salad with pesto", description: "The perfect italian taste", price: 4, photo: "italian_salad.png", instructions: dummy_instructions, prep_time: 8, cooking_time: 0, category: "Starter", calories: 250, gluten_free: true, dairy_free: false, egg_free: false, vegetarian: true, vegan: false)
 
 Dose.create(measure: "1/4" , ingredient: melon, recipe: italian_salad)
 Dose.create(measure: "2", ingredient: mozzarella, recipe: italian_salad)
 Dose.create(measure:  "100g", ingredient: rocket, recipe: italian_salad)
 Dose.create(measure:  "4 tablespoons", ingredient: pesto, recipe: italian_salad)
 
-gazpacho = Recipe.new(name: "Gazpacho of red peppers and tomatoes", description: "Richful mix of vegetables", price: 12, photo: "gazpacho.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+gazpacho = Recipe.create(name: "Gazpacho of red peppers and tomatoes", description: "Richful mix of vegetables", price: 3, photo: "gazpacho.png", instructions: dummy_instructions, prep_time: 12, cooking_time: 0, category: "Starter", calories: 150, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
 Dose.create(measure: "5", ingredient: tomatoes, recipe: gazpacho)
 Dose.create(measure: "3", ingredient: peppers, recipe: gazpacho)
 Dose.create(measure: "2", ingredient: onion, recipe: gazpacho)
 
-mexican_salad = Recipe.new(name: "Mexican salad with beans", description: "The right salad at the right place", price:10, photo: "mexican_salad.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+mexican_salad = Recipe.create(name: "Mexican salad with beans", description: "The right salad at the right place", price:4, photo: "mexican_salad.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 0, category: "Starter", calories: 270, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: true, vegan: false)
 
 Dose.create(measure: "1 can", ingredient: beans, recipe: mexican_salad)
 Dose.create(measure: "1 can", ingredient: corn, recipe: mexican_salad)
@@ -236,26 +224,26 @@ Dose.create(measure: "2", ingredient: onion, recipe: mexican_salad)
 Dose.create(measure: "1/2 cup", ingredient: vinegar, recipe: mexican_salad)
 Dose.create(measure: "2 tablespoons", ingredient: lime_juice, recipe: mexican_salad)
 
-pasta_carbonara = Recipe.new(name: "Pasta carbonara with thyme", description: "Get the meal rolling with your friends", price: 15, photo: "pasta_carbonara.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+pasta_carbonara = Recipe.create(name: "Pasta carbonara with thyme", description: "Get the meal rolling with your friends", price: 6, photo: "pasta_carbonara.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 10, category: "Main course", calories: 490, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
 Dose.create(measure: "250g", ingredient: pasta, recipe: pasta_carbonara)
 Dose.create(measure: "2 pieces", ingredient: bacon, recipe: pasta_carbonara)
 Dose.create(measure:  "1 tablespoon", ingredient: thyme, recipe: pasta_carbonara)
 Dose.create(measure: "1 pinch", ingredient: salt, recipe: pasta_carbonara)
 
-coley_parmesan = Recipe.new(name: "Coley with potatoes and parmesan cream", description: "For fish lovers, give it a try", price: 20, photo: "coley_parmesan.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+coley_parmesan = Recipe.create(name: "Coley with potatoes and parmesan cream", description: "For fish lovers, give it a try", price: 7, photo: "coley_parmesan.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 270, gluten_free: true, dairy_free: false, egg_free: false, vegetarian: true, vegan: false)
 
 Dose.create(measure: "1", ingredient: coley, recipe: coley_parmesan)
 Dose.create(measure: "2", ingredient: potatoes, recipe: coley_parmesan)
 Dose.create(measure:  "75g", ingredient: parmesan_cheese, recipe: coley_parmesan)
 
-beef_mash = Recipe.new(name: "Beef with rice, honey and ginger", description: "Beef up your evening!", price: 14, photo: "beef_mash.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Main course", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+beef_mash = Recipe.create(name: "Beef with rice, honey and ginger", description: "Beef up your evening!", price: 6, photo: "beef_mash.png", instructions: dummy_instructions, prep_time: 14, cooking_time: 20, category: "Main course", calories: 370, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
 
 Dose.create(measure: "150g", ingredient: beef, recipe: beef_mash)
 Dose.create(measure: "2 tablespoons", ingredient: honey, recipe: beef_mash)
 Dose.create(measure: "100g", ingredient: rice, recipe: beef_mash)
 Dose.create(measure: "2 tablespoons", ingredient: ginger, recipe: beef_mash)
 
-brownie_custard = Recipe.new(name: "Brownie with custard cream", description:"Not for faint hearted", price: 9, photo: "brownie_custard.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 2000, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+brownie_custard = Recipe.create(name: "Brownie with custard cream", description:"Not for faint hearted", price: 5, photo: "brownie_custard.png", instructions: dummy_instructions, prep_time: 14, cooking_time: 20, category: "Dessert", calories: 380, gluten_free: false, dairy_free: false, egg_free: false, vegetarian: true, vegan: false)
 
 Dose.create(measure: "375g", ingredient: dark_chocolate, recipe: brownie_custard)
 Dose.create(measure: "375g", ingredient: butter, recipe: brownie_custard)
@@ -263,14 +251,14 @@ Dose.create(measure: "1 tablespoon", ingredient: vanilla, recipe: brownie_custar
 Dose.create(measure: "700ml", ingredient: custard_cream, recipe: brownie_custard)
 Dose.create(measure:  "6", ingredient: egg, recipe: brownie_custard)
 
-strawberry_compote = Recipe.new(name: "Strawberry compote with walnut shortbread", description: "Strawberries are always on top of the world", price: 8, photo: "strawberry_compote.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "Dessert", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+strawberry_compote = Recipe.create(name: "Strawberry compote with walnut shortbread", description: "Strawberries are always on top of the world", price: 4, photo: "strawberry_compote.png", instructions: dummy_instructions, prep_time: 7, cooking_time: 0, category: "Dessert", calories: 160, gluten_free: false, dairy_free: false, egg_free: false, vegetarian: true, vegan: true)
 
 Dose.create(measure: "250g", ingredient: strawberries, recipe: strawberry_compote)
 Dose.create(measure: "3 slices", ingredient: walnut_shortbread, recipe: strawberry_compote)
 Dose.create(measure:  "½ cup", ingredient: sugar, recipe: strawberry_compote)
 Dose.create(measure:  "½ cup", ingredient: water, recipe: strawberry_compote)
 
-cottage_cheese_honey = Recipe.new(name: "Cottage cheese with honey", description: "The perfect combination in the mouth", price: 7, photo: "cottage_cheese_honey.png", instructions: dummy_instructions, prep_time: 10, cooking_time: 20, category: "starter", calories: 300, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: false, vegan: false)
+cottage_cheese_honey = Recipe.create(name: "Cottage cheese with honey", description: "The perfect combination in the mouth", price: 4, photo: "cottage_cheese_honey.png", instructions: dummy_instructions, prep_time:8, cooking_time: 9, category: "Starter", calories: 220, gluten_free: true, dairy_free: false, egg_free: true, vegetarian: true, vegan: false)
 
 Dose.create(measure: "1/2 cup", ingredient: cottage_cheese, recipe: cottage_cheese_honey)
 Dose.create(measure: "2 teaspoons", ingredient: honey, recipe: cottage_cheese_honey)
