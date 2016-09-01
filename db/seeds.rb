@@ -29,6 +29,7 @@ cayenne = Ingredient.where(name: "Cayenne").first_or_create!
 chicken = Ingredient.where(name: "Skinned chicken").first_or_create!
 chickpeas =  Ingredient.where(name: "chickpeas").first_or_create!
 chili_sauce = Ingredient.where(name: "Sweet Chili Sauce").first_or_create!
+chocolate = Ingredient.where(name: "Chocolate").first_or_create!
 chocolate_cake_mix = Ingredient.where(name: "Chocolate cake mix").first_or_create!
 cinnamon = Ingredient.where(name: "Cinnamon").first_or_create!
 cocoa = Ingredient.where(name: "Cocoa").first_or_create!
