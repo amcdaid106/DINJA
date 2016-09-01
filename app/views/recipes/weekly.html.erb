@@ -1,10 +1,9 @@
 <% if user_signed_in? %>
   <% if current_user.has_user_completed_food_preferences? == false %>
-   <div class="alert alert-info alert-dismissible" role="alert">
+   <div class="alert alert-info alert-dismissible alert-profile" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-     <div class="text-update-profile"> Fill in your food preferences<%= link_to "(here)", edit_user_path(current_user)%>  so that we will only show you meals responding to your diet.</div>
+     <div class="text-update-profile"> You havent' filled in your food preferences yet. Do it <%= link_to "here", edit_user_path(current_user), class: "link-update-profile"%> so that we will only suggest you meals complying with your diet.</div>
     </div>
-
   <% end %>
 <% end %>
 
