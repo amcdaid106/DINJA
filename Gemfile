@@ -21,6 +21,10 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'stripe'
+gem 'coffee-rails', '~> 4.1.0'
+
+gem 'rails-assets-sweetalert2', source: 'https://rails-assets.org'
+gem 'sweet-alert-confirm'
 
 group :development, :test do
   gem 'binding_of_caller'

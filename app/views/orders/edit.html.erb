@@ -27,7 +27,12 @@
                 </div>
               </div>
               <div><span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00€</div>
-              <%= link_to order_item_path(order_item), method: :delete, data: {confirm: "Are you sure you want to delete #{order_item.recipe.name}?"}, remote: true do %>
+              <%= link_to order_item_path(order_item), method: :delete, data: {
+                confirm: "Are you sure...",
+                text: "...you want to delete #{order_item.recipe.name}?",
+                confirm_button_text: 'Yes',
+                cancel_button_text: 'No'
+                }, remote: true do %>
                 <i class="fa fa-times" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
               <% end %>
             </div>
@@ -37,7 +42,8 @@
         <div class="row">
         <br>
         <div class="text-center">
-            <%= submit_tag "Pay #{@grand_total}.00€", class: "btn orders-checkout-button" %>
+            <span id="grand_total">Total: <%= @grand_total %>.00€</span><br>
+            <%= submit_tag "Checkout", id: "grand_total", class: "btn orders-checkout-button" %>
         </div>
       <% end %>
     <% else %>
