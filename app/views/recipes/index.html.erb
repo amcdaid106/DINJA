@@ -1,29 +1,22 @@
 <div class="order-process-container" style = "font-family: 'source sans pro'";>
   <div class= "cart-confirm-container">
     <div class="cart-heading text-center">
-      <h2>My recipes</h2>
+      <h2>MY RECIPES</h2>
       <hr>
     </div>
       <% @recipes.each do |recipe|  %>
-        <div class="cart-order-items">
+        <div class="cart-order-items" style = "text-align: center">
           <div class="cart-order-picture">
             <%= image_tag recipe.photo %>
           </div>
           <div class="cart-order-item-text">
             <h4><%= recipe.name %></h4>
-             <%= link_to "#" do %>
-            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width:20px";>
+              <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{recipe.id}" do %>
+            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width:18px";>
             <% end %>
           </div>
         </div>
+        <%= render 'recipes/show', recipe: recipe %>
       <% end %>
   </div>
 </div>
-
-
-
-
-
-
-
-
