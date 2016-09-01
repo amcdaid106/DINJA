@@ -336,7 +336,7 @@ cottage_cheese_honey = Recipe.create(name: "Cottage cheese with honey", descript
 Dose.create(measure: "1/2 cup", ingredient: cottage_cheese, recipe: cottage_cheese_honey)
 Dose.create(measure: "2 teaspoons", ingredient: honey, recipe: cottage_cheese_honey)
 
-taboulet_aux_herbes = Recipe.new(name: "Tabouleh", category: "Starter", photo: "taboulet_aux_herbes.png", description: "A magical experience into your mouth, that’s how they call it", price: 5, prep_time: 10 , cooking_time: 0, calories: 300, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+taboulet_aux_herbes = Recipe.new(name: "Tabbouleh", category: "Starter", photo: "taboulet_aux_herbes.png", description: "A magical experience into your mouth, that’s how they call it", price: 5, prep_time: 10 , cooking_time: 0, calories: 300, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "1cup of ", ingredient: wheat, recipe: taboulet_aux_herbes)
 Dose.create(measure: "3", ingredient: tomatoes, recipe: taboulet_aux_herbes )
