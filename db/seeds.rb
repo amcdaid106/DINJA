@@ -83,6 +83,7 @@ salt = Ingredient.where(name: "Salt").first_or_create!
 sesame_oil =  Ingredient.where(name: "Sesame oil").first_or_create!
 sesame_pastry =  Ingredient.where(name: "sesame pastry").first_or_create!
 shallots = Ingredient.where(name: "Shallots").first_or_create!
+spinach = Ingredient.where(name: "Spinach").first_or_create!
 steak = Ingredient.where(name: "Flat Iron Steaks").first_or_create!
 strawberries =  Ingredient.where(name: "Strawberry").first_or_create!
 sugar = Ingredient.where(name: "Sugar").first_or_create!
@@ -98,6 +99,16 @@ water = Ingredient.where(name: "Water").first_or_create!
 wheat = Ingredient.where(name: "Wheat").first_or_create!
 whole_wheat_flour = Ingredient.where(name: "Whole wheat flour").first_or_create!
 wine = Ingredient.where(name: "Red wine").first_or_create!
+
+summer_lemon_salad = Recipe.create(name: "Summer Lemon Salad", category: "Main course", photo: "lemon_salad.png", description: "Summery salad with bitter lemon flavours, great a hot day.", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
+vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: summer_lemon_salad)
+Dose.create(measure: "2 cups", ingredient: mushrooms, recipe: summer_lemon_salad)
+Dose.create(measure: "3 cloves", ingredient: garlic, recipe: summer_lemon_salad)
+Dose.create(measure: "1/2", ingredient: avocado, recipe: summer_lemon_salad)
+Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: summer_lemon_salad)
+Dose.create(measure: "1 bag" , ingredient: spinach, recipe: summer_lemon_salad)
 
 
 butternut_squash_salad = Recipe.create(name: "Butternut Squash Salad", category: "Main course", photo: "butternut_squash_salad.jpg", description: "Super healthy summery salad. Great for vegans and vegetarians and it's also dairy-free!", price: 7, prep_time: 10 , cooking_time: 5, calories: 350,
@@ -181,7 +192,7 @@ Dose.create(measure: "10g of", ingredient: sesame_pastry, recipe: houmous)
 Dose.create(measure: "some", ingredient: garlic, recipe: houmous)
 Dose.create(measure: "2" , ingredient: lemon, recipe: houmous)
 
-bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 8, photo: "bean_burger.png", instructions: dummy_instructions, prep_time: 15, cooking_time: 15, category: "Main course", calories: 807, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
+bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 8, photo: "bean_burger.png", instructions: dummy_instructions, prep_time: 14, cooking_time: 15, category: "Main course", calories: 350, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
 Dose.create(measure: "a bunch", recipe: bean_burger, ingredient: parsley)
 Dose.create(measure: "2 leaves", recipe: bean_burger, ingredient: romaine)
@@ -191,7 +202,7 @@ Dose.create(measure: "3 tablespoons", recipe: bean_burger, ingredient: ketchup)
 Dose.create(measure: "2 ears", recipe: bean_burger, ingredient: corn)
 
 
-rice_risotto = Recipe.create(name: "Lemon Rice Risotto", description: "Meyer lemon forbidden rice risotto with sweet peas", price: 6, photo: "rice_risotto.png", instructions: dummy_instructions, prep_time: 30, cooking_time: 10, category: "Main course", calories: 433, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
+rice_risotto = Recipe.create(name: "Lemon Rice Risotto", description: "Meyer lemon forbidden rice risotto with sweet peas", price: 6, photo: "rice_risotto.png", instructions: dummy_instructions, prep_time: 12, cooking_time: 10, category: "Main course", calories: 350, gluten_free: true, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
 Dose.create(measure: "1", recipe: rice_risotto, ingredient: shallots)
 Dose.create(measure: "1 cup", recipe: rice_risotto, ingredient: rice)
@@ -211,7 +222,7 @@ Dose.create(measure: "3 fluid oz", recipe: asado_negro, ingredient: wine)
 Dose.create(measure: "⅗ oz", recipe: asado_negro, ingredient: butter)
 
 
-tofu_pad_thai = Recipe.create(name: "Tofu Pad Thai", description: "Tofu Pad Thai with carrots and sweet chili sauce", price: 10, photo: "tofu_pad_thai.jpg", instructions: dummy_instructions, prep_time: 25, cooking_time: 10, category: "Main course", calories: 437, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: true, vegan: true)
+tofu_pad_thai = Recipe.create(name: "Tofu Pad Thai", description: "Tofu Pad Thai with carrots and sweet chili sauce", price: 9, photo: "tofu_pad_thai.jpg", instructions: dummy_instructions, prep_time: 10, cooking_time: 10, category: "Main course", calories: 390, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: true, vegan: true)
 
 Dose.create(measure: "2 cloves", recipe: tofu_pad_thai, ingredient: tofu)
 Dose.create(measure: "2", recipe: tofu_pad_thai, ingredient: green_onion)
@@ -349,7 +360,7 @@ Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_broccolis)
 Dose.create(measure: "1", ingredient: garlic, recipe: salad_broccolis)
 Dose.create(measure: "2 tablespoons" , ingredient: pesto, recipe: salad_broccolis)
 
-salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "Starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "Starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: false, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "400g", ingredient: mozzarella, recipe: salad_mozzarella)
 Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_mozzarella)
