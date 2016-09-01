@@ -231,9 +231,21 @@
   padding-right: 30px;
 }
 
+.panel-title-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+#save-delivery-address {
+  margin-left: 15px;
+}
 
+.order-item-checkout p {
+  margin-bottom: 0;
+}
 
-
-
+.panel-body.panel-body-unpadded {
+  padding: 0;
+}
 
