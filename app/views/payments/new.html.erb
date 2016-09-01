@@ -10,7 +10,7 @@
 
         <div class="panel panel-default">
           <div class="panel-heading" style = "text-align:right">
-            <h3 class="panel-title panel-title-flex" style="font-family:'source sans pro'">1. Check your order: <%= @grand_total %>.00€
+            <h3 class="panel-title panel-title-flex">1. Check your order - <%= @grand_total %>.00€
               <div class="line-button" style = " display: inline-block; ">
                 <%= link_to edit_order_path(@order) do %>
                   <button class="btn btn-default confirm-order-button">Edit</button>
@@ -33,14 +33,14 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title panel-title-flex" style ="font-family: 'source sans pro' "> 2. Check your delivery address:
-              <span id="current-address" class="edit-address" >
+            <h3 class="panel-title panel-title-flex"> 2. Enter your delivery address
+              <span id="current-address" class="edit-address address" >
                 <%= render "orders/address", order: @order %>
               </span>
               <div id="edit-address-form" class="edit-address hidden" style = "display:inline-block">
                 <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true, html: {class: "form-inline"} do |f| %>
                 <%= f.input :address, placeholder: 'Address', label: false %>
-                <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'button btn btn-primary pull-right'  %>
+                <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'btn btn-save-changes pull-right'  %>
                <% end %>
               </div>
             </h3>

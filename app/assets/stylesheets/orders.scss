@@ -249,3 +249,33 @@
   padding: 0;
 }
 
+.panel-body {
+  border: none;
+}
+
+.panel-title {
+  font-family: $header-font;
+  font-weight: bold;
+  background-color: $white;
+  font-size: 22px;
+}
+
+.panel-default {
+  border: none;
+  background-color: $white;
+}
+
+.panel-default > .panel-heading {
+background-color: $white;
+}
+
+.address {
+  font-family: $base-font;
+  background-color: $white;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.font {
+  font-size: 18px;
+}
