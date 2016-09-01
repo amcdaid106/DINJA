@@ -1,32 +1,26 @@
-<div class="order-process-container">
-  <div class="cart-confirm-container">
+<div class="order-process-container" style = "font-family: 'source sans pro'";>
+  <div class= "cart-confirm-container">
     <div class="cart-heading text-center">
+<<<<<<< HEAD
+      <h2>My recipes</h2>
+=======
       <h2> MY RECIPES </h2>
+>>>>>>> master
       <hr>
     </div>
-
-    <% @recipes.each do |recipe|  %>
-      <div class="row order-item-cart">
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="order-picture">
+      <% @recipes.each do |recipe|  %>
+        <div class="cart-order-items">
+          <div class="cart-order-picture">
             <%= image_tag recipe.photo %>
           </div>
+          <div class="cart-order-item-text">
+            <h4><%= recipe.name %></h4>
+             <%= link_to "#" do %>
+            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width:20px";>
+            <% end %>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-4 order-item-col-centered">
-          <p><%= recipe.name %></p>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 order-item-col-centered">
-          <%= link_to recipe_path(recipe) do %>
-            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width: 15px; display: flex;
-  align-items: flex-end;">
-              <% end %>
-        </div>
-
-      </div>
-    <% end %>
-
+      <% end %>
   </div>
 </div>
 
