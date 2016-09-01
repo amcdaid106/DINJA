@@ -12,14 +12,18 @@ Drain and rinse the beans. Add the beans, walnuts, oats, garlic powder, cumin, a
 
 Keeping the corn in the husk, place the ears on the middle rack for 15 to 20 minutes or until the husk is golden brown.Keeping the corn in the husk, place the ears on the middle rack for 15 to 20 minutes or until the husk is golden brown."
 
+almonds = Ingredient.where(name: "Almonds").first_or_create!
 artichoke_hearts = Ingredient.where(name: "Artichoke Hearts").first_or_create!
+avocado = Ingredient.where(name: "Avocado").first_or_create!
 bacon =  Ingredient.where(name: "Bacon").first_or_create!
+banana = Ingredient.where(name: "Banana").first_or_create!
 beans =  Ingredient.where(name: "Black beans").first_or_create!
 beef =  Ingredient.where(name: "Beef").first_or_create!
 blue_cheese_dressing = Ingredient.where(name: "Blue Cheese Dressing").first_or_create!
 bread_crumbs = Ingredient.where(name: "Breadcrumbs").first_or_create!
 broccoli =  Ingredient.where(name: "Broccoli").first_or_create!
 butter = Ingredient.where(name: "Butter").first_or_create!
+butternut_squash = Ingredient.where(name: "Butternut squash").first_or_create!
 carrot = Ingredient.where(name: "Carrot").first_or_create!
 cayenne = Ingredient.where(name: "Cayenne").first_or_create!
 chicken = Ingredient.where(name: "Skinned chicken").first_or_create!
@@ -42,6 +46,7 @@ green_onion = Ingredient.where(name: "Green Onion").first_or_create!
 ham =  Ingredient.where(name: "Ham").first_or_create!
 honey =  Ingredient.where(name:"Honey").first_or_create!
 hot_pepper_sauce = Ingredient.where(name: "Frank’s RedHot Sauce").first_or_create!
+kale = Ingredient.where(name: "Kale").first_or_create!
 ketchup = Ingredient.where(name: "Ketchup").first_or_create!
 kidney_beans = Ingredient.where(name: "Kidney beans").first_or_create!
 lemon = Ingredient.where(name: "Lemon").first_or_create!
@@ -49,6 +54,7 @@ lime = Ingredient.where(name: "Lime").first_or_create!
 lime_juice =  Ingredient.where(name: "lime juice").first_or_create!
 mashed_potatoes =  Ingredient.where(name: "mashed_potatoes").first_or_create!
 melon =  Ingredient.where(name: "melon").first_or_create!
+melted_chocolate = Ingredient.where(name: "Melted Dark Chocolate").first_or_create
 milk = Ingredient.where(name: "Milk").first_or_create!
 mozzarella =  Ingredient.where(name: "Mozzarella cheese").first_or_create!
 mushrooms = Ingredient.where(name: "Whole fresh mushrooms").first_or_create!
@@ -66,6 +72,7 @@ pepper_jack_cheese = Ingredient.where(name: "Pepper Jack Cheese").first_or_creat
 peppers =  Ingredient.where(name: "peppers").first_or_create!
 pesto =  Ingredient.where(name: "pesto").first_or_create!
 potatoes =  Ingredient.where(name: "Potatoes").first_or_create!
+quinoa = Ingredient.where(name: "Quinoa").first_or_create!
 red_bell_pepper = Ingredient.where(name: "Bell pepper").first_or_create!
 red_onion = Ingredient.where(name: "Red onion").first_or_create!
 rice = Ingredient.where(name: "Rice").first_or_create!
@@ -91,6 +98,71 @@ wheat = Ingredient.where(name: "Wheat").first_or_create!
 whole_wheat_flour = Ingredient.where(name: "Whole wheat flour").first_or_create!
 wine = Ingredient.where(name: "Red wine").first_or_create!
 
+
+butternut_squash_salad = Recipe.create(name: "Butternut Squash Salad", category: "Main course", photo: "kale_quinoa_salad.jpg", description: "Super healthy summery salad. Great for vegans and vegetarians and it's also dairy-free!", price: 7, prep_time: 10 , cooking_time: 5, calories: 350,
+vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: butternut_squash_salad)
+Dose.create(measure: "10 oz", ingredient: tofu, recipe: butternut_squash_salad)
+Dose.create(measure: "3 cloves", ingredient: garlic, recipe: butternut_squash_salad)
+Dose.create(measure: "1/2", ingredient: avocado, recipe: butternut_squash_salad)
+Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: butternut_squash_salad)
+Dose.create(measure: "1 whole" , ingredient: butternut_squash, recipe: butternut_squash_salad)
+
+
+kale_quinoa_salad = Recipe.create(name: "Kale and Quinoa Salad", category: "Main course", photo: "kale_quinoa_salad.jpg", description: "Super healthy summery salad. Great for vegans and vegetarians and it's also dairy-free!", price: 7, prep_time: 10 , cooking_time: 5, calories: 350,
+vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: kale_quinoa_salad)
+Dose.create(measure: "1 cup", ingredient: quinoa, recipe: kale_quinoa_salad)
+Dose.create(measure: "3 cloves", ingredient: garlic, recipe: kale_quinoa_salad)
+Dose.create(measure: "2 cups", ingredient: red_bell_pepper, recipe: kale_quinoa_salad)
+Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: kale_quinoa_salad)
+Dose.create(measure: "1 package" , ingredient: kale, recipe: kale_quinoa_salad)
+
+
+paella_primavera = Recipe.create(name: "Paella Primavera", category: "Main course", photo: "paella_primavera.jpg", description: "Light and healthy - great option for those who can't eat dairy. A taste of Spain in your home!", price: 8, prep_time: 10 , cooking_time: 10, calories: 350,
+vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: paella_primavera)
+Dose.create(measure: "1 cup", ingredient: rice, recipe: paella_primavera)
+Dose.create(measure: "3 cloves", ingredient: garlic, recipe: paella_primavera)
+Dose.create(measure: "2 cups", ingredient: red_bell_pepper, recipe: paella_primavera)
+Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: paella_primavera)
+Dose.create(measure: "1" , ingredient: egg, recipe: paella_primavera)
+
+
+banana_chocolate_muffins = Recipe.create(name: "Banana Chocolate Chip Muffins", category: "dessert", photo: "banana_choc_chip.jpg", description: "Great for those who can't eat dairy and a great way to get rid of old bananas!", price: 4, prep_time: 10 , cooking_time: 10, calories: 250,
+vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: banana_chocolate_muffins)
+Dose.create(measure: "100g", ingredient: sugar, recipe: banana_chocolate_muffins)
+Dose.create(measure: "1", ingredient: banana, recipe: banana_chocolate_muffins)
+Dose.create(measure: "2 cups", ingredient: chocolate_cake_mix, recipe: banana_chocolate_muffins)
+Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: banana_chocolate_muffins)
+Dose.create(measure: "1" , ingredient: egg, recipe: banana_chocolate_muffins)
+
+
+chocolate_quinoa_strawberries = Recipe.create(name: "Chocolate Almond Qunioa Strawberries", category: "dessert", photo: "chocolate_quinoa_strawberries.jpg", description: "Great dairy-free dessert full of nutrition. Light, fresh, and summery!", price: 6, prep_time: 15 , cooking_time: 5, calories: 150,
+vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: quinoa, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "100g", ingredient: sugar, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "1", ingredient: banana, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "2 cups", ingredient: chocolate_cake_mix, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "12", ingredient: almonds, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "1/2 teaspoon" , ingredient: cinnamon, recipe: chocolate_quinoa_strawberries)
+
+
+banoffee_tart = Recipe.create(name: "Banoffee Tarts", category: "dessert", photo: "banoffee_tart.jpg", description: "Delicious vegan version of traditional banoffee tarts!", price: 5, prep_time: 10 , cooking_time: 5, calories: 200,
+vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+Dose.create(measure: "1/4 cup", ingredient: chocolate_cake_mix, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "100g", ingredient: sugar, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "3", ingredient: banana, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "2 cups", ingredient: chocolate_cake_mix, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "8 oz", ingredient: chocolate, recipe: chocolate_quinoa_strawberries)
+Dose.create(measure: "1/2 teaspoon" , ingredient: cinnamon, recipe: chocolate_quinoa_strawberries)
 
 
 
