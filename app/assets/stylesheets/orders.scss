@@ -28,7 +28,8 @@
   align-items: center;
   font-size: larger;
   margin: 10px 6px;
-  padding: 6px;
+  padding: 10px;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
   &:hover {
     background-color: $gray-lighter;
@@ -53,7 +54,6 @@
       width: 50%;
     }
   }
-  padding-bottom: 20px;
 }
 .order-picture {
   margin: 0 20px;
@@ -118,6 +118,7 @@
   border-radius: 4px;
   font-family: $base-font;
   padding: 10px 30px;
+  margin-top: 10px;
   font-weight: 400px;
   font-size: 20px;
   border: none;

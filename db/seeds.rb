@@ -18,6 +18,7 @@ beans =  Ingredient.where(name: "Black beans").first_or_create!
 beef =  Ingredient.where(name: "Beef").first_or_create!
 blue_cheese_dressing = Ingredient.where(name: "Blue Cheese Dressing").first_or_create!
 bread_crumbs = Ingredient.where(name: "Breadcrumbs").first_or_create!
+broccoli =  Ingredient.where(name: "Broccoli").first_or_create!
 butter = Ingredient.where(name: "Butter").first_or_create!
 carrot = Ingredient.where(name: "Carrot").first_or_create!
 cayenne = Ingredient.where(name: "Cayenne").first_or_create!
@@ -79,15 +80,20 @@ strawberries =  Ingredient.where(name: "Strawberry").first_or_create!
 sugar = Ingredient.where(name: "Sugar").first_or_create!
 thyme=  Ingredient.where(name: "Thyme").first_or_create!
 tofu = Ingredient.where(name: "Tofu").first_or_create!
-tomatoes =  Ingredient.where(name: "Tomato").first_or_create!
-vanilla=  Ingredient.where(name: "vanilla").first_or_create!
+tomatoes =  Ingredient.where(name: "Tomatoes").first_or_create!
+vanilla=  Ingredient.where(name: "Vanilla").first_or_create!
 vanilla_pudding_mix = Ingredient.where(name: "Vanilla Pudding Mix").first_or_create!
 vegetable_oil = Ingredient.where(name: "Vegetable oil").first_or_create!
 vinegar =  Ingredient.where(name: "Vinegar").first_or_create!
 walnut_shortbread=  Ingredient.where(name: "walnut shortbread").first_or_create!
-water = Ingredient.where(name: "water").first_or_create!
+water = Ingredient.where(name: "Water").first_or_create!
+wheat = Ingredient.where(name: "Wheat").first_or_create!
 whole_wheat_flour = Ingredient.where(name: "Whole wheat flour").first_or_create!
 wine = Ingredient.where(name: "Red wine").first_or_create!
+
+
+
+
 
 
 
@@ -101,7 +107,6 @@ Dose.create(measure: "dessert spoon of", ingredient: sesame_oil, recipe: houmous
 Dose.create(measure: "10g of", ingredient: sesame_pastry, recipe: houmous)
 Dose.create(measure: "some", ingredient: garlic, recipe: houmous)
 Dose.create(measure: "2" , ingredient: lemon, recipe: houmous)
-
 
 bean_burger = Recipe.create(name: "Bean Burger", description: "Better bean burger with spiced ketchup and onions", price: 8, photo: "bean_burger.png", instructions: dummy_instructions, prep_time: 15, cooking_time: 15, category: "Main course", calories: 807, gluten_free: false, dairy_free: true, egg_free: true, vegetarian: true, vegan: true)
 
@@ -257,6 +262,26 @@ cottage_cheese_honey = Recipe.create(name: "Cottage cheese with honey", descript
 
 Dose.create(measure: "1/2 cup", ingredient: cottage_cheese, recipe: cottage_cheese_honey)
 Dose.create(measure: "2 teaspoons", ingredient: honey, recipe: cottage_cheese_honey)
+
+taboulet_aux_herbes = Recipe.new(name: "Tabouleh", category: "starter", photo: "taboulet_aux_herbes.png", description: "A magical experience into your mouth, that’s how they call it", price: 5, prep_time: 10 , cooking_time: 0, calories: 300, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+Dose.create(measure: "1cup of ", ingredient: wheat, recipe: taboulet_aux_herbes)
+Dose.create(measure: "3", ingredient: tomatoes, recipe: taboulet_aux_herbes )
+Dose.create(measure: "2 tablespoons" , ingredient: olive_oil, recipe: taboulet_aux_herbes)
+
+salad_broccolis = Recipe.new(name: "Broccoli salad with peanuts and pesto", category: "starter", photo: "salad_broccolis.png", description: "Fresh and healthy, the broccoli salad brings joy into your plate, blended with tahini and sesame.", price:3, prep_time:15 , cooking_time:0, calories: 250, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+Dose.create(measure: "400g of", ingredient: broccoli, recipe: salad_broccolis)
+Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_broccolis)
+Dose.create(measure: "1", ingredient: garlic, recipe: salad_broccolis)
+Dose.create(measure: "2 tablespoons" , ingredient: pesto, recipe: salad_broccolis)
+
+salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+
+Dose.create(measure: "400g", ingredient: mozzarella, recipe: salad_mozzarella)
+Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_mozzarella)
+Dose.create(measure: "some", ingredient: garlic, recipe: salad_mozzarella)
+Dose.create(measure: "2 tablespoons" , ingredient: olive_oil, recipe: salad_mozzarella)
 
 
 order = Order.create(user: User.last, delivery_date: Date.today)
