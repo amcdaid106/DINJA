@@ -38,7 +38,6 @@
               <div class = "recipe-show-tab-content details-content row" id="details_<%= recipe.id %>" >
                 <div class="col-xs-6">
                   <p><i class="fa fa-clock-o" aria-hidden="true"></i> : <%= recipe.prep_time %> mins</p>
-                  <p><i class="fa fa-cutlery" aria-hidden="true"></i> : <%= recipe.cooking_time %> mins</p>
                   <p><i class="fa fa-balance-scale" aria-hidden="true"></i> : <%= recipe.calories %> Kcal</p>
                 </div>
                 <div class="col-xs-6">
@@ -60,7 +59,7 @@
                 </div>
               </div>
               <div class="recipe-show-tab-content hidden" id="ingredients_<%= recipe.id %>">
-                <h4><i class="fa fa-envira" aria-hidden="true"></i><strong>In Your Dinja Box</strong></h4>
+                <h4><strong>In Your Dinja Box</strong></h4>
                 <% recipe.doses.each do |dose| %>
                   <p><%= dose.measure %> <%= dose.ingredient.name %></p>
                 <% end %>

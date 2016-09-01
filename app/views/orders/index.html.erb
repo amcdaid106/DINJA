@@ -4,20 +4,33 @@
       <h2>MY ORDERS</h2>
       <hr>
     </div>
+    <div class="order-item-cart my-past-orders">
+      <div>
+        <p class="font flex-quarter"><strong>Date of delivery</strong></p>
+      </div>
+      <div>
+        <p class="font flex-quarter"><strong>Amount</strong></p>
+      </div>
+      <div>
+        <p class="font flex-fifth"><strong>Status</strong></p>
+      </div>
+    </div>
     <% if @orders_paid.count > 0 %>
     <% @orders_paid.each do |orders_paid| %>
-      <div class="row order-item-cart">
-        <div class="col-xs-12 col-sm-3">
-          <p class="font"> Order number : <%= orders_paid.id%></p>
+      <div class="order-item-cart my-past-orders">
+        <div>
+          <p class="font flex-quarter"><%= orders_paid.delivery_date.strftime("%B %d, %Y")%></p>
         </div>
-        <div class="col-xs-12 col-sm-3">
-          <p class="font"><%= orders_paid.delivery_date.strftime("%B, %d, %Y")%></p>
+        <div>
+          <p class="font flex-quarter"><%= orders_paid.price%>.00€</p>
         </div>
-        <div class="col-xs-12 col-sm-3">
-          <p class="font"><%= orders_paid.price%> €</p>
-        </div>
-        <div class="col-xs-12 col-sm-3">
-          <p class="font"> Paid <i class="fa fa-check" aria-hidden="true"></i></p>
+        <div>
+          
+          <% if orders_paid.delivery_date > Date.today %>
+            <p class="font flex-fifth">On its way!   <i class="fa fa-truck" aria-hidden="true"></i></p>
+          <% else %>
+            <p class="font flex-fifth">Delivered!   <i class="fa fa-check" aria-hidden="true"></i></p>
+          <% end %>
         </div>
       </div>
     <% end %>

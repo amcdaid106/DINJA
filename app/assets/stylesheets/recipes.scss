@@ -101,7 +101,7 @@
 }
 
 .recipe-price {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 }
 .buttons-inline {
@@ -216,10 +216,6 @@
   justify-content: flex-end;
 }
 
-// .recipe-close {
-//   display: flex;
-// }
-
 .close-modal {
   position: absolute;
   right: -53px;
@@ -332,4 +328,7 @@
   text-align: center;
 }
 
+.my-recipe-name {
+  margin-left: 20px;
+}
 

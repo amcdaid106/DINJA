@@ -5,12 +5,12 @@
       <hr>
     </div>
       <% @recipes.each do |recipe|  %>
-        <div class="cart-order-items" style = "text-align: center">
+        <div class="cart-order-items">
           <div class="cart-order-picture">
             <%= image_tag recipe.photo %>
           </div>
           <div class="cart-order-item-text">
-            <h4><%= recipe.name %></h4>
+            <h4 class="my-recipe-name"><%= recipe.name %></h4>
               <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{recipe.id}" do %>
             <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width:18px";>
             <% end %>

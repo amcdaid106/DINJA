@@ -53,15 +53,16 @@
         </div>
 
 
-
+            <div class="text-center">
+              <span>Total due: <%= humanized_money_with_symbol(@order.price) %></span>
+            </div>
             <div class="panel-body payment-body text-center">
+
             <%= form_tag order_payments_path(@order), id: "payment_form" do %>
               <article>
-                <label class="price" style = "float:left">
-                  <span>Total due: <%= humanized_money_with_symbol(@order.price) %></span>
-                </label>
+
               </article>
-              <button class="payment-button btn" style= "margin-right:120px">Pay now</button>
+              <button class="payment-button btn" style="margin-right:2px">Pay now</button>
             <% end %>
             </div>
 
