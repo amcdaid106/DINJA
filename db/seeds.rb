@@ -100,7 +100,7 @@ wheat = Ingredient.where(name: "Wheat").first_or_create!
 whole_wheat_flour = Ingredient.where(name: "Whole wheat flour").first_or_create!
 wine = Ingredient.where(name: "Red wine").first_or_create!
 
-summer_lemon_salad = Recipe.create(name: "Summer Lemon Salad", category: "Main course", photo: "butternut_squash_salad.jpg", description: "Summery salad with bitter lemon flavours, great a hot day.", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
+summer_lemon_salad = Recipe.create(name: "Summer Lemon Salad", category: "Main course", photo: "lemon_salad.png", description: "Summery salad with bitter lemon flavours, great a hot day.", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
 vegetarian: true, gluten_free: false, egg_free: false, dairy_free: true, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "1/4 cup", ingredient: vegetable_oil, recipe: summer_lemon_salad)
@@ -360,7 +360,7 @@ Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_broccolis)
 Dose.create(measure: "1", ingredient: garlic, recipe: salad_broccolis)
 Dose.create(measure: "2 tablespoons" , ingredient: pesto, recipe: salad_broccolis)
 
-salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "Starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: true, vegan: true, instructions: dummy_instructions)
+salad_mozzarella = Recipe.new(name: "Salad Mozzarella", category: "Starter", photo: "salad_mozzarella.png", description:" Fresh and easy, the mozzarella salad is the salad not to miss in your italian evening", price:4, prep_time:6 , cooking_time:0, calories:150, vegetarian: true, gluten_free: true, egg_free: true, dairy_free: false, vegan: true, instructions: dummy_instructions)
 
 Dose.create(measure: "400g", ingredient: mozzarella, recipe: salad_mozzarella)
 Dose.create(measure: "10g of", ingredient: peanuts, recipe: salad_mozzarella)
