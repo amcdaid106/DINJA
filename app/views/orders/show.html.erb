@@ -13,7 +13,7 @@
 
     <div class="panel-body">
       <% @order.order_items.each do |order_item| %>
-        <div class="cart-order-items" id="order_item_row_<%= order_item.id %>">
+        <div class="order-complete-items" id="order_item_row_<%= order_item.id %>">
           <div class="cart-order-picture">
             <%= image_tag order_item.recipe.photo %>
           </div>
