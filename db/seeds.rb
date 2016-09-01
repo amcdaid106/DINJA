@@ -211,7 +211,7 @@ Dose.create(measure: "3 fluid oz", recipe: asado_negro, ingredient: wine)
 Dose.create(measure: "⅗ oz", recipe: asado_negro, ingredient: butter)
 
 
-tofu_pad_thai = Recipe.create(name: "Tofu Pad Thai", description: "Tofu Pad Thai with carrots and sweet chili sauce", price: 10, photo: "tofu_pad_thai.jpg", instructions: dummy_instructions, prep_time: 25, cooking_time: 10, category: "Main course", calories: 437, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: true, vegan: true)
+tofu_pad_thai = Recipe.create(name: "Tofu Pad Thai", description: "Tofu Pad Thai with carrots and sweet chili sauce", price: 9, photo: "tofu_pad_thai.jpg", instructions: dummy_instructions, prep_time: 25, cooking_time: 10, category: "Main course", calories: 437, gluten_free: true, dairy_free: true, egg_free: false, vegetarian: true, vegan: true)
 
 Dose.create(measure: "2 cloves", recipe: tofu_pad_thai, ingredient: tofu)
 Dose.create(measure: "2", recipe: tofu_pad_thai, ingredient: green_onion)
