@@ -4,18 +4,18 @@
       <h2>MY ORDERS</h2>
       <hr>
     </div>
-    <div class="order-item-cart my-past-orders">
-      <div>
-        <p class="font flex-quarter"><strong>Date of delivery</strong></p>
-      </div>
-      <div>
-        <p class="font flex-quarter" style="padding-left: 38px;"><strong>Amount</strong></p>
-      </div>
-      <div>
-        <p class="font flex-fifth" style="padding-right: 60px;"><strong>Status</strong></p>
-      </div>
-    </div>
     <% if @orders_paid.count > 0 %>
+      <div class="order-item-cart my-past-orders">
+        <div>
+          <p class="font flex-quarter"><strong>Date of delivery</strong></p>
+        </div>
+        <div>
+          <p class="font flex-quarter" style="padding-left: 38px;"><strong>Amount</strong></p>
+        </div>
+        <div>
+          <p class="font flex-fifth" style="padding-right: 60px;"><strong>Status</strong></p>
+        </div>
+      </div>
     <% @orders_paid.each do |orders_paid| %>
       <div class="order-item-cart my-past-orders">
         <div>
