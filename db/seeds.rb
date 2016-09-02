@@ -134,7 +134,7 @@ Dose.create(measure: "1/2", ingredient: avocado, recipe: summer_lemon_salad)
 Dose.create(measure: "1/4 teaspoon", ingredient: salt, recipe: summer_lemon_salad)
 Dose.create(measure: "1 bag" , ingredient: spinach, recipe: summer_lemon_salad)
 
-magret_canard = Recipe.create(name: "Magret de canard", category: "Starter", photo: "magret_canard.png", description: "Hopefully you are very hungry to start with this. It's very tasty!", price: 4, prep_time: 10 , cooking_time: 5, calories: 150,
+magret_canard = Recipe.create(name: "Duck Breast", category: "Starter", photo: "magret_canard.png", description: "Hopefully you are very hungry to start with this. It's very tasty!", price: 5, prep_time: 10 , cooking_time: 5, calories: 350,
 vegetarian: false, gluten_free: false, egg_free: false, dairy_free: true, vegan: false, instructions: dummy_instructions)
 
 Dose.create(measure: "1/4 cup", ingredient: olive_oil, recipe: magret_canard)
