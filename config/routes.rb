@@ -27,6 +27,11 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
   # get '/order_confirmation/:id', to: 'orders#show', as: :order
-  resources :order_items, only: [ :destroy, :create]
+  resources :order_items, only: [ :destroy, :create] do
+    member do
+      put :add_one
+      put :remove_one
+    end
+  end
 
 end

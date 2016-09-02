@@ -13,11 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @grand_total = 0
-    @order.order_items.each do |item|
-      @grand_total += (item.quantity * item.recipe.price)
-    end
-
+    @grand_total = @order.order_items.joins(:recipe).sum("quantity * recipes.price")
   end
 
   def update

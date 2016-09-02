@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
   include OrdersHelper
-  before_action :create_order, only: [:create]
+  before_action :set_order, only: [:create, :add_one, :remove_one]
 
   def destroy
     @order_item = OrderItem.find(params[:id])
@@ -38,9 +38,35 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def add_one
+    @order_item = @order.order_items.find(params[:id])
+    @order_item.quantity += 1
+    @order_item.save
+
+    @grand_total = @order.order_items.joins(:recipe).sum("quantity * recipes.price")
+
+    respond_to do |format|
+      format.html { redirect_to edit_order_path(@order) }
+      format.js   { render :cart_order_item }
+    end
+  end
+
+  def remove_one
+    @order_item = @order.order_items.find(params[:id])
+    @order_item.quantity -= 1 if @order_item.quantity > 1
+    @order_item.save
+
+    @grand_total = @order.order_items.joins(:recipe).sum("quantity * recipes.price")
+
+    respond_to do |format|
+      format.html { redirect_to edit_order_path(@order) }
+      format.js   { render :cart_order_item }
+    end
+  end
+
 private
 
-  def create_order
+  def set_order
     @order = current_order
   end
 end

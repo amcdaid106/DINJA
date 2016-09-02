@@ -1,0 +1,2 @@
+$('#order_item_row_<%= @order_item.id %>').html("<%= j render 'orders/cart_order_item', order_item: @order_item %>");
+$('#grand_total').html("Total: <%= @grand_total %>.00€");
