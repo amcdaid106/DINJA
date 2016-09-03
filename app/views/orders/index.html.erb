@@ -1,48 +1,48 @@
-<div class="order-process-container">
-  <div class="cart-confirm-container">
-    <div class="cart-heading text-center">
-      <h2>MY ORDERS</h2>
-      <hr>
-    </div>
+<div class="inner-container">
+  <div class="inner-container-heading text-center">
+    <h2>MY ORDERS</h2>
+    <hr>
+  </div>
+  <div class="row">
     <% if @orders_paid.count > 0 %>
-      <div class="order-item-cart my-past-orders">
-        <div>
-          <p class="font flex-quarter"><strong>Date of delivery</strong></p>
+      <div class="my-orders">
+        <div class="col-xs-5">
+          <h5 class="my-orders-column-values"><strong>Date of delivery</strong></h5>
         </div>
-        <div>
-          <p class="font flex-quarter" style="padding-left: 38px;"><strong>Amount</strong></p>
+        <div class="col-xs-5">
+          <h5 class="my-orders-column-values"><strong>Amount</strong></h5>
         </div>
-        <div>
-          <p class="font flex-fifth" style="padding-right: 60px;"><strong>Status</strong></p>
+        <div class="col-xs-2">
+          <h5 class="my-orders-column-values"><strong>Status</strong></h5>
         </div>
       </div>
     <% @orders_paid.each do |orders_paid| %>
-      <div class="order-item-cart my-past-orders">
-        <div>
-          <p class="font flex-quarter"><%= orders_paid.delivery_date.strftime("%B %d, %Y")%></p>
+      <div class="my-orders">
+        <div class="col-xs-5">
+          <p class="my-orders-column-values my-orders-column-values"><%= orders_paid.delivery_date.strftime("%B %d, %Y")%></p>
         </div>
-        <div>
-          <p class="font flex-quarter"><%= orders_paid.price%>.00€</p>
+        <div class="col-xs-5">
+          <p class="my-orders-column-values my-orders-column-values"><%= orders_paid.price%>.00€</p>
         </div>
-        <div>
-          
-          <% if orders_paid.delivery_date > Date.today %>
-            <p class="font flex-fifth">On its way!   <i class="fa fa-truck" aria-hidden="true"></i></p>
-          <% else %>
-            <p class="font flex-fifth">Delivered!   <i class="fa fa-check" aria-hidden="true"></i></p>
-          <% end %>
+        <div class="col-xs-2">
+        <% if orders_paid.delivery_date > Date.today %>
+          <p class="my-orders-column-values my-orders-column-values">On its way!   <i class="fa fa-truck" aria-hidden="true"></i></p>
+        <% else %>
+          <p class="my-orders-column-values my-orders-column-values">Delivered!   <i class="fa fa-check" aria-hidden="true"></i></p>
+        <% end %>
         </div>
       </div>
     <% end %>
     <% else %>
-     <div class="no-items-in-cart">
-        <h4 class="text-center">You have currently no orders. Time to get clicking and start cooking!</h4>
+     <div class="no-items-to-show">
+        <h4 class="text-center">You haven't made any orders yet. Time to get clicking and start cooking!</h4>
         <hr>
         <%= link_to root_path({target: 'starters'}) do  %>
           <button class="btn btn-check-meals btn-lg">Check out this week's meals</button>
         <% end %>
       </div>
     <% end %>
+
   </div>
 </div>
 

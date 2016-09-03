@@ -1,32 +1,28 @@
-<div class="order-process-container">
-  <div class="cart-confirm-container">
-    <div class="cart-heading text-center">
-      <h2>YOUR SHOPPING CART</h2>
-      <hr>
-    </div>
-    <% if @order.order_items.count > 0 %>
-      <%= form_tag order_path(@order), method: :patch do %>
-        <% @order.order_items.each do |order_item| %>
-          <div class="cart-order-items" id="order_item_row_<%= order_item.id %>">
-            <%= render 'cart_order_item', order_item: order_item %>
-          </div>
-        <% end %>
-        <div class="row">
-        <br>
-        <div class="text-center">
-            <span id="grand_total">Total: <%= @grand_total %>.00€</span><br>
-            <%= submit_tag "Checkout", id: "grand_total", class: "btn orders-checkout-button" %>
+<div class="inner-container">
+  <div class="inner-container-heading cart-heading text-center">
+    <h2>YOUR SHOPPING CART</h2>
+    <hr>
+  </div>
+  <% if @order.order_items.count > 0 %>
+    <%= form_tag order_path(@order), method: :patch do %>
+      <% @order.order_items.each do |order_item| %>
+        <div class="order-items-list cart-order-items" id="order_item_row_<%= order_item.id %>">
+          <%= render 'cart_order_item', order_item: order_item %>
         </div>
       <% end %>
-    <% else %>
-      <div class="no-items-in-cart">
-        <h4 class="text-center">There are currently no items in your cart. Time to get clicking and start cooking!</h4>
-        <hr>
-        <%= link_to root_path({target: 'starters'}) do  %>
-          <button class="btn btn-check-meals btn-lg">Check out this week's meals</button>
-        <% end %>
+      <br>
+      <div class="text-center">
+          <span id="grand_total">Total: <%= @grand_total %>.00€</span><br>
+          <%= submit_tag "Checkout", id: "grand_total", class: "btn orders-checkout-button" %>
       </div>
     <% end %>
-
-  </div>
+  <% else %>
+    <div class="no-items-to-show">
+      <h4 class="text-center">There are currently no items in your cart. Time to get clicking and start cooking!</h4>
+      <hr>
+      <%= link_to root_path({target: 'starters'}) do  %>
+        <button class="btn btn-check-meals btn-lg">Check out this week's meals</button>
+      <% end %>
+    </div>
+  <% end %>
 </div>

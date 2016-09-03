@@ -1,14 +1,8 @@
-.order-confirm-heading h2 {
-  font-size: 28px;
-}
+// Style for payments#new
 
 .order-confirm-heading hr {
-  color: $blue;
-  background-color: $blue;
-  border: 1px solid;
-  width: 25%;
+  width: 20%;
 }
-
 .payment-button {
   background-color: $blue;
   color: $white;
@@ -25,8 +19,6 @@
   color: $white;
   }
 }
-
-
 .btn-save-changes {
   background-color: $blue;
   color: $white;

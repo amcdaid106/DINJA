@@ -1,6 +1,5 @@
-<div class="order-process-container">
-  <div class="order-confirm-container">
-  <div class="order-confirmation-heading text-center">
+<div class="inner-container">
+  <div class="inner-container-heading order-confirmation-heading text-center">
     <h2>ORDER COMPLETE!</h2>
     <hr>
   </div>
@@ -13,12 +12,12 @@
 
     <div class="panel-body">
       <% @order.order_items.each do |order_item| %>
-        <div class="order-complete-items" id="order_item_row_<%= order_item.id %>">
-          <div class="cart-order-picture">
+        <div class="order-items-list" id="order_item_row_<%= order_item.id %>">
+          <div class="order-item-picture">
             <%= image_tag order_item.recipe.photo %>
           </div>
 
-          <div class="cart-order-item-text">
+          <div class="order-item-text">
             <h4 id="recipe_name_<%= order_item.id %>"><%= order_item.recipe.name %></h4>
             <div><span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00€</div>
             <div class="orders-controls-container">
@@ -38,6 +37,5 @@
           <div class="total-price"><h4>€<%= @grand_total %>.00</h4></div>
       </div>
     </div>
-  </div>
   </div>
 </div>

@@ -1,15 +1,15 @@
-<div class="order-process-container" style = "font-family: 'source sans pro'";>
+<div class="inner-container" style = "font-family: 'source sans pro'";>
   <div class= "cart-confirm-container">
-    <div class="cart-heading text-center">
+    <div class="inner-container-heading text-center">
       <h2>MY RECIPES</h2>
       <hr>
     </div>
       <% @recipes.each do |recipe|  %>
-        <div class="cart-order-items">
-          <div class="cart-order-picture">
+        <div class="order-items-list">
+          <div class="order-item-picture">
             <%= image_tag recipe.photo %>
           </div>
-          <div class="cart-order-item-text">
+          <div class="order-item-text">
             <h4 class="my-recipe-name"><%= recipe.name %></h4>
               <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{recipe.id}" do %>
             <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width:18px";>
