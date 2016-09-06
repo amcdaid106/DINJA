@@ -31,9 +31,6 @@ class OrdersController < ApplicationController
     else
       render :edit
     end
-
-
-
   end
 
   def update_address
@@ -61,5 +58,4 @@ class OrdersController < ApplicationController
   def create_order
     @order = current_order
   end
-
 end
