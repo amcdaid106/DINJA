@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   include OrdersHelper
   before_action :set_order, only: [:edit, :update, :update_address, :show]
   before_action :create_order, only: [:edit]
-  # before_action :set_grand_total, [:edit, :update, :show]
 
   def index
     @orders = Order.where({ user_id: params[:user_id] })
@@ -59,13 +58,6 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
-  end
-
-  def set_grand_total
-    @grand_total = 0
-    @order.order_items.each do |item|
-      @grand_total += (item.quantity * item.recipe.price)
-    end
   end
 
   def create_order
