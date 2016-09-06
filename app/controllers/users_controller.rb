@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:edit, :update]
-
   def edit
     @user = current_user
   end
@@ -34,9 +32,4 @@ class UsersController < ApplicationController
       :no_gluten, :no_eggs, :no_dairy, :vegetarian, :vegan, :max_calories,
       :max_calories, :max_prep_time)
   end
-
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
-
 end

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
- def self.find_for_facebook_oauth(auth)
+  def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
     user_params[:token] = auth.credentials.token
@@ -30,7 +30,7 @@ class User < ApplicationRecord
     end
 
     return user
-end
+  end
 
   def has_user_completed_food_preferences?
     !vegetarian.nil?

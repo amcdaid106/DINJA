@@ -57,9 +57,7 @@ class RecipesController < ApplicationController
       @mains = @recipes.where(category: "Main course").sample(6)
       @desserts = @recipes.where(category: "Dessert").sample(3)
     end
-
   end
-
 
   private
 
@@ -68,11 +66,6 @@ class RecipesController < ApplicationController
       @order = current_user.orders.where(status: 'pending').first
     end
   end
-
-
 end
 
-# Ajouter une semaine aux meals (ex: 1, 2, 3, 4...)
-# Ajouter : toujours les mêmes meals doivent apparaître pendant 1 semaine
-# fixer le sample dans la durée
 
