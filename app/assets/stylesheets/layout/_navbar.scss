@@ -21,7 +21,6 @@
     margin-bottom: 0px;
   }
 }
-
 .navbar-side {
   flex: 0 0 30%;
   &-right {
@@ -53,18 +52,18 @@
   box-shadow: 1px 1px 4px $gray-lighter;
   border-color: $gray-lighter;
   flex: 0 0 30%;
-}
-.navbar-dropdown-menu li > a {
-  transition: color 0.3s ease;
-  font-weight: lighter;
-  color: $gray;
-  font-size: 15px;
-  line-height: 22px;
-  padding: 10px 20px;
-}
-.navbar-dropdown-menu li > a:hover {
-  background: transparent;
-  color: black;
+  li > a {
+    transition: color 0.3s ease;
+    font-weight: lighter;
+    color: $gray;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 10px 20px;
+    &:hover {
+      background: transparent;
+      color: black;
+    }
+  }
 }
 .navbar-dropdown-menu:before {
   content: ' ';
@@ -96,26 +95,12 @@
   text-decoration: none;
 }
 
-.police {
+.navbar-right-font {
   color: $gray;
   font-size: 18px;
   font-family: $header-font;
 }
 
-// alert when profile not updated
-.text-update-profile {
-  font-size: 18px;
-  color: $white;
-  font-family: $base-font;
-  font-weight: normal;
-}
-
-.link-update-profile {
-  font-size: 18px;
-  color: $gray;
-  font-family: $base-font;
-   font-weight: normal;
-}
 
 
 

@@ -1,5 +1,5 @@
 <div class="inner-container">
-  <div class="inner-container-heading text-center">
+  <div class="inner-container-heading my-orders-heading text-center">
     <h2>MY ORDERS</h2>
     <hr>
   </div>
@@ -26,9 +26,9 @@
         </div>
         <div class="col-xs-2">
         <% if orders_paid.delivery_date > Date.today %>
-          <p class="my-orders-column-values my-orders-column-values">On its way!   <i class="fa fa-truck" aria-hidden="true"></i></p>
+          <p class="my-orders-column-values my-orders-column-values">On its way!<i class="fa fa-truck" aria-hidden="true"></i></p>
         <% else %>
-          <p class="my-orders-column-values my-orders-column-values">Delivered!   <i class="fa fa-check" aria-hidden="true"></i></p>
+          <p class="my-orders-column-values my-orders-column-values">Delivered!<i class="fa fa-check" aria-hidden="true"></i></p>
         <% end %>
         </div>
       </div>

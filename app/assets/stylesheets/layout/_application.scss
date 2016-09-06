@@ -1,11 +1,38 @@
 body {
   background-color: $gray-background;
 }
-
 .container {
   background-color: $white;
 }
-
+.inner-container {
+  margin: 20px 250px 60px 250px;
+  background-color: $white;
+  padding: 30px;
+  border-radius: 3px;
+}
+.inner-container-heading {
+  h2 {
+  font-size: 28px;
+  }
+  hr {
+    color: $blue;
+    background-color: $blue;
+    border: 1px solid;
+    margin-top: 0;
+  }
+}
+.text-update-profile {
+  font-size: 16px;
+  color: $white;
+  font-family: $base-font;
+  font-weight: normal;
+}
+#link-update-profile {
+  font-size: 16px;
+  color: $gray;
+  font-family: $base-font;
+   font-weight: normal;
+}
 .loading {
   align-items: center;
   background: $gray-light;
@@ -21,3 +48,4 @@ body {
     font-size: 90px;
   }
 }
+

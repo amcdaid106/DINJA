@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: "recipes#weekly"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :recipes, only: [:show]
   resources :ingredients, only: [:index]
@@ -15,9 +14,6 @@ Rails.application.routes.draw do
   end
 
 
-  # resources :orders, only: [:edit], as: 'cart'
-
-
   get '/cart/:id', to: 'orders#edit', as: :edit_order
   resources :orders, only: [ :update, :show ] do
     member do
@@ -26,7 +22,7 @@ Rails.application.routes.draw do
 
     resources :payments, only: [:new, :create]
   end
-  # get '/order_confirmation/:id', to: 'orders#show', as: :order
+
   resources :order_items, only: [ :destroy, :create] do
     member do
       put :add_one

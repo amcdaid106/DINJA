@@ -12,10 +12,9 @@
 // Your CSSn
 @import "layout/index";
 @import "components/index";
-@import "pages/index";
 @import "vendor/index";
 
-@import "recipes";
+@import "recipes/recipes";
 @import "users";
 @import "orders/orders";
 @import "devise";

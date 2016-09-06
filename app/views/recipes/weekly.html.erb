@@ -1,35 +1,25 @@
-<% if user_signed_in? %>
-  <% if current_user.has_user_completed_food_preferences? == false %>
-   <div class="alert alert-info alert-dismissible alert-profile" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-     <div class="text-update-profile">Don't forget to complete <%= link_to "your profile", edit_user_path(current_user), class: "link-update-profile"%> so that you only see meals that match your food preferences.</div>
-    </div>
-  <% end %>
-<% end %>
-
-<div class="banner" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 70%), url('<%= asset_path 'shutterstock.png' %>');">
+<div class="banner" style="background-image: linear-gradient(-210deg, rgba(0,10,58,0.6) 0%, rgba(0,10,10,0.2) 70%), url('<%= asset_path 'banner_background.png' %>');">
   <div class="banner-content">
   <p>Sick of making the same thing for dinner every night?</p>
     <h1>Let us do the shopping, you do the cooking!</h1>
     <br> <br> <br>
-    <a id="link-to-starters" href="#starters" class="btn btn-lg">Check out this week's meals</a>
+    <a id="link-to-starters" href="#starters" class="home-button btn btn-lg">Check out this week's meals</a>
   </div>
 </div>
-
 
 
 <div class="weekly-section">
   <div id="how-it-works" class="container features-container">
     <div class="row">
        <div class="col-xs-12 col-sm-6 col-md-4">
-         <div class="features text-center" style = "padding-top: 15px">
+         <div class="features text-center">
           <img  src="<%= asset_path "compose.png" %>"/>
           <h3>Tell us about your diet</h3>
           <p>Any food preferences, restrictions, or allergies? Only like to cook quick-and-easy meals? Complete your profile - you'll only see dishes that match.</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="features text-center" style = "padding-top: 15px">
+        <div class="features text-center">
           <img src="<%= asset_path "computer.png" %>" />
           <h3>Fill up your cart</h3>
           <p> Choose between a weekly selection of starters, main courses, and desserts; as many or as few as you need! No commitment required.</p>
@@ -37,7 +27,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="features text-center" style = "padding-top: 15px">
+        <div class="features text-center">
           <img src="<%= asset_path "dolly.png" %>" />
           <h3>Delivery right to your door</h3>
           <p>In your Dinja box, you'll find all the ingredients you need. No more trips to the supermarket, no more wondering what to buy for dinner. Bon appétit!</p>
@@ -54,7 +44,7 @@
         <% @starters.each do |starter| %>
           <div class="col-xs-12 col-sm-4">
             <div class="recipe-container">
-            <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{starter.id}" do %>
+              <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{starter.id}" do %>
               <div class="recipe-picture" style="background: url('<%= image_path starter.photo %>');">
               </div>
               <% end %>
@@ -66,7 +56,7 @@
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: starter.id } %>
                       <div class="buttons-inline weekly-buttons">
-                        <span class="added-weekly-text" id='added-button-<%= starter.id %>'>
+                        <span class="weekly-quantity-text-text" id='add-button-<%= starter.id %>'>
                           <%= order_item_quantity_label(@order, starter) %>
                         </span>
                         <%= f.submit " + ", class: "recipe-select" %>
@@ -104,7 +94,7 @@
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: main.id } %>
                       <div class="buttons-inline">
-                        <span class="added-weekly-text" id='added-button-<%= main.id %>'>
+                        <span class="weekly-quantity-text-text" id='add-button-<%= main.id %>'>
                           <%= order_item_quantity_label(@order, main) %>
                         </span>
                         <%= f.submit " + ", class: "recipe-select" %>
@@ -143,7 +133,7 @@
                     <%= simple_form_for OrderItem.new, remote: true do |f| %>
                       <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
                       <div class="buttons-inline">
-                        <span class="added-weekly-text" id='added-button-<%= dessert.id %>'>
+                        <span class="weekly-quantity-text-text" id='add-button-<%= dessert.id %>'>
                           <%= order_item_quantity_label(@order, dessert) %>
                         </span>
                         <%= f.submit " + ", class: "recipe-select" %>
@@ -174,7 +164,7 @@
   Waste no time wondering what to cook from now on!</p>
   <form class="form-inline contact-dinja-form">
     <input type="email" placeholder="contact@dinja.com" class="form-control">
-    <input type="submit" value="Receive weekly recipes" class="btn btn-danger btn-bordered btn-bordered-danger">
+    <input type="submit" value="Receive weekly recipes" class="home-button btn btn-danger btn-bordered btn-bordered-danger">
   </form>
 </div>
 

@@ -1,22 +1,20 @@
-<div class="inner-container" style = "font-family: 'source sans pro'";>
-  <div class= "cart-confirm-container">
-    <div class="inner-container-heading text-center">
-      <h2>MY RECIPES</h2>
-      <hr>
-    </div>
-      <% @recipes.each do |recipe|  %>
-        <div class="order-items-list">
-          <div class="order-item-picture">
-            <%= image_tag recipe.photo %>
-          </div>
-          <div class="order-item-text">
-            <h4 class="my-recipe-name"><%= recipe.name %></h4>
-              <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{recipe.id}" do %>
-            <img src="<%= asset_path "magnifyingglass2.png"%>" style = "width:18px";>
-            <% end %>
-          </div>
-        </div>
-        <%= render 'recipes/show', recipe: recipe, mode: "ordered" %>
-      <% end %>
+<div class="inner-container">
+  <div class="inner-container-heading my-recipes-heading text-center">
+    <h2>MY RECIPES</h2>
+    <hr>
   </div>
+  <% @recipes.each do |recipe|  %>
+    <div class="order-items-list">
+      <div class="order-item-picture">
+        <%= image_tag recipe.photo %>
+      </div>
+      <div class="order-item-text">
+        <h4 class="my-recipe-name"><%= recipe.name %></h4>
+          <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{recipe.id}" do %>
+            <img src="<%= asset_path "magnifyingglass2.png"%>">
+          <% end %>
+      </div>
+    </div>
+    <%= render 'recipes/show', recipe: recipe, mode: "ordered" %>
+  <% end %>
 </div>

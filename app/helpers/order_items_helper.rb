@@ -6,9 +6,9 @@ module OrderItemsHelper
     return unless order_item
 
     if referral == "recipe_show"
-      css_class_name = "recipe-added-count-in-show"
+      css_class_name = "quantity-count-in-show"
     else
-      css_class_name = "recipe-added-count"
+      css_class_name = "quantity-count"
     end
 
     content_tag :p, "Quantity: #{order_item.quantity}", class: css_class_name

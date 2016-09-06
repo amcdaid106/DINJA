@@ -1,5 +1,41 @@
-// Style for recipes#weekly
-
+.banner {
+  color: white;
+  text-align: center;
+  height: 70vh;
+  display: flex;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 75px;
+    text-shadow: 0px 1px ;
+    font-family: $banner-font;
+    letter-spacing: 1px;
+  }
+  p {
+    font-size: 40px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: $banner-font;
+    letter-spacing: 1px;
+  }
+  .home-button {
+    background-color: $red;
+    opacity: 0.9;
+    color: $white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    border: none;
+    font-family: $base-font;
+  }
+  .home-button:hover {
+    background: $red;
+    opacity: 0.8;
+    text-decoration: none;
+    color: $white;
+  }
+}
 .recipe-category-title {
     position: relative;
     z-index: 4;
@@ -22,8 +58,8 @@
   }
 }
 .recipe-category-title-start {
-  text-align:center;
-  color:inherit;
+  text-align: center;
+  color: inherit;
   font-family: $banner-font;
 }
 .features-container {
@@ -31,6 +67,7 @@
   margin-bottom: 60px;
   background-color: $gray-background;
   .features {
+    padding-top: 15px;
     p {
       margin: 0 38px;
     }
@@ -41,7 +78,6 @@
 
   }
 }
-
 .weekly-section {
   background-color: $gray-background;
   padding-top: 15px;
@@ -53,8 +89,6 @@
 .card-price {
   width: 50px;
   border-radius: 50%;
-}
-.card-price {
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
@@ -69,7 +103,6 @@
     outline: none;
   }
 }
-
 .recipe-picture {
   height: 220px;
   width: 100%;
@@ -77,7 +110,6 @@
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
-
 .recipe-footer {
   background-color: $white;
   padding: 15px;
@@ -87,19 +119,16 @@
   min-height: 130px;
   position: relative;
 }
-
 .recipe-title {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.4px;
 }
-
 .recipe-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .recipe-price {
   font-size: 20px;
   font-weight: 400;
@@ -112,7 +141,7 @@
   display: table;
   vertical-align: middle;
 }
-.added-weekly-text {
+.weekly-quantity-text-text {
   display: table-cell;
   padding-right: 10px;
 
@@ -134,21 +163,9 @@
   color: $white;
   }
 }
-.recipe-added-count {
-  //height: 34px;
+.quantity-count {
   margin: 0;
 }
-//this is for recipe#show
-.recipe-added-count-in-show {
-  margin-bottom: 7px;
-  height: 48px;
-  font-size: 20px;
-}
-.added-text-in-show {
-  display: inline-block;
-  margin-right: 10px;
-}
-//back to recipes#weekly
 .recipe-place-order-button-container {
   display: flex;
   justify-content: center;
@@ -170,7 +187,6 @@
   color: $white;
   }
 }
-
 #newsletter {
   background-color: $gray-darker;
   opacity: 0.8;
@@ -187,148 +203,5 @@
 .contact-dinja-form {
   opacity: 1;
   margin-bottom: 40px;
-}
-
-
-
-// Style for recipes#show
-.container-recipe-show {
-  margin-top: 100px;
-}
-.recipe-info-show-1 {
-  height: 100px;
-  background-color: $white;
-  margin: 0px auto 0px auto;
-  display: flex;
-  border: 1px solid #E7E7E7;
-  align-items: center;
-}
-.recipe-show-name {
-  flex: 1 0 auto;
-  h3 {
-  margin-top: 11px;
-  padding: 12px;
-  font-size: 21px;
-  }
-}
-.recipe-info-details {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.close-modal {
-  position: absolute;
-  right: -53px;
-  top: -25px;
-  color: white;
-  opacity: 1;
-  border: 2px solid white !important;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.modal-recipe {
-  .modal-dialog {
-    width:1200px;
-  }
-}
-
-.recipe-add-to-cart-button {
-  color: $white;
-  background-color: $red;
-  font-family: $base-font;
-  opacity: 0.9;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: 300px;
-  font-size: 20px;
-  transition: background 0.3s ease;
-  border: none;
-  &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-    color: $white;
-  }
-}
-.recipe-show-cart {
-  color: #E45F56;
-  font-size: 46px;
-  margin: 0 10px;
-}
-
-.recipe-info-show-2 {
-  height: 400px;
-  background-color: #E7E7E7;
-  border-right: 1px solid #E7E7E7;
-  border-bottom: 1px solid #E7E7E7;
-  margin: 0px auto;
-  display: flex;
-  .recipe-image {
-    margin: 0 -15px;
-    min-height: 399px;
-    background-size: cover !important;
-    background-position: center center;
-  }
-  .recipe-show-tab-container {
-    padding: 0;
-  }
-  .recipe-show-tabs-section {
-    width: 100%;
-    flex: 0 0 auto;
-    background-color: $white;
-    overflow: auto;
-    padding-right: -20px;
-  }
-  .recipe-show-tab-list {
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-  }
-}
-.recipe-show-tab {
-  flex: 0 0 33%;
-  font-size: 18px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  letter-spacing: 0.8px;
-  background-color: #F0F0F0;
-  opacity: 0.8;
-  text-align: center;
-  .details {
-    border-right: 1px solid gray;
-  }
-  .ingredients {
-    border-right: 1px solid gray;
-  }
-  &:hover {
-    opacity: 1;
-  }
-}
-.recipe-show-tab.active {
-  border-bottom: 5px solid $blue;
-  opacity: 1;
-}
-.recipe-show-tab-content {
-  border-left: 0.2px solid $gray-lighter;
-  border-right: 0.2px solid $gray-lighter;
-  border-bottom: 0.2px solid $gray-lighter;
-  height: calc(400px - 60px);
-  overflow: scroll;
-  text-align: left;
-  padding: 30px;
-  font-size: 18px;
-}
-.iconTick{
-  background-color:red !important;
-}
-
-.payment-body {
-  text-align: center;
-}
-
-.my-recipe-name {
-  margin-left: 20px;
 }
 
