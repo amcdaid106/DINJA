@@ -3,23 +3,43 @@
 .order-confirm-heading hr {
   width: 20%;
 }
-.payment-button {
-  background-color: $blue;
-  color: $white;
-  border-radius: 4px;
-  font-family: $base-font;
-  padding: 10px 30px;
-  font-weight: 400px;
-  font-size: 20px;
+.panel-title {
+  font-family: $header-font;
+  font-weight: bold;
+  background-color: $white;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.panel-body {
   border: none;
-  &:hover {
-  background-color: $blue;
-  opacity: 0.8;
-  text-decoration: none;
-  color: $white;
+}
+.panel-body.confirm-info-panel-body {
+  padding: 0;
+}
+.panel-default {
+  border: none;
+  background-color: $white;
+  .panel-heading {
+  background-color: $white;
+  text-align: right;
   }
 }
-.btn-save-changes {
+#edit-order-button {
+  display: inline-block;
+}
+#current-address-text {
+  display: inline-block
+}
+#edit-address-button {
+  font-family: $header-font;
+}
+#edit-address-form {
+  display: inline-block;
+}
+#save-delivery-address {
+  margin-left: 15px;
   background-color: $blue;
   color: $white;
   border-radius: 4px;
@@ -35,3 +55,35 @@
   background-color: $blue;
   }
 }
+#current-address {
+  font-family: $base-font;
+  background-color: $white;
+  font-size: 16px;
+  font-weight: normal;
+}
+#confirm-info-map {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+.confirm-all-info p {
+  margin: 0 11px;
+}
+.payment-button {
+  background-color: $blue;
+  color: $white;
+  border-radius: 4px;
+  font-family: $base-font;
+  padding: 10px 30px;
+  margin-right: 2px;
+  font-weight: 400px;
+  font-size: 20px;
+  border: none;
+  &:hover {
+  background-color: $blue;
+  opacity: 0.8;
+  text-decoration: none;
+  color: $white;
+  }
+}
+

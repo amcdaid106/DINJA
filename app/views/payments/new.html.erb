@@ -7,16 +7,16 @@
   <div class="confirm-all-info">
 
       <div class="panel panel-default">
-        <div class="panel-heading" style = "text-align:right">
-          <h3 class="panel-title panel-title-flex">1. Check your order - <%= @grand_total %>.00€
-            <div class="line-button" style = " display: inline-block; ">
+        <div class="panel-heading">
+          <h3 class="panel-title">1. Review your order - <%= @grand_total %>.00€
+            <div id="edit-order-button">
               <%= link_to edit_order_path(@order) do %>
                 <button class="btn btn-default confirm-order-button">Edit</button>
-                <% end %>
+              <% end %>
             </div>
           </h3>
         </div>
-        <div class="panel-body panel-body-unpadded">
+        <div class="panel-body confirm-info-panel-body">
           <% @order.order_items.each do |item| %>
             <div class="order-item-confirm">
               <p class="order-item-confirm-name"><%= item.recipe.name %></p>
@@ -31,19 +31,19 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title panel-title-flex"> 2. Enter your delivery address
-            <span id="current-address" class="edit-address address" >
+          <h3 class="panel-title"> 2. Confirm delivery address
+            <div id="current-address">
               <%= render "orders/address", order: @order %>
-            </span>
-            <div id="edit-address-form" class="edit-address hidden" style = "display:inline-block">
+            </div>
+            <div id="edit-address-form" class="hidden">
               <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true, html: {class: "form-inline"} do |f| %>
               <%= f.input :address, placeholder: 'Address', label: false %>
-              <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'btn btn-save-changes pull-right'  %>
+              <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'btn btn-default pull-right'  %>
              <% end %>
             </div>
           </h3>
         </div>
-        <div class="panel-body panel-body-unpadded">
+        <div class="panel-body confirm-info-panel-body">
           <div id="address_map">
             <%= render "payments/address_map", order: @order %>
           </div>
@@ -60,7 +60,7 @@
             <article>
 
             </article>
-            <button class="payment-button btn" style="margin-right:2px">Pay now</button>
+            <button class="payment-button btn">Pay now</button>
           <% end %>
           </div>
 
