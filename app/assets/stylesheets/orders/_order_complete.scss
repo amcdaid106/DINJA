@@ -1,0 +1,38 @@
+// Style for orders#show
+.order-confirmation-heading hr {
+  width: 20%;
+}
+.order-final-price {
+  padding-right:55px;
+  text-align: right;
+  p {
+    font-size: 20px;
+  }
+}
+.order-item-confirm {
+  background-color: $gray-background;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  &-name {
+    flex: 0 0 50%;
+  }
+  p {
+  margin-bottom: 0;
+  }
+}
+.link-and-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .link-home {
+    margin-left: 15px;
+    padding-left: 20px;
+  }
+  .total-price {
+    margin-right: 15px;
+    padding-right: 30px;
+  }
+}
+

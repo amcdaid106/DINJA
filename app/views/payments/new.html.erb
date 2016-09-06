@@ -1,73 +1,70 @@
-<div class="order-process-container">
-  <div class="cart-confirm-container">
-
-    <div class="order-confirm-heading text-center">
-      <h2>ORDER DETAILS</h2>
-      <hr>
-    </div>
-
-    <div class="confirm-all-info">
-
-        <div class="panel panel-default">
-          <div class="panel-heading" style = "text-align:right">
-            <h3 class="panel-title panel-title-flex">1. Check your order - <%= @grand_total %>.00€
-              <div class="line-button" style = " display: inline-block; ">
-                <%= link_to edit_order_path(@order) do %>
-                  <button class="btn btn-default confirm-order-button">Edit</button>
-                  <% end %>
-              </div>
-            </h3>
-          </div>
-          <div class="panel-body panel-body-unpadded">
-            <% @order.order_items.each do |item| %>
-              <div class="order-item-checkout">
-                <p class="order-item-checkout-name"><%= item.recipe.name %></p>
-                <p class="order-item-checkout-price"><%= item.recipe.price %>.00€</p>
-                <p class="order-item-checkout-quantity"><%= item.quantity %></p>
-                <p class="order-item-checkout-price"><%= item.recipe.price*item.quantity %>.00€</p>
-              </div>
-            <% end %>
-          </div>
-        </div>
-
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title panel-title-flex"> 2. Enter your delivery address
-              <span id="current-address" class="edit-address address" >
-                <%= render "orders/address", order: @order %>
-              </span>
-              <div id="edit-address-form" class="edit-address hidden" style = "display:inline-block">
-                <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true, html: {class: "form-inline"} do |f| %>
-                <%= f.input :address, placeholder: 'Address', label: false %>
-                <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'btn btn-save-changes pull-right'  %>
-               <% end %>
-              </div>
-            </h3>
-          </div>
-          <div class="panel-body panel-body-unpadded">
-            <div id="address_map">
-              <%= render "payments/address_map", order: @order %>
-            </div>
-          </div>
-        </div>
-
-
-            <div class="text-center">
-              <span>Total due: <%= humanized_money_with_symbol(@order.price) %></span>
-            </div>
-            <div class="panel-body payment-body text-center">
-
-            <%= form_tag order_payments_path(@order), id: "payment_form" do %>
-              <article>
-
-              </article>
-              <button class="payment-button btn" style="margin-right:2px">Pay now</button>
-            <% end %>
-            </div>
-
-      </div>
+<div class="inner-container">
+  <div class="inner-container-heading order-confirm-heading text-center">
+    <h2>ORDER DETAILS</h2>
+    <hr>
   </div>
+
+  <div class="confirm-all-info">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">1. Review your order - <%= @grand_total %>.00€
+            <div id="edit-order-button">
+              <%= link_to edit_order_path(@order) do %>
+                <button class="btn btn-default confirm-order-button">Edit</button>
+              <% end %>
+            </div>
+          </h3>
+        </div>
+        <div class="panel-body confirm-info-panel-body">
+          <% @order.order_items.each do |item| %>
+            <div class="order-item-confirm">
+              <p class="order-item-confirm-name"><%= item.recipe.name %></p>
+              <p><%= item.recipe.price %>.00€</p>
+              <p><%= item.quantity %></p>
+              <p><%= item.recipe.price*item.quantity %>.00€</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> 2. Confirm delivery address
+            <div id="current-address">
+              <%= render "orders/address", order: @order %>
+            </div>
+            <div id="edit-address-form" class="hidden">
+              <%= simple_form_for @order, url: update_address_order_path(@order), method: :patch, remote: true, html: {class: "form-inline"} do |f| %>
+              <%= f.input :address, placeholder: 'Address', label: false %>
+              <%= f.button :submit, 'Save changes', id: 'save-delivery-address', class: 'btn btn-default pull-right'  %>
+             <% end %>
+            </div>
+          </h3>
+        </div>
+        <div class="panel-body confirm-info-panel-body">
+          <div id="address_map">
+            <%= render "payments/address_map", order: @order %>
+          </div>
+        </div>
+      </div>
+
+
+          <div class="text-center">
+            <span>Total due: <%= humanized_money_with_symbol(@order.price) %></span>
+          </div>
+          <div class="panel-body payment-body text-center">
+
+          <%= form_tag order_payments_path(@order), id: "payment_form" do %>
+            <article>
+
+            </article>
+            <button class="payment-button btn">Pay now</button>
+          <% end %>
+          </div>
+
+    </div>
 </div>
 
 <% content_for :after_js do %>
@@ -92,7 +89,6 @@
                   $('.payment-button').on('click', function(e) {
                     e.preventDefault();
                     handler.open();
-                    console.log("tata");
                     $('.iconTick').addClass('iconTick');
                   });
                 </script>

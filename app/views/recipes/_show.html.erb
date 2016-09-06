@@ -14,7 +14,7 @@
                   <%= simple_form_for OrderItem.new, remote: true do |f| %>
                     <%= hidden_field_tag :referral, 'recipe_show' %>
                     <%= f.association :recipe, as: :hidden, input_html: { value: recipe.id } %>
-                    <span class="added-text-in-show" id='modal-added-button-<%= recipe.id %>'>
+                    <span class="quantity-text-in-show" id='modal-add-button-<%= recipe.id %>'>
                       <%= order_item_quantity_label(@order, recipe, "recipe_show") %>
                     </span>
                     <%= f.submit "Add to cart", class: "recipe-add-to-cart-button" %>

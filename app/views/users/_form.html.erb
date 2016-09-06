@@ -24,12 +24,12 @@
   <div class="banished-ingredients-section food-card">
     <div class="banished-ingredients-input">
       <div>
-        <label for="banished_ingredients_autocomplete">Ingredients to exclude</label>
+        <label for="banished_ingredients_autocomplete">Search here for ingredients to exclude</label>
       </div>
       <input type="text" id="banished_ingredients_autocomplete" class="form-control" value="" placeholder="E.g. Cabbage" />
     </div>
     <div class="banished-ingredients-ul">
-      <label for="banished_ingredients_list" class="indredient-list-heading">Hooray, you'll never eat these ingredients!</label>
+      <label for="banished_ingredients_list" class="indredient-list-heading">You'll never see these ingredients:</label>
       <p class="no-excluded-ingredients <%= "hidden" if current_user.ingredients.exists? %>">You haven't excluded any ingredients yet</p>
       <ul id="banished_ingredients_list" class="list-inline">
           <!-- Empty list, will be filled by js -->

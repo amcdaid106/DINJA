@@ -1,29 +1,27 @@
 <%= hidden_field_tag "quantity_order_item_#{order_item.id}", order_item.quantity %>
 
-<div class="cart-order-picture">
+<div class="order-item-picture">
   <%= image_tag order_item.recipe.photo %>
 </div>
 
-<div class="cart-order-item-text">
+<div class="order-item-text">
   <h4 id="recipe_name_<%= order_item.id %>"><%= order_item.recipe.name %></h4>
   <div><span id="price_<%= order_item.id %>"><%= order_item.recipe.price %></span>.00€</div>
   <div class="orders-controls-container">
     <div class="orders-controls-quantity">
-      <div class="orders-controls-plus-minus">
-        <%= link_to remove_one_order_item_path(order_item), method: :put, remote: true do %>
-          <i class="fa fa-minus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
-        <% end %>
-        <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
-        <%= link_to add_one_order_item_path(order_item), method: :put, remote: true do %>
-          <i class="fa fa-plus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
-        <% end %>
-      </div>
+      <%= link_to remove_one_order_item_path(order_item), method: :put, remote: true do %>
+        <i class="fa fa-minus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+      <% end %>
+      <div><span id="quantity_<%= order_item.id %>"><%= order_item.quantity %></span></div>
+      <%= link_to add_one_order_item_path(order_item), method: :put, remote: true do %>
+        <i class="fa fa-plus" data-order-item-id="<%= order_item.id %>" aria-hidden="true"></i>
+      <% end %>
     </div>
   </div>
   <div><span id="total_price_<%= order_item.id %>"><%= order_item.recipe.price * order_item.quantity %></span>.00€</div>
   <%= link_to order_item_path(order_item), method: :delete, data: {
-    confirm: "Are you sure...",
-    text: "...you want to delete #{order_item.recipe.name}?",
+    confirm: "Confirm delete",
+    text: "Are you sure you want to remove #{order_item.recipe.name}?",
     confirm_button_text: 'Yes',
     cancel_button_text: 'No'
     }, remote: true do %>

@@ -1,0 +1,67 @@
+// Style for orders#edit
+
+.cart-heading hr {
+  width: 25%;
+
+}
+.cart-order-items {
+  &:hover {
+    background-color: $gray-lighter;
+  }
+}
+.orders-edit-quantity {
+  display: flex;
+  justify-content: space-around;
+  i {
+    font-size: larger;
+    padding-left: 10px;
+  }
+}
+.orders-controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .fa-times {
+    color: black;
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+.orders-controls-quantity {
+  display: flex;
+  justify-content: space-around;
+  i {
+    padding-top: 8px;
+    padding-left: 20px;
+  }
+  .fa-minus {
+    padding-right: 9px;
+  }
+  .fa-plus {
+    padding-left: 9px;
+  }
+  .fa-plus:hover {
+    color: $blue;
+  }
+  .fa-minus:hover {
+    color: $blue;
+  }
+}
+.orders-checkout-button {
+  background-color: $blue;
+  color: $white;
+  border-radius: 4px;
+  font-family: $base-font;
+  padding: 10px 30px;
+  margin-top: 10px;
+  font-weight: 400px;
+  font-size: 20px;
+  border: none;
+  &:hover {
+  background-color: $blue;
+  opacity: 0.8;
+  text-decoration: none;
+  color: $white;
+  }
+}
