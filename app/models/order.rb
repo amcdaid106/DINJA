@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  STATUS = ["pending", "confirmed", "paid", "delivered"]
+  STATUS = ["pending", "paid"]
   belongs_to :user
   has_many :order_items, dependent: :destroy
   has_many :recipes, through: :order_items

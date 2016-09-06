@@ -5,10 +5,8 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.where({ user_id: params[:user_id] })
-    @orders_pending = @orders.where(status: "pending")#.map(&:recipes).flatten
-    @orders_confirmed = @orders.where(status: "confirmed").map(&:recipes).flatten
-    @orders_cancelled = @orders.where(status: "cancelled").map(&:recipes).flatten
-    @orders_paid = @orders.where(status: "paid")#.map(&:recipes).flatten
+    @orders_pending = @orders.where(status: "pending")
+    @orders_paid = @orders.where(status: "paid")
   end
 
   def edit
