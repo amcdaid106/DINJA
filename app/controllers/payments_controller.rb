@@ -10,8 +10,6 @@ class PaymentsController < ApplicationController
     @order.price = @grand_total
   end
 
-
-
   def create
     @amount_cents = @order.price_cents
 

@@ -1,8 +1,5 @@
 <%= simple_form_for(user, remote: true) do |f| %>
   <h3>Tell us about your food preferences</h3>
-<!--            <% unless current_user.has_user_completed_food_preferences? %>
-    <p>Looks like you haven't listed any restrictions. Not a fussy eater!</p>
-  <% end %> -->
   <div class="food-card">
     <label for="no_gluten">Dietary preferences</label>
     <div class="food-checks">
@@ -32,7 +29,6 @@
       <label for="banished_ingredients_list" class="indredient-list-heading">You'll never see these ingredients:</label>
       <p class="no-excluded-ingredients <%= "hidden" if current_user.ingredients.exists? %>">You haven't excluded any ingredients yet</p>
       <ul id="banished_ingredients_list" class="list-inline">
-          <!-- Empty list, will be filled by js -->
         <% current_user.ingredients.each do |banned_ingredient| %>
           <li class="ingredient-and-delete">
             <%= banned_ingredient.name %>
