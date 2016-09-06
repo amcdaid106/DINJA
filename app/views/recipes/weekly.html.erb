@@ -118,33 +118,32 @@
       <div class="recipe-category-title-start"><h4 class="recipe-category-title">Desserts</h4> </div>
         <% @desserts.each do |dessert| %>
           <div class="col-xs-12 col-sm-4">
-          <%= link_to recipe_path(dessert) do  %>
-            <div class="recipe-container">
-            <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{dessert.id}" do %>
-              <div class="recipe-picture" style="background: url('<%= image_path dessert.photo %>');">
-              </div>
-              <% end %>
-              <div class="recipe-footer">
-                <div class="recipe-title"><%= dessert.name %></div>
-                <div class="recipe-actions">
-                  <div class="recipe-price"><%= dessert.price %>.00€</div>
-                  <% if current_user %>
-                    <%= simple_form_for OrderItem.new, remote: true do |f| %>
-                      <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
-                      <div class="buttons-inline">
-                        <span class="weekly-quantity-text-text" id='add-button-<%= dessert.id %>'>
-                          <%= order_item_quantity_label(@order, dessert) %>
-                        </span>
-                        <%= f.submit " + ", class: "recipe-select" %>
-                      </div>
+            <%= link_to recipe_path(dessert) do  %>
+              <div class="recipe-container">
+                <%= link_to '#', "data-toggle" => "modal", "data-target" => "#recipe-#{dessert.id}" do %>
+                  <div class="recipe-picture" style="background: url('<%= image_path dessert.photo %>');">
+                  </div>
+                <% end %>
+                <div class="recipe-footer">
+                  <div class="recipe-title"><%= dessert.name %></div>
+                  <div class="recipe-actions">
+                    <div class="recipe-price"><%= dessert.price %>.00€</div>
+                    <% if current_user %>
+                      <%= simple_form_for OrderItem.new, remote: true do |f| %>
+                        <%= f.association :recipe, as: :hidden, input_html: { value: dessert.id } %>
+                        <div class="buttons-inline">
+                          <span class="weekly-quantity-text-text" id='add-button-<%= dessert.id %>'>
+                            <%= order_item_quantity_label(@order, dessert) %>
+                          </span>
+                          <%= f.submit " + ", class: "recipe-select" %>
+                        </div>
+                      <% end %>
                     <% end %>
-                  <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
             <% end %>
             <%= render 'recipes/show', recipe: dessert %>
-
           </div>
         <% end %>
     </div>
